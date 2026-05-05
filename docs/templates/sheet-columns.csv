@@ -1,0 +1,23 @@
+column_name,description,example
+public_order_id,Human-readable order ID,DK-20260430-0001
+created_at,Order creation timestamp,2026-04-30T15:00:00Z
+customer_name,Customer name,سارة
+phone_e164,Normalized KSA phone,+9665XXXXXXXX
+status,Order status,pending_confirmation
+items_summary,Readable order items,دفاية الطعام الكهربائية x1
+subtotal,Subtotal before discount,199
+discount,Discount amount,0
+delivery_fee,Delivery fee,0
+total,Final COD amount,199
+currency,Currency,SAR
+payment_method,Payment method,COD
+upsell_accepted,Whether post-checkout upsell accepted,false
+landing_page,Landing page URL,https://dafakitchen.shop/products/dafaya-food-warmer
+utm_source,UTM source,tiktok
+utm_medium,UTM medium,paid_social
+utm_campaign,UTM campaign,food_warmer_test
+utm_content,UTM content,ugc_01
+utm_term,UTM term,
+event_id,Deduplication event ID,evt_abc123
+sheet_received_at,Sheet append timestamp,2026-04-30T15:00:05Z
+

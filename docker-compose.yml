@@ -1,0 +1,52 @@
+services:
+  dafa_kitchen_database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: dafa_kitchen
+      POSTGRES_USER: dafakitchen
+      POSTGRES_PASSWORD: dafakitchen
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dafakitchen -d dafa_kitchen"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      APP_ENV: local
+      API_BASE_URL: http://localhost:8000
+      FRONTEND_URL: http://localhost:3000
+      DATABASE_URL: postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
+      ENABLE_CAPI: "false"
+      ENABLE_SHEETS_WEBHOOK: "true"
+      ORDER_WEBHOOK_URL: "https://script.google.com/macros/s/AKfycbxa6oKq3s8B98l08vb6I4kJf6-uogoNTWHaVRWBM2sH4KI4-CuVFjxYWsZx179YbSFx/exec"
+    ports:
+      - "8000:8000"
+    depends_on:
+      dafa_kitchen_database:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_SITE_URL: http://localhost:3000
+        NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+    environment:
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+      NEXT_PUBLIC_ENABLE_PIXEL_DEBUG: "true"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres-data:
+

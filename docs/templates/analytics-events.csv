@@ -1,0 +1,6 @@
+event_name,trigger,frontend_pixel,server_capi,notes
+PageView,Any page load,yes,no,Deferred pixel load
+ViewContent,Product page view,yes,optional,Include product ID and value
+AddToCart,Offer CTA click,yes,no,Open cart drawer after event
+InitiateCheckout,Cart checkout CTA click,yes,optional,Use event_id if also sent server-side
+Purchase,Final order submit after upsell step,yes,yes,Use same event_id for browser and CAPI dedupe
