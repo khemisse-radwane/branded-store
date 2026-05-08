@@ -24,6 +24,8 @@ services:
       FRONTEND_URL: http://localhost:3000
       DATABASE_URL: postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
       ENABLE_CAPI: "false"
+      ADMIN_USERNAME: "admin"
+      ADMIN_PASSWORD: "admin"
       ENABLE_SHEETS_WEBHOOK: "true"
       ORDER_WEBHOOK_URL: "https://script.google.com/macros/s/AKfycbxa6oKq3s8B98l08vb6I4kJf6-uogoNTWHaVRWBM2sH4KI4-CuVFjxYWsZx179YbSFx/exec"
     ports:
