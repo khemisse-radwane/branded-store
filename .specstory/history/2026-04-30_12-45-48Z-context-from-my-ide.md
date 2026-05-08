@@ -25277,3 +25277,1616 @@ npm run typecheck
 Passed.
 
 `npm run build` was blocked by a Windows lock on `.next/trace`, likely because the dev server is running. Stop the frontend dev server, then run build again.
+
+---
+
+_**User (2026-05-05 11:34:55Z)**_
+
+# Context from my IDE setup:
+
+## Active file: google-apps-script-webhook.js
+
+## Open tabs:
+- google-apps-script-webhook.js: google-apps-script-webhook.js
+
+## My request for Codex:
+Here is a list of adjustement to improve the store, apply this instructions on by one and display the checklist:
+- in the home page section hero use only one image instead of 3 images where we are going to gather the product collection in one image
+- whenever you found COD change it with it arabic name "الدفع عند الاستلام"
+' 
+- in the home page decorate this part with icons  and a creative styling
+- from the product page and anyplace where the product are shown, remove the subtitle or the description.
+- There is no main product so the tag "المنتج الرئيسي" is not good
+- this part in the home should be well styled be creative "مشكلة يومية في المطبخ
+استخدام مفهوم بدون شرح طويل
+مقاس وفائدة واضحين قبل الطلب
+COD، اتصال تأكيد، وضمان ذهبي"
+- fix the format of the product page hero image 1:1, and it should appear aligned with the content of the description (title, rating, offer ...), so I want you to put these below the container with a styling maybe make it scrollable for mobile "دفع عند الاستلام 
+شحن سريع للسعودية
+ضمان ذهبي 30 يوم"
+- for the offer part, I want the tags "most demanded" and "best discount" to be on the border with styling
+- this part need better styling, and it image should be aligned with it so maybe we need 1:1 image or 5:4 "تقطيع وبشر وتحضير في مجموعة واحدة بدل استخدام سكين ومبشرة وأكثر من صحن
+الحافظة تجمع الخضار مباشرة وتقلل الفوضى على الرخام
+مناسبة للسلطة، البصل، البطاطس، الجزر وتجهيز مكونات الطبخ اليومي
+14 قطعة/استخدام حسب النسخة المتوفرة لتناسب أكثر من نوع تحضير"
+- be more creative to present this content, if some of it is not necessary remove it :
+"تفاصيل عملية
+شفرات ستانلس ستيل حسب مواصفات المورد
+حافظة لتجميع المكونات وتقليل الفوضى
+قطع متعددة للتقطيع والبشر والتحضير حسب النسخة المتوفرة
+منتج غير كهربائي، سهل الفهم في الاتصال، ومناسب لطلبات الدفع عند الاستلام
+محتويات الطلب
+قاعدة التقطيع
+حافظة
+شفرات متعددة
+أداة تنظيف"
+
+
+_**User (2026-05-05 11:36:13Z)**_
+
+# Context from my IDE setup:
+
+## Open tabs:
+- google-apps-script-webhook.js: google-apps-script-webhook.js
+
+## My request for Codex:
+Here is a list of adjustement to improve the store, apply this instructions on by one and display the checklist:
+- in the home page section hero use only one image instead of 3 images where we are going to gather the product collection in one image
+- whenever you found COD change it with it arabic name "الدفع عند الاستلام"
+' 
+- in the home page decorate this part with icons  and a creative styling
+- from the product page and anyplace where the product are shown, remove the subtitle or the description.
+- There is no main product so the tag "المنتج الرئيسي" is not good
+- this part in the home should be well styled be creative "مشكلة يومية في المطبخ
+استخدام مفهوم بدون شرح طويل
+مقاس وفائدة واضحين قبل الطلب
+COD، اتصال تأكيد، وضمان ذهبي"
+- fix the format of the product page hero image 1:1, and it should appear aligned with the content of the description (title, rating, offer ...), so I want you to put these below the container with a styling maybe make it scrollable for mobile "دفع عند الاستلام 
+شحن سريع للسعودية
+ضمان ذهبي 30 يوم"
+- for the offer part, I want the tags "most demanded" and "best discount" to be on the border with styling
+- this part need better styling, and it image should be aligned with it so maybe we need 1:1 image or 5:4 "تقطيع وبشر وتحضير في مجموعة واحدة بدل استخدام سكين ومبشرة وأكثر من صحن
+الحافظة تجمع الخضار مباشرة وتقلل الفوضى على الرخام
+مناسبة للسلطة، البصل، البطاطس، الجزر وتجهيز مكونات الطبخ اليومي
+14 قطعة/استخدام حسب النسخة المتوفرة لتناسب أكثر من نوع تحضير"
+- be more creative to present this content, if some of it is not necessary remove it :
+"تفاصيل عملية
+شفرات ستانلس ستيل حسب مواصفات المورد
+حافظة لتجميع المكونات وتقليل الفوضى
+قطع متعددة للتقطيع والبشر والتحضير حسب النسخة المتوفرة
+منتج غير كهربائي، سهل الفهم في الاتصال، ومناسب لطلبات الدفع عند الاستلام
+محتويات الطلب
+قاعدة التقطيع
+حافظة
+شفرات متعددة
+أداة تنظيف"
+
+
+_**User (2026-05-05 11:44:23Z)**_
+
+# Context from my IDE setup:
+
+## Open tabs:
+- google-apps-script-webhook.js: google-apps-script-webhook.js
+
+## My request for Codex:
+hi
+
+
+_**User (2026-05-07 16:44:28Z)**_
+
+# Context from my IDE setup:
+
+## Open tabs:
+- Dockerfile: frontend/Dockerfile
+
+## My request for Codex:
+Here is a list of adjustement to improve the store, apply this instructions on by one and display the checklist:
+- in the home page section hero use only one image instead of 3 images where we are going to gather the product collection in one image
+- whenever you found COD change it with it arabic name "الدفع عند الاستلام"
+' 
+- in the home page decorate this part with icons  and a creative styling
+- from the product page and anyplace where the product are shown, remove the subtitle or the description.
+- There is no main product so the tag "المنتج الرئيسي" is not good
+- this part in the home should be well styled be creative "مشكلة يومية في المطبخ
+استخدام مفهوم بدون شرح طويل
+مقاس وفائدة واضحين قبل الطلب
+COD، اتصال تأكيد، وضمان ذهبي"
+- fix the format of the product page hero image 1:1, and it should appear aligned with the content of the description (title, rating, offer ...), so I want you to put these below the container with a styling maybe make it scrollable for mobile "دفع عند الاستلام 
+شحن سريع للسعودية
+ضمان ذهبي 30 يوم"
+- for the offer part, I want the tags "most demanded" and "best discount" to be on the border with styling
+- this part need better styling, and it image should be aligned with it so maybe we need 1:1 image or 5:4 "تقطيع وبشر وتحضير في مجموعة واحدة بدل استخدام سكين ومبشرة وأكثر من صحن
+الحافظة تجمع الخضار مباشرة وتقلل الفوضى على الرخام
+مناسبة للسلطة، البصل، البطاطس، الجزر وتجهيز مكونات الطبخ اليومي
+14 قطعة/استخدام حسب النسخة المتوفرة لتناسب أكثر من نوع تحضير"
+- be more creative to present this content, if some of it is not necessary remove it :
+"تفاصيل عملية
+شفرات ستانلس ستيل حسب مواصفات المورد
+حافظة لتجميع المكونات وتقليل الفوضى
+قطع متعددة للتقطيع والبشر والتحضير حسب النسخة المتوفرة
+منتج غير كهربائي، سهل الفهم في الاتصال، ومناسب لطلبات الدفع عند الاستلام
+محتويات الطلب
+قاعدة التقطيع
+حافظة
+شفرات متعددة
+أداة تنظيف"
+
+
+---
+
+_**Agent (gpt-5.5 2026-05-07 16:44:35Z)**_
+
+I’ll apply these as a UI/CRO pass and keep a checklist as I go. First I’m reading the current home, product page, product data, and visual components so the edits stay consistent instead of becoming a patchwork.
+
+_**Agent (gpt-5.5 2026-05-07 16:44:37Z)**_
+
+<tool-use data-tool-type="task" data-tool-name="update_plan"><details>
+<summary>Tool use: **update_plan**</summary>
+**Agent task list:**
+- [⚡] Audit current home/product UI and copy targets
+- [ ] Update shared product data/copy and COD wording
+- [ ] Revise home hero and authority sections
+- [ ] Revise product page layout, offer badges, benefits/specs presentation
+- [ ] Run typecheck/build verification
+
+```
+Plan updated
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:44:45Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content -Path frontend\app\page.tsx -Encoding utf8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ProductCard } from "@/components/product/product-card";
+import { ReviewCard } from "@/components/product/review-card";
+import { ButtonLink } from "@/components/ui/button";
+import { KitchenHeroVisual } from "@/components/ui/product-visual";
+import { products } from "@/data/products";
+
+export default function HomePage() {
+  return (
+    <>
+      <section className="bg-warm-100 py-14 md:py-20">
+        <div className="container-shell grid items-center gap-10 md:grid-cols-[1fr_0.9fr]">
+          <div>
+            <p className="mb-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-black text-date shadow-soft">
+              بيت اختيار أدوات المطبخ العملية للبيت السعودي
+            </p>
+            <h1 className="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
+              مطبخ دفا يختار لك الأدوات اللي تستاهل تدخل مطبخك
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-9 text-charcoal/70">
+              مو كل أداة منتشرة تستاهل الشراء. نختار أدوات يومية واضحة للبيت السعودي: تجهز أسرع، ترتب الدولاب، وتخلي الحوض والسطح أهدأ بعد الغسيل.
+            </p>
+            <div className="mt-6 grid gap-3 text-sm font-black sm:grid-cols-3">
+              {["COD داخل السعودية", "اتصال تأكيد قبل الشحن", "ضمان ذهبي 30 يوم"].map((item) => (
+                <div key={item} className="rounded-xl bg-white px-4 py-3 text-center shadow-soft">{item}</div>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonLink href="/products" variant="gold">
+                تسوقي الآن
+                <ArrowLeft size={18} />
+              </ButtonLink>
+              <ButtonLink href="/about" variant="outline">لماذا مطبخ دفا؟</ButtonLink>
+            </div>
+          </div>
+          <KitchenHeroVisual />
+        </div>
+      </section>
+
+      <section className="container-shell py-16">
+        <div className="mb-8 text-center">
+          <p className="text-sm font-black text-olive">معيار مطبخ دفا</p>
+          <h2 className="mt-2 text-3xl font-black">نختار المنتج إذا كانت فائدته واضحة قبل ما يوصلك</h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            ["التقطيع يأخذ وقت", "كل يوم سلطة، كشنة، شوربة أو خضار. اختصار التحضير يعني وقت أقل وفوضى أقل."],
+            ["أكياس الأرز والحبوب تسبب فوضى", "الأرز والعدس والبرغل من أساسيات البيت. ترتيبها يعطيك دولاب أهدأ وأنظف."],
+            ["الصحون تزحم سطح المطبخ", "بعد الغسيل، الرخام يصير منطقة تجفيف. المنظم يرجع المساحة للحوض بدل السطح."],
+          ].map(([title, body]) => (
+            <div key={title} className="rounded-2xl border border-charcoal/10 bg-white p-6 shadow-soft">
+              <CheckCircle2 className="mb-4 text-olive" />
+              <h3 className="text-xl font-black">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-charcoal/65">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="container-shell">
+          <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+          <p className="text-sm font-black text-date">اختيارات دفا</p>
+          <h2 className="mt-2 text-3xl font-black">أدوات مختارة بعقلية مطبخ، مو بعقلية ترند</h2>
+            </div>
+            <ButtonLink href="/products" variant="outline">عرض كل المنتجات</ButtonLink>
+          </div>
+          <div className="grid gap-5 lg:grid-cols-3">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-shell grid items-center gap-8 py-16 md:grid-cols-2">
+        <div className="rounded-2xl bg-olive p-8 text-white">
+          <p className="text-sm font-black text-gold">هوية مطبخ دفا</p>
+          <h2 className="mt-3 text-3xl font-black leading-tight">نبيع الثقة قبل الأداة: اختيار واضح، استخدام يومي، وطلب مؤكد</h2>
+          <p className="mt-4 leading-8 text-white/75">
+            لأن الشراء بالدفع عند الاستلام يحتاج قناعة حقي
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:44:45Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content -LiteralPath 'frontend\app\products\[slug]\page.tsx' -Encoding utf8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+import { notFound } from "next/navigation";
+import { Award, Banknote, CheckCircle2, Star, Truck } from "lucide-react";
+import { OfferSelector } from "@/components/product/offer-selector";
+import { ProductCard } from "@/components/product/product-card";
+import { ReviewCard } from "@/components/product/review-card";
+import { StickyProductCta } from "@/components/product/sticky-product-cta";
+import { ProductVisual } from "@/components/ui/product-visual";
+import { getCrossSells, getProductBySlug, products } from "@/data/products";
+
+export function generateStaticParams() {
+  return products.map((product) => ({ slug: product.slug }));
+}
+
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
+  if (!product) notFound();
+  const crossSells = getCrossSells([product.id]);
+
+  return (
+    <>
+      <section className="bg-warm-100 py-10 md:py-14">
+        <div className="container-shell grid items-start gap-8 lg:grid-cols-[0.9fr_1fr] lg:[direction:ltr]">
+          <div className="order-2 lg:order-1 lg:col-start-1 lg:row-start-1 lg:[direction:rtl]">
+            <p className="mb-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-black text-date shadow-soft">
+              {product.role}
+            </p>
+            <h1 className="text-4xl font-black leading-tight md:text-5xl">{product.nameAr}</h1>
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-1 text-gold">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star key={index} size={18} className="fill-gold" />
+                ))}
+              </div>
+              <span className="text-sm font-black text-charcoal">
+                {product.rating} من 5
+              </span>
+              <span className="rounded-full bg-white px-3 py-1 text-xs font-bold text-charcoal/65 shadow-soft">
+                {product.ratingCount.toLocaleString("ar-SA")} تقييم
+              </span>
+            </div>
+            <div className="mt-4 grid gap-2 sm:grid-cols-3">
+              <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-3 text-xs font-black text-charcoal shadow-soft">
+                <Banknote size={18} className="text-olive" />
+                دفع عند الاستلام
+              </div>
+              <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-3 text-xs font-black text-charcoal shadow-soft">
+                <Truck size={18} className="text-clay" />
+                شحن سريع للسعودية
+              </div>
+              <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-3 text-xs font-black text-charcoal shadow-soft">
+                <Award size={18} className="text-gold" />
+                ضمان ذهبي 30 يوم
+              </div>
+            </div>
+            <p className="mt-4 text-xl font-black leading-9 text-date">{product.headlineAr}</p>
+            <p className="mt-4 max-w-2xl leading-8 text-charcoal/70">{product.subheadingAr}</p>
+            <div id="product-offer" className="mt-6 scroll-mt-28">
+              <OfferSelector product={product} />
+            </div>
+          </div>
+          <ProductVisual product={product} className="order-1 lg:order-2 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-32" />
+        </div>
+      </section>
+
+      <section className="container-shell grid items-center gap-8 py-12 md:grid-cols-2">
+        <div>
+          <p className="text-sm font-black text-olive">المشكلة اللي تحسينها كل يوم</p>
+          <h2 className="mt-3 text-3xl font-black leading-tight">{product.painAr}</h2>
+          <p className="mt-4 rounded-2xl bg-warm-50 p-5 text-lg font-black leading-9 text-date">{product.demoHookAr}</p>
+        </div>
+        <ProductVisual product={product} label="استخدام المنتج" />
+      </section>
+
+      <section className="bg-white py-14">
+        <div className="container-shell grid gap-8 md:grid-cols-2">
+          <div className="order-2 md:order-1">
+            <ProductVisual product={product} label="تفاصيل المنتج" />
+          </div>
+          <div className="order-1 md:order-2">
+            <p className="text-sm font-black text-date">الفوائد</p>
+            <h2 className="mt-3 text-3xl font-black">ليش راح تحبينه من أول أسبوع؟</h2>
+            <div className="mt-6 grid gap-3">
+              {product.benefits.map((benefit) => (
+                <div key={benefit} className="flex gap-3 rounded-2xl bg-warm-50 p-4">
+                  <CheckCircle2 className="mt-1 shrink-0 text-olive" size={20} />
+                  <span className="font-bold leading-7">{benefit}</span>
+                </div>
+              ))}
+            </d
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:44:46Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content -Path frontend\components\ui\product-visual.tsx -Encoding utf8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+import type { Product } from "@/data/products";
+
+const imageDescriptions = {
+  dish_drying_rack: "[صورة منظم تجفيف الصحون المعدني القابل للتعديل فوق الحوض مع صحون وأكواب مرتبة والماء ينزل داخل الحوض]",
+  rice_dispenser: "[صورة حافظة أرز وحبوب دوارة محكمة داخل دولاب مطبخ مرتب مع كوب قياس]",
+  vegetable_cutter: "[صورة قطاعة خضار 14 في 1 مع الحافظة أثناء تحضير السلطة والكشنة]",
+};
+
+export function ProductVisual({
+  product,
+  label = "صورة المنتج",
+  className = "",
+  compact = false,
+}: {
+  product: Product;
+  label?: string;
+  className?: string;
+  compact?: boolean;
+}) {
+  const description = imageDescriptions[product.id];
+
+  return (
+    <div
+      className={`relative overflow-hidden rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 shadow-soft ${
+        compact ? "min-h-20" : "min-h-[280px]"
+      } ${className}`}
+      role="img"
+      aria-label={`${label}: ${product.nameAr}`}
+    >
+      <div
+        className={`relative z-10 flex h-full flex-col items-center justify-center text-center ${
+          compact ? "min-h-20 p-2" : "min-h-[280px] p-8"
+        }`}
+      >
+        <p className={`max-w-md font-black text-charcoal/55 ${compact ? "text-[10px] leading-5" : "text-base leading-8"}`}>
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export function KitchenHeroVisual() {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2" aria-label="منتجات مطبخ دفا">
+      <div className="flex min-h-44 items-center justify-center rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 p-5 text-center shadow-soft sm:col-span-2">
+        <p className="max-w-md text-base font-black leading-8 text-charcoal/55">
+          [صورة هيرو لمطبخ دفا تعرض قطاعة الخضار وحافظة الأرز والحبوب ومنظم الصحون على سطح مطبخ سعودي مرتب]
+        </p>
+      </div>
+      <div className="flex min-h-32 items-center justify-center rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 p-5 text-center">
+        <p className="text-sm font-black leading-7 text-charcoal/55">[صورة قريبة لحافظة الأرز والحبوب داخل الدولاب]</p>
+      </div>
+      <div className="flex min-h-32 items-center justify-center rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 p-5 text-center">
+        <p className="text-sm font-black leading-7 text-charcoal/55">[صورة منظم تجفيف الصحون فوق الحوض بعد غسل الأطباق]</p>
+      </div>
+    </div>
+  );
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:44:46Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content -Path frontend\components\product\offer-selector.tsx -Encoding utf8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+"use client";
+
+import { Award, Check, ShoppingCart } from "lucide-react";
+import { useState } from "react";
+import type { OfferId, Product } from "@/data/products";
+import { Button } from "@/components/ui/button";
+import { makeCartItem, useCartStore } from "@/store/cart-store";
+import { createEventId } from "@/lib/event-id";
+import { trackPixelEvent } from "@/lib/tracking";
+
+export function OfferSelector({ product, compact = false }: { product: Product; compact?: boolean }) {
+  const [selectedOffer, setSelectedOffer] = useState<OfferId>("two");
+  const addItem = useCartStore((state) => state.addItem);
+  const offer = product.offers.find((candidate) => candidate.id === selectedOffer) ?? product.offers[0];
+
+  function handleAdd() {
+    const item = makeCartItem(product, selectedOffer);
+    addItem(item);
+    const eventId = createEventId("atc");
+    trackPixelEvent(
+      "AddToCart",
+      {
+        value: item.totalPrice,
+        currency: "SAR",
+        content_ids: [product.id],
+        content_name: product.nameAr,
+      },
+      eventId,
+    );
+  }
+
+  return (
+    <div className={`rounded-2xl border border-charcoal/10 bg-white p-4 shadow-soft ${compact ? "" : "md:p-6"}`}>
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <div>
+          <p className="text-sm font-black">اختاري الكمية المناسبة لبيتك</p>
+          <p className="text-xs text-charcoal/60">الدفع عند الاستلام، ونكلمك قبل الشحن للتأكيد</p>
+        </div>
+        <span className="rounded-full bg-warm-100 px-3 py-1 text-xs font-black text-date">وفر أكثر مع 2 أو 3</span>
+      </div>
+
+      <div className="grid gap-3">
+        {product.offers.map((candidate) => (
+          <button
+            key={candidate.id}
+            type="button"
+            onClick={() => setSelectedOffer(candidate.id)}
+            className={`focus-ring flex items-center justify-between rounded-xl border p-3 text-start transition ${
+              selectedOffer === candidate.id
+                ? "border-gold bg-[#FFF8E8]"
+                : "border-charcoal/10 bg-warm-50 hover:bg-white"
+            }`}
+          >
+            <span className="flex items-center gap-3">
+              <span
+                className={`flex h-6 w-6 items-center justify-center rounded-full border ${
+                  selectedOffer === candidate.id ? "border-gold bg-gold" : "border-charcoal/20"
+                }`}
+              >
+                {selectedOffer === candidate.id ? <Check size={14} /> : null}
+              </span>
+              <span>
+                <span className="block text-sm font-black">{candidate.labelAr}</span>
+                <span className="text-xs font-bold text-charcoal/55">
+                  {Math.round(candidate.price / candidate.quantity)} ريال للقطعة
+                </span>
+                {candidate.badge ? <span className="block text-xs font-bold text-olive">{candidate.badge}</span> : null}
+              </span>
+            </span>
+            <span className="text-lg font-black">{candidate.price} ريال</span>
+          </button>
+        ))}
+      </div>
+
+      <Button onClick={handleAdd} className="mt-5 w-full text-base" variant="gold">
+        <ShoppingCart size={18} />
+        أضيفي للسلة - {offer.price} ريال
+      </Button>
+      <div className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-gold/40 bg-[#FFF7E4] px-4 py-3 text-center text-xs font-black text-date">
+        <Award size={18} className="text-gold" />
+        ضمان ذهبي 30 يوم
+      </div>
+    </div>
+  );
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:44:46Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content -Path frontend\components\product\product-card.tsx -Encoding utf8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+"use client";
+
+import Link from "next/link";
+import { CheckCircle2, Star } from "lucide-react";
+import type { Product } from "@/data/products";
+import { Button } from "@/components/ui/button";
+import { ProductVisual } from "@/components/ui/product-visual";
+import { makeCartItem, useCartStore } from "@/store/cart-store";
+import { createEventId } from "@/lib/event-id";
+import { trackPixelEvent } from "@/lib/tracking";
+
+export function ProductCard({ product }: { product: Product }) {
+  const addItem = useCartStore((state) => state.addItem);
+
+  function addDefaultOffer() {
+    const item = makeCartItem(product, "two");
+    addItem(item);
+    trackPixelEvent("AddToCart", { value: item.totalPrice, currency: "SAR", content_ids: [product.id] }, createEventId("atc"));
+  }
+
+  return (
+    <article className="overflow-hidden rounded-2xl border border-charcoal/10 bg-white shadow-soft transition hover:-translate-y-1 hover:border-gold/50">
+      <Link href={`/products/${product.slug}`}>
+        <ProductVisual product={product} className="min-h-[220px] rounded-none border-0 shadow-none" />
+      </Link>
+      <div className="p-5">
+        <div className="mb-3 flex items-center justify-between gap-3">
+          <span className="rounded-full bg-warm-100 px-3 py-1 text-xs font-black text-date">{product.role}</span>
+          <span className="flex items-center gap-1 text-xs font-bold text-charcoal/70">
+            <Star size={14} className="fill-gold text-gold" /> {product.rating}
+          </span>
+        </div>
+        <h3 className="text-xl font-black">{product.nameAr}</h3>
+        <p className="mt-2 text-sm font-bold leading-7 text-date">{product.headlineAr}</p>
+        <p className="mt-2 text-sm leading-7 text-charcoal/65">{product.subheadingAr}</p>
+        <div className="mt-4 grid gap-2">
+          {product.benefits.slice(0, 2).map((benefit) => (
+            <div key={benefit} className="flex gap-2 rounded-xl bg-warm-50 p-3 text-xs font-bold leading-6 text-charcoal/75">
+              <CheckCircle2 size={16} className="mt-1 shrink-0 text-olive" />
+              <span>{benefit}</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 rounded-xl border border-gold/35 bg-[#FFF7E4] p-3 text-xs font-black leading-6 text-date">
+          دفع عند الاستلام، اتصال تأكيد قبل الشحن، وضمان ذهبي 30 يوم.
+        </div>
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <div>
+            <p className="text-xs text-charcoal/50">ابتداء من</p>
+            <p className="text-2xl font-black">199 ريال</p>
+          </div>
+          <Button onClick={addDefaultOffer} variant="gold">اختاري العرض</Button>
+        </div>
+      </div>
+    </article>
+  );
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:44:46Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content -Path frontend\data\products.ts -Encoding utf8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+export type OfferId = "one" | "two" | "three" | "upsell_99";
+
+export type Offer = {
+  id: OfferId;
+  labelAr: string;
+  quantity: number;
+  price: number;
+  badge?: string;
+};
+
+export type Product = {
+  id: "dish_drying_rack" | "rice_dispenser" | "vegetable_cutter";
+  slug: string;
+  nameAr: string;
+  nameEn: string;
+  role: string;
+  headlineAr: string;
+  subheadingAr: string;
+  painAr: string;
+  emotionAr: string;
+  demoHookAr: string;
+  color: "gold" | "olive" | "date";
+  rating: number;
+  ratingCount: number;
+  benefits: string[];
+  specs: string[];
+  included: string[];
+  faq: { question: string; answer: string }[];
+  offers: Offer[];
+};
+
+export const standardOffers: Offer[] = [
+  { id: "one", labelAr: "قطعة واحدة", quantity: 1, price: 199 },
+  { id: "two", labelAr: "قطعتين", quantity: 2, price: 279, badge: "الأكثر طلبا" },
+  { id: "three", labelAr: "3 قطع", quantity: 3, price: 349, badge: "أفضل توفير" },
+];
+
+const productDisplayOrder: Product["id"][] = ["vegetable_cutter", "rice_dispenser", "dish_drying_rack"];
+
+const unsortedProducts: Product[] = [
+  {
+    id: "dish_drying_rack",
+    slug: "over-sink-dish-drying-rack",
+    nameAr: "منظم تجفيف الصحون فوق الحوض",
+    nameEn: "Over-Sink Dish Drying Organizer",
+    role: "حل فوضى الحوض",
+    headlineAr: "سطح المطبخ يرجع فاضي بعد الغسيل، والماء ينزل في الحوض مو على الرخام",
+    subheadingAr: "منظم قابل للتعديل فوق الحوض يجمع الصحون، الأكواب، الملاعق ولوح التقطيع في مكان واحد. حل بسيط بس يفرق كل يوم بعد الغسيل.",
+    painAr: "تعرفين اللحظة اللي تخلصين غسل والصحون مالية الرخام؟ ماء حول الحوض، مناشف مبتلة، وأكواب ما لها مكان. هذا المنتج يحول الفوضى لمنطقة تجفيف مرتبة فوق الحوض.",
+    emotionAr: "راحة بعد الغسيل، رخام فاضي، ومطبخ مرتب حتى بعد الطبخ",
+    demoHookAr: "ركبيه فوق الحوض، حطي الصحون بعد الغسيل، وخلي الماء يرجع لمكانه الطبيعي بدل ما ينتشر على السطح.",
+    color: "gold",
+    rating: 4.7,
+    ratingCount: 1089,
+    benefits: [
+      "يرجع لك مساحة الرخام بعد غسل الصحون بدل ما تصير منطقة تجفيف عشوائية",
+      "يساعد الماء ينزل مباشرة داخل الحوض بدل التجمع حول المغسلة",
+      "يرتب الصحون والأكواب والملاعق ولوح التقطيع في مكان واحد حسب الموديل",
+      "مناسب للبيت السعودي لأن الغسيل يتكرر يوميا بعد القهوة، الغداء، والعشاء",
+    ],
+    specs: [
+      "تصميم قابل للتعديل حسب مقاس الحوض عند اختيار الموديل المناسب",
+      "هيكل معدني بستايل أسود عملي ومناسب للمطابخ الحديثة حسب مواصفات المورد",
+      "تصميم متعدد الاستخدامات للصحون والأدوات الصغيرة حسب النسخة المتوفرة",
+      "اختيار غير كهربائي، واضح الاستخدام، ومناسب للدفع عند الاستلام لأنه يحل مشكلة تشوفينها كل يوم",
+    ],
+    included: ["منظم تجفيف الصحون", "حامل أدوات صغير حسب الموديل", "قطع تركيب أساسية"],
+    faq: [
+      {
+        question: "كيف أعرف إذا يناسب حوضي؟",
+        answer: "قبل الطلب بنوضح المقاس وطريقة القياس. إذا كان حوضك ضمن المقاس المناسب، بيكون خيار عملي جدا خصوصا للمطابخ اللي سطحها ينزحم بسرعة.",
+      },
+      {
+        question: "هل يتحمل الصحون اليومية؟",
+        answer: "نعم، هو مصمم للاستخدام اليومي مع الصحون والأكواب وأدوات المطبخ الخفيفة إلى المتوسطة. الأهم عدم تحميله بأوزان مبالغ فيها.",
+      },
+      {
+        question: "هل يساعد فعلا في تقليل الفوضى؟",
+        answer: "نعم، لأنه ينقل منطقة التجفيف من الرخام إلى فوق الحوض. الفرق يبان مباشرة بعد أول غسيل: سطح أوسع، ماء أقل، وترتيب أوضح.",
+      },
+      {
+        question: "هل شكله يخرب منظر المطبخ؟",
+        answer: "لا، اخترناه لأنه عملي وبستايل بسيط. الفكرة أنه يعطي منظر مرتب بدل تكدس الصحو�
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:45:06Z)**_
+
+Checklist update:
+- [x] Audit current home/product UI and copy targets
+- [ ] Update shared product data and COD wording
+- [ ] Revise home hero and authority sections
+- [ ] Revise product page layout, offer badges, benefits/specs presentation
+- [ ] Run typecheck/build verification
+
+I found the main targets: home hero/trust sections, `KitchenHeroVisual`, `ProductCard`, product roles, product page hero, `OfferSelector`, and the product detail sections.
+
+_**Agent (gpt-5.5 2026-05-07 16:45:07Z)**_
+
+<tool-use data-tool-type="task" data-tool-name="update_plan"><details>
+<summary>Tool use: **update_plan**</summary>
+**Agent task list:**
+- [X] Audit current home/product UI and copy targets
+- [⚡] Update shared product data/copy and COD wording
+- [ ] Revise home hero and authority sections
+- [ ] Revise product page layout, offer badges, benefits/specs presentation
+- [ ] Run typecheck/build verification
+
+```
+Plan updated
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:45:13Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `rg "COD|المنتج الرئيسي|subheadingAr" -n frontend --glob '!frontend/.next/**'`</summary>
+```
+Exit code: 0
+Wall time: 0.6 seconds
+Output:
+frontend\data\products.ts:18:  subheadingAr: string;
+frontend\data\products.ts:48:    subheadingAr: "منظم قابل للتعديل فوق الحوض يجمع الصحون، الأكواب، الملاعق ولوح التقطيع في مكان واحد. حل بسيط بس يفرق كل يوم بعد الغسيل.",
+frontend\data\products.ts:99:    subheadingAr: "حافظة دوارة محكمة للأرز والحبوب الجافة مثل العدس، البرغل، الشوفان والسيريال، مع كوب قياس يخلي التحضير أسرع وأنظف.",
+frontend\data\products.ts:148:    role: "المنتج الرئيسي",
+frontend\data\products.ts:150:    subheadingAr: "قطاعة 14 في 1 للتقطيع، البشر والتحضير اليومي. الشفرات تنزل الخضار داخل الحافظة مباشرة عشان تخلصين أسرع وتنظفين أقل.",
+frontend\components\product\product-card.tsx:35:        <p className="mt-2 text-sm leading-7 text-charcoal/65">{product.subheadingAr}</p>
+frontend\app\page.tsx:24:              {["COD داخل السعودية", "اتصال تأكيد قبل الشحن", "ضمان ذهبي 30 يوم"].map((item) => (
+frontend\app\page.tsx:86:          {["مشكلة يومية في المطبخ", "استخدام مفهوم بدون شرح طويل", "مقاس وفائدة واضحين قبل الطلب", "COD، اتصال تأكيد، وضمان ذهبي"].map((item) => (
+frontend\app\products\[slug]\page.tsx:57:            <p className="mt-4 max-w-2xl leading-8 text-charcoal/70">{product.subheadingAr}</p>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:45:13Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `rg "COD" -n backend docs frontend google-apps-script-webhook.js --glob '!frontend/.next/**'`</summary>
+```
+Exit code: 0
+Wall time: 0.6 seconds
+Output:
+docs\01-brand-positioning.md:33:- Higher trust: COD, WhatsApp confirmation, clear policies, quality check, support.
+backend\.env.example:12:META_TEST_EVENT_CODE=
+backend\.env.example:14:TIKTOK_PIXEL_CODE=
+backend\.env.example:17:TIKTOK_TEST_EVENT_CODE=
+backend\Dockerfile:3:ENV PYTHONDONTWRITEBYTECODE=1
+backend\alembic\versions\202604300001_initial.py:33:        sa.Column("payment_method", sa.String(length=20), nullable=False, server_default="COD"),
+frontend\app\page.tsx:24:              {["COD داخل السعودية", "اتصال تأكيد قبل الشحن", "ضمان ذهبي 30 يوم"].map((item) => (
+frontend\app\page.tsx:86:          {["مشكلة يومية في المطبخ", "استخدام مفهوم بدون شرح طويل", "مقاس وفائدة واضحين قبل الطلب", "COD، اتصال تأكيد، وضمان ذهبي"].map((item) => (
+docs\03-cro-offers-cart-checkout.md:122:- COD reassurance.
+docs\03-cro-offers-cart-checkout.md:201:- COD amount.
+docs\03-cro-offers-cart-checkout.md:212:## COD Confirmation CRO
+docs\02-icp-language-emotion-proof.md:128:   - COD.
+docs\02-icp-language-emotion-proof.md:167:COD buyers need reassurance and memory reinforcement.
+docs\04-site-architecture.md:58:- COD and support notes.
+docs\04-site-architecture.md:150:- Trust / COD block.
+docs\04-site-architecture.md:169:- COD and Arabic support.
+backend\app\db\models.py:27:    payment_method: Mapped[str] = mapped_column(String(20), default="COD")
+docs\06-backend-spec.md:221:META_TEST_EVENT_CODE=
+docs\06-backend-spec.md:223:TIKTOK_PIXEL_CODE=
+docs\06-backend-spec.md:225:TIKTOK_TEST_EVENT_CODE=
+backend\app\routers\orders.py:51:        payment_method="COD",
+docs\07-tracking-pixels-capi.md:198:- Phone is used for COD confirmation and delivery.
+docs\08-database-sheets-webhooks.md:66:    "payment_method": "COD",
+docs\08-database-sheets-webhooks.md:122:      order.payment_method || 'COD',
+docs\10-coding-rules.md:43:- Store raw phone only because it is operationally needed for COD; hash for ad platforms.
+docs\11-docker-easypanel.md:105:TIKTOK_PIXEL_CODE=
+docs\12-ugc-proof-materials-skills.md:133:5. COD/trust line.
+docs\12-ugc-proof-materials-skills.md:163:Honest limitations increase COD confirmation and reduce refusals.
+docs\13-coder-prompt.md:36:- Payment: COD only
+docs\brand-summary.md:19:- Trustworthy for COD customers
+docs\brand-summary.md:47:Avoid exaggerated miracle claims. Authority comes from clarity, product selection standards, COD trust, phone confirmation, visible use cases, and the 30-day golden guarantee.
+docs\README.md:8:Payment model: COD only  
+docs\README.md:11:This folder is the implementation handoff for the AI coder. Build a branded DTC store that feels like it owns the products, sells at premium prices, increases AOV, and protects COD confirmation/delivery rates.
+docs\templates\orders-sample.csv:2:DK-20260430-0001,2026-04-30T15:00:00Z,سارة,+9665XXXXXXXX,pending_confirmation,دفاية الطعام الكهربائية x1,199,0,0,199,SAR,COD,false,https://dafakitchen.shop/products/dafaya-food-warmer,tiktok,paid_social,food_warmer_test,ugc_01,,evt_sample_001,2026-04-30T15:00:05Z
+docs\templates\sheet-columns.csv:11:total,Final COD amount,199
+docs\templates\sheet-columns.csv:13:payment_method,Payment method,COD
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:45:19Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/data/products.ts`**
+
+```diff
+@@
+-    role: "المنتج الرئيسي",
++    role: "حل التحضير اليومي",
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:45:27Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/product/product-card.tsx`**
+
+```diff
+@@
+-        <p className="mt-2 text-sm leading-7 text-charcoal/65">{product.subheadingAr}</p>
+-        <div className="mt-4 grid gap-2">
+-          {product.benefits.slice(0, 2).map((benefit) => (
+-            <div key={benefit} className="flex gap-2 rounded-xl bg-warm-50 p-3 text-xs font-bold leading-6 text-charcoal/75">
+-              <CheckCircle2 size={16} className="mt-1 shrink-0 text-olive" />
+-              <span>{benefit}</span>
+-            </div>
+-          ))}
+-        </div>
+         <div className="mt-4 rounded-xl border border-gold/35 bg-[#FFF7E4] p-3 text-xs font-black leading-6 text-date">
+           دفع عند الاستلام، اتصال تأكيد قبل الشحن، وضمان ذهبي 30 يوم.
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:45:32Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/product/product-card.tsx`**
+
+```diff
+@@
+-import { CheckCircle2, Star } from "lucide-react";
++import { Star } from "lucide-react";
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:45:36Z)**_
+
+Checklist update:
+- [x] Audit current home/product UI and copy targets
+- [x] Removed visible COD wording from the main frontend targets and replaced the “main product” tag
+- [ ] Revise home hero and authority sections
+- [ ] Revise product page layout, offer badges, benefits/specs presentation
+- [ ] Run typecheck/build verification
+
+I’ve also removed the product-card descriptions so product listings are cleaner.
+
+_**Agent (gpt-5.5 2026-05-07 16:45:38Z)**_
+
+<tool-use data-tool-type="task" data-tool-name="update_plan"><details>
+<summary>Tool use: **update_plan**</summary>
+**Agent task list:**
+- [X] Audit current home/product UI and copy targets
+- [X] Update shared product data/copy and COD wording
+- [⚡] Revise home hero and authority sections
+- [ ] Revise product page layout, offer badges, benefits/specs presentation
+- [ ] Run typecheck/build verification
+
+```
+Plan updated
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:45:55Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/ui/product-visual.tsx`**
+
+```diff
+@@
+ export function KitchenHeroVisual() {
+   return (
+-    <div className="grid gap-4 sm:grid-cols-2" aria-label="منتجات مطبخ دفا">
+-      <div className="flex min-h-44 items-center justify-center rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 p-5 text-center shadow-soft sm:col-span-2">
+-        <p className="max-w-md text-base font-black leading-8 text-charcoal/55">
++    <div className="relative overflow-hidden rounded-3xl border border-dashed border-charcoal/25 bg-warm-50 p-4 shadow-soft" aria-label="منتجات مطبخ دفا">
++      <div className="flex aspect-[5/4] min-h-80 items-center justify-center rounded-2xl bg-white p-6 text-center">
++        <p className="max-w-lg text-base font-black leading-8 text-charcoal/55">
+           [صورة هيرو لمطبخ دفا تعرض قطاعة الخضار وحافظة الأرز والحبوب ومنظم الصحون على سطح مطبخ سعودي مرتب]
+         </p>
+       </div>
+-      <div className="flex min-h-32 items-center justify-center rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 p-5 text-center">
+-        <p className="text-sm font-black leading-7 text-charcoal/55">[صورة قريبة لحافظة الأرز والحبوب داخل الدولاب]</p>
+-      </div>
+-      <div className="flex min-h-32 items-center justify-center rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 p-5 text-center">
+-        <p className="text-sm font-black leading-7 text-charcoal/55">[صورة منظم تجفيف الصحون فوق الحوض بعد غسل الأطباق]</p>
++      <div className="pointer-events-none absolute inset-x-8 bottom-8 flex flex-wrap justify-center gap-2">
++        {["تحضير أسرع", "مؤونة أرتب", "حوض أنظف"].map((label) => (
++          <span key={label} className="rounded-full bg-olive px-4 py-2 text-xs font-black text-white shadow-soft">
++            {label}
++          </span>
++        ))}
+       </div>
+     </div>
+   );
+ }
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:46:15Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/app/page.tsx`**
+
+```diff
+@@
+-import { ArrowLeft, CheckCircle2 } from "lucide-react";
++import { ArrowLeft, Banknote, CheckCircle2, ClipboardCheck, PhoneCall, Ruler, ShieldCheck, Sparkles, Wrench } from "lucide-react";
+@@
+-            <div className="mt-6 grid gap-3 text-sm font-black sm:grid-cols-3">
+-              {["COD داخل السعودية", "اتصال تأكيد قبل الشحن", "ضمان ذهبي 30 يوم"].map((item) => (
+-                <div key={item} className="rounded-xl bg-white px-4 py-3 text-center shadow-soft">{item}</div>
+-              ))}
++            <div className="mt-6 grid gap-3 text-sm font-black sm:grid-cols-3">
++              {[
++                [Banknote, "الدفع عند الاستلام"],
++                [PhoneCall, "اتصال تأكيد قبل الشحن"],
++                [ShieldCheck, "ضمان ذهبي 30 يوم"],
++              ].map(([Icon, item]) => (
++                <div key={item as string} className="group relative overflow-hidden rounded-2xl border border-charcoal/10 bg-white p-4 shadow-soft">
++                  <div className="absolute inset-y-0 right-0 w-1 bg-gold" />
++                  <div className="flex items-center gap-3">
++                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-olive text-gold transition group-hover:scale-105">
++                      <Icon size={19} />
++                    </span>
++                    <span>{item as string}</span>
++                  </div>
++                </div>
++              ))}
+             </div>
+@@
+-        <div className="grid gap-4">
+-          {["مشكلة يومية في المطبخ", "استخدام مفهوم بدون شرح طويل", "مقاس وفائدة واضحين قبل الطلب", "COD، اتصال تأكيد، وضمان ذهبي"].map((item) => (
+-            <div key={item} className="rounded-2xl border border-charcoal/10 bg-white p-5 font-black shadow-soft">
+-              {item}
++        <div className="grid gap-4">
++          {[
++            [Sparkles, "مشكلة يومية في المطبخ", "ما نختار منتج إلا إذا كان يحل لحظة مزعجة تتكرر في البيت."],
++            [Wrench, "استخدام مفهوم بسرعة", "الأداة لازم تنفهم من أول نظرة وبدون شرح طويل."],
++            [Ruler, "مقاس وفائدة واضحين", "نوضح لك وين تستخدمينها ولماذا تستاهل مكانها."],
++            [ClipboardCheck, "طلب مطمئن", "الدفع عند الاستلام، اتصال تأكيد، وضمان ذهبي."],
++          ].map(([Icon, title, body]) => (
++            <div key={title as string} className="relative overflow-hidden rounded-3xl border border-charcoal/10 bg-white p-5 shadow-soft">
++              <div className="absolute -left-8 -top-8 h-24 w-24 rounded-full bg-gold/15" />
++              <div className="relative flex gap-4">
++                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-warm-100 text-olive">
++                  <Icon size={22} />
++                </span>
++                <span>
++                  <span className="block font-black">{title as string}</span>
++                  <span className="mt-1 block text-sm font-bold leading-7 text-charcoal/60">{body as string}</span>
++                </span>
++              </div>
+             </div>
+           ))}
+         </div>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:46:37Z)**_
+
+Checklist update:
+- [x] Home hero now has one collection image placeholder instead of three separate images
+- [x] Home trust/authority areas are moving to icon-led creative cards
+- [x] Product listing descriptions are removed
+- [ ] Product page hero/image/offer/detail layout pass in progress
+- [ ] Verify
+
+Next I’m changing the reusable product image component so product page images can be forced to 1:1 or 5:4 cleanly.
+
+_**Agent (gpt-5.5 2026-05-07 16:46:39Z)**_
+
+<tool-use data-tool-type="task" data-tool-name="update_plan"><details>
+<summary>Tool use: **update_plan**</summary>
+**Agent task list:**
+- [X] Audit current home/product UI and copy targets
+- [X] Update shared product data/copy and COD wording
+- [X] Revise home hero and authority sections
+- [⚡] Revise product page layout, offer badges, benefits/specs presentation
+- [ ] Run typecheck/build verification
+
+```
+Plan updated
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:46:51Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/ui/product-visual.tsx`**
+
+```diff
+@@
+ export function ProductVisual({
+   product,
+   label = "صورة المنتج",
+   className = "",
+   compact = false,
++  ratio = "auto",
+ }: {
+   product: Product;
+   label?: string;
+   className?: string;
+   compact?: boolean;
++  ratio?: "auto" | "square" | "wide";
+ }) {
+   const description = imageDescriptions[product.id];
++  const frameClass = compact
++    ? "min-h-20"
++    : ratio === "square"
++      ? "aspect-square min-h-0"
++      : ratio === "wide"
++        ? "aspect-[5/4] min-h-0"
++        : "min-h-[280px]";
++  const contentClass = compact
++    ? "min-h-20 p-2"
++    : ratio === "auto"
++      ? "min-h-[280px] p-8"
++      : "h-full p-8";
+ 
+   return (
+     <div
+-      className={`relative overflow-hidden rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 shadow-soft ${
+-        compact ? "min-h-20" : "min-h-[280px]"
+-      } ${className}`}
++      className={`relative overflow-hidden rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 shadow-soft ${frameClass} ${className}`}
+       role="img"
+       aria-label={`${label}: ${product.nameAr}`}
+     >
+-      <div
+-        className={`relative z-10 flex h-full flex-col items-center justify-center text-center ${
+-          compact ? "min-h-20 p-2" : "min-h-[280px] p-8"
+-        }`}
+-      >
++      <div className={`relative z-10 flex h-full flex-col items-center justify-center text-center ${contentClass}`}>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:47:00Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/product/offer-selector.tsx`**
+
+```diff
+@@
+-      <div className="grid gap-3">
++      <div className="grid gap-4 pt-2">
+         {product.offers.map((candidate) => (
+           <button
+             key={candidate.id}
+             type="button"
+             onClick={() => setSelectedOffer(candidate.id)}
+-            className={`focus-ring flex items-center justify-between rounded-xl border p-3 text-start transition ${
++            className={`focus-ring relative flex items-center justify-between rounded-xl border p-3 text-start transition ${
+               selectedOffer === candidate.id
+                 ? "border-gold bg-[#FFF8E8]"
+                 : "border-charcoal/10 bg-warm-50 hover:bg-white"
+             }`}
+           >
++            {candidate.badge ? (
++              <span className="absolute -top-3 right-10 rounded-full border border-gold bg-white px-3 py-1 text-[11px] font-black text-date shadow-soft">
++                {candidate.badge}
++              </span>
++            ) : null}
+             <span className="flex items-center gap-3">
+@@
+-                {candidate.badge ? <span className="block text-xs font-bold text-olive">{candidate.badge}</span> : null}
+               </span>
+             </span>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:47:39Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/app/products/[slug]/page.tsx`**
+
+```diff
+@@
+ import { notFound } from "next/navigation";
+-import { Award, Banknote, CheckCircle2, Star, Truck } from "lucide-react";
++import { Award, Banknote, CheckCircle2, PackageCheck, Settings2, Star, Truck } from "lucide-react";
+@@
+-      <section className="bg-warm-100 py-10 md:py-14">
+-        <div className="container-shell grid items-start gap-8 lg:grid-cols-[0.9fr_1fr] lg:[direction:ltr]">
++      <section className="bg-warm-100 py-10 md:py-14">
++        <div className="container-shell grid items-start gap-8 lg:grid-cols-[0.9fr_1fr] lg:[direction:ltr]">
+           <div className="order-2 lg:order-1 lg:col-start-1 lg:row-start-1 lg:[direction:rtl]">
+@@
+             </div>
+             <p className="mt-4 text-xl font-black leading-9 text-date">{product.headlineAr}</p>
+-            <p className="mt-4 max-w-2xl leading-8 text-charcoal/70">{product.subheadingAr}</p>
+             <div id="product-offer" className="mt-6 scroll-mt-28">
+               <OfferSelector product={product} />
+             </div>
+           </div>
+-          <ProductVisual product={product} className="order-1 lg:order-2 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-32" />
++          <ProductVisual product={product} ratio="square" className="order-1 lg:order-2 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-32" />
++        </div>
++        <div className="container-shell mt-5 overflow-x-auto pb-1">
++          <div className="flex min-w-max gap-3 md:min-w-0 md:grid md:grid-cols-3">
++            {[
++              [Banknote, "دفع عند الاستلام"],
++              [Truck, "شحن سريع للسعودية"],
++              [Award, "ضمان ذهبي 30 يوم"],
++            ].map(([Icon, text]) => (
++              <div key={text as string} className="flex min-w-48 items-center gap-3 rounded-2xl border border-charcoal/10 bg-white px-4 py-3 text-sm font-black text-charcoal shadow-soft">
++                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-warm-100 text-olive">
++                  <Icon size={19} />
++                </span>
++                <span>{text as string}</span>
++              </div>
++            ))}
++          </div>
+         </div>
+       </section>
+@@
+-      <section className="bg-white py-14">
+-        <div className="container-shell grid gap-8 md:grid-cols-2">
+-          <div className="order-2 md:order-1">
+-            <ProductVisual product={product} label="تفاصيل المنتج" />
++      <section className="bg-white py-14">
++        <div className="container-shell grid items-center gap-8 md:grid-cols-[0.9fr_1fr]">
++          <div className="order-2 md:order-1">
++            <ProductVisual product={product} label="تفاصيل المنتج" ratio="wide" className="rounded-3xl" />
+           </div>
+           <div className="order-1 md:order-2">
+             <p className="text-sm font-black text-date">الفوائد</p>
+             <h2 className="mt-3 text-3xl font-black">ليش راح تحبينه من أول أسبوع؟</h2>
+-            <div className="mt-6 grid gap-3">
+-              {product.benefits.map((benefit) => (
+-                <div key={benefit} className="flex gap-3 rounded-2xl bg-warm-50 p-4">
+-                  <CheckCircle2 className="mt-1 shrink-0 text-olive" size={20} />
+-                  <span className="font-bold leading-7">{benefit}</span>
++            <div className="mt-6 grid gap-3 sm:grid-cols-2">
++              {product.benefits.map((benefit, index) => (
++                <div key={benefit} className="relative overflow-hidden rounded-3xl border border-charcoal/10 bg-warm-50 p-4">
++                  <span className="mb-4 grid h-9 w-9 place-items-center rounded-xl bg-olive text-sm font-black text-white">
++                    {index + 1}
++                  </span>
++                  <span className="block font-bold leading-7">{benefit}</span>
+                 </div>
+               ))}
+             </div>
+           </div>
+@@
+-      <section className="container-shell grid gap-5 py-14 md:grid-cols-2">
+-        <div className="rounded-2xl border border-charcoal/10 bg-white p-6 shadow-soft">
+-          <h2 className="text-2xl font-black">تفاصيل عملية</h2>
+-          <ul className="mt-5 grid gap-3">
+-            {product.specs.map((spec) => (
+-              <li key={spec} className="rounded-xl bg-warm-50 p-3 text-sm font-bold leading-7">{spec}</li>
+-            ))}
+-          </ul>
++      <section className="container-shell py-14">
++        <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
++        <div className="rounded-3xl border border-charcoal/10 bg-white p-6 shadow-soft">
++          <div className="flex items-center gap-3">
++            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-warm-100 text-olive">
++              <Settings2 size={22} />
++            </span>
++            <div>
++              <p className="text-sm font-black text-date">اختيار دفا</p>
++              <h2 className="text-2xl font-black">نقاط عملية قبل الطلب</h2>
++            </div>
++          </div>
++          <div className="mt-6 grid gap-3 sm:grid-cols-2">
++            {product.specs.map((spec) => (
++              <div key={spec} className="flex gap-3 rounded-2xl bg-warm-50 p-4 text-sm font-bold leading-7">
++                <CheckCircle2 className="mt-1 shrink-0 text-olive" size={18} />
++                <span>{spec}</span>
++              </div>
++            ))}
++          </div>
+         </div>
+-        <div className="rounded-2xl border border-charcoal/10 bg-white p-6 shadow-soft">
+-          <h2 className="text-2xl font-black">محتويات الطلب</h2>
+-          <ul className="mt-5 grid gap-3">
+-            {product.included.map((item) => (
+-              <li key={item} className="rounded-xl bg-warm-50 p-3 text-sm font-bold leading-7">{item}</li>
+-            ))}
+-          </ul>
++        <div className="rounded-3xl bg-olive p-6 text-white shadow-soft">
++          <PackageCheck className="mb-5 text-gold" size={34} />
++          <p className="text-sm font-black text-gold">داخل الطلب</p>
++          <h2 className="mt-2 text-2xl font-black">كل شيء تحتاجينه لاستخدام المنتج</h2>
++          <div className="mt-6 flex flex-wrap gap-2">
++            {product.included.map((item) => (
++              <span key={item} className="rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-white/85">
++                {item}
++              </span>
++            ))}
++          </div>
++          <p className="mt-6 rounded-2xl bg-white/10 p-4 text-sm font-bold leading-7 text-white/75">
++            نركز على التفاصيل التي تساعدك تقررين بثقة قبل الشحن، بدون حشو زائد.
++          </p>
++        </div>
+         </div>
+       </section>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:47:48Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `rg "COD|المنتج الرئيسي|subheadingAr" -n frontend --glob '!frontend/.next/**'`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+frontend\data\products.ts:18:  subheadingAr: string;
+frontend\data\products.ts:48:    subheadingAr: "منظم قابل للتعديل فوق الحوض يجمع الصحون، الأكواب، الملاعق ولوح التقطيع في مكان واحد. حل بسيط بس يفرق كل يوم بعد الغسيل.",
+frontend\data\products.ts:99:    subheadingAr: "حافظة دوارة محكمة للأرز والحبوب الجافة مثل العدس، البرغل، الشوفان والسيريال، مع كوب قياس يخلي التحضير أسرع وأنظف.",
+frontend\data\products.ts:150:    subheadingAr: "قطاعة 14 في 1 للتقطيع، البشر والتحضير اليومي. الشفرات تنزل الخضار داخل الحافظة مباشرة عشان تخلصين أسرع وتنظفين أقل.",
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:47:48Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `$i=1; Get-Content -LiteralPath 'frontend\app\products\[slug]\page.tsx' -Encoding utf8 | ForEach-Object { if ($i -ge 1 -and $i -le 190) { '{0,4}: {1}' -f $i, $_ }; $i++ }`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+   1: import { notFound } from "next/navigation";
+   2: import { Award, Banknote, CheckCircle2, PackageCheck, Settings2, Star, Truck } from "lucide-react";
+   3: import { OfferSelector } from "@/components/product/offer-selector";
+   4: import { ProductCard } from "@/components/product/product-card";
+   5: import { ReviewCard } from "@/components/product/review-card";
+   6: import { StickyProductCta } from "@/components/product/sticky-product-cta";
+   7: import { ProductVisual } from "@/components/ui/product-visual";
+   8: import { getCrossSells, getProductBySlug, products } from "@/data/products";
+   9: 
+  10: export function generateStaticParams() {
+  11:   return products.map((product) => ({ slug: product.slug }));
+  12: }
+  13: 
+  14: export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  15:   const { slug } = await params;
+  16:   const product = getProductBySlug(slug);
+  17:   if (!product) notFound();
+  18:   const crossSells = getCrossSells([product.id]);
+  19: 
+  20:   return (
+  21:     <>
+  22:       <section className="bg-warm-100 py-10 md:py-14">
+  23:         <div className="container-shell grid items-start gap-8 lg:grid-cols-[0.9fr_1fr] lg:[direction:ltr]">
+  24:           <div className="order-2 lg:order-1 lg:col-start-1 lg:row-start-1 lg:[direction:rtl]">
+  25:             <p className="mb-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-black text-date shadow-soft">
+  26:               {product.role}
+  27:             </p>
+  28:             <h1 className="text-4xl font-black leading-tight md:text-5xl">{product.nameAr}</h1>
+  29:             <div className="mt-4 flex flex-wrap items-center gap-3">
+  30:               <div className="flex items-center gap-1 text-gold">
+  31:                 {Array.from({ length: 5 }).map((_, index) => (
+  32:                   <Star key={index} size={18} className="fill-gold" />
+  33:                 ))}
+  34:               </div>
+  35:               <span className="text-sm font-black text-charcoal">
+  36:                 {product.rating} من 5
+  37:               </span>
+  38:               <span className="rounded-full bg-white px-3 py-1 text-xs font-bold text-charcoal/65 shadow-soft">
+  39:                 {product.ratingCount.toLocaleString("ar-SA")} تقييم
+  40:               </span>
+  41:             </div>
+  42:             <div className="mt-4 grid gap-2 sm:grid-cols-3">
+  43:               <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-3 text-xs font-black text-charcoal shadow-soft">
+  44:                 <Banknote size={18} className="text-olive" />
+  45:                 دفع عند الاستلام
+  46:               </div>
+  47:               <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-3 text-xs font-black text-charcoal shadow-soft">
+  48:                 <Truck size={18} className="text-clay" />
+  49:                 شحن سريع للسعودية
+  50:               </div>
+  51:               <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-3 text-xs font-black text-charcoal shadow-soft">
+  52:                 <Award size={18} className="text-gold" />
+  53:                 ضمان ذهبي 30 يوم
+  54:               </div>
+  55:             </div>
+  56:             <p className="mt-4 text-xl font-black leading-9 text-date">{product.headlineAr}</p>
+  57:             <div id="product-offer" className="mt-6 scroll-mt-28">
+  58:               <OfferSelector product={product} />
+  59:             </div>
+  60:           </div>
+  61:           <ProductVisual product={product} ratio="square" className="order-1 lg:order-2 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-32" />
+  62:         </div>
+  63:         <div className="container-shell mt-5 overflow-x-auto pb-1">
+  64:           <div className="flex min-w-max gap-3 md:min-w-0 md:grid md:grid-cols-3">
+  65:             {[
+  66:               [Banknote, "دفع عند الاستلام"],
+  67:               [Truck, "شحن سريع للسعودية"],
+  68:               [Award, "ضمان ذهبي 30 يوم"],
+  69:             ].map(([Icon, text]) => (
+  70:               <div key={text as string} className="flex min-w-48 items-center gap-3 rounded-2xl border border-charcoal/10 bg-white px-4 py-3 text-sm font-black text-charcoal shadow-soft">
+  71:                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-warm-100 text-olive">
+  72:                   <Icon size={19} />
+  73:                 </span>
+  74:                 <span>{text as string}</span>
+  75:               </div>
+  76:             ))}
+  77:           </div>
+  78:         </div>
+  79:       </section>
+  80: 
+  81:       <section className="container-shell grid items-center gap-8 py-12 md:grid-cols-2">
+  82:         <div>
+  83:           <p className="te
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:02Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/app/products/[slug]/page.tsx`**
+
+```diff
+@@
+-            <div className="mt-4 grid gap-2 sm:grid-cols-3">
+-              <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-3 text-xs font-black text-charcoal shadow-soft">
+-                <Banknote size={18} className="text-olive" />
+-                دفع عند الاستلام
+-              </div>
+-              <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-3 text-xs font-black text-charcoal shadow-soft">
+-                <Truck size={18} className="text-clay" />
+-                شحن سريع للسعودية
+-              </div>
+-              <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-3 text-xs font-black text-charcoal shadow-soft">
+-                <Award size={18} className="text-gold" />
+-                ضمان ذهبي 30 يوم
+-              </div>
+-            </div>
+             <p className="mt-4 text-xl font-black leading-9 text-date">{product.headlineAr}</p>
+@@
+-              [Banknote, "دفع عند الاستلام"],
++              [Banknote, "الدفع عند الاستلام"],
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:08Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/product/offer-selector.tsx`**
+
+```diff
+@@
+-          <p className="text-xs text-charcoal/60">الدفع عند الاستلام، ونكلمك قبل الشحن للتأكيد</p>
++          <p className="text-xs text-charcoal/60">الدفع عند الاستلام، ونكلمك قبل الشحن للتأكيد</p>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:12Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/product/product-card.tsx`**
+
+```diff
+@@
+-          دفع عند الاستلام، اتصال تأكيد قبل الشحن، وضمان ذهبي 30 يوم.
++          الدفع عند الاستلام، اتصال تأكيد قبل الشحن، وضمان ذهبي 30 يوم.
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:17Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `rg "دفع عند الاستلام|COD|المنتج الرئيسي|product\.subheadingAr" -n frontend --glob '!frontend/.next/**'`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+frontend\data\products.ts:65:      "اختيار غير كهربائي، واضح الاستخدام، ومناسب للدفع عند الاستلام لأنه يحل مشكلة تشوفينها كل يوم",
+frontend\data\products.ts:86:        question: "هل الدفع عند الاستلام؟",
+frontend\data\products.ts:87:        answer: "نعم، كل طلبات مطبخ دفا بالدفع عند الاستلام داخل السعودية.",
+frontend\data\products.ts:167:      "منتج غير كهربائي، سهل الفهم في الاتصال، ومناسب لطلبات الدفع عند الاستلام",
+frontend\app\page.tsx:25:                [Banknote, "الدفع عند الاستلام"],
+frontend\app\page.tsx:94:            لأن الشراء بالدفع عند الاستلام يحتاج قناعة حقيقية، نختار أدوات تشوفين فائدتها من أول نظرة وتبقين محتاجتها بعد ما تهدأ رغبة الشراء.
+frontend\app\page.tsx:102:            [ClipboardCheck, "طلب مطمئن", "الدفع عند الاستلام، اتصال تأكيد، وضمان ذهبي."],
+frontend\components\layout\trust-ticker.tsx:24:    title: "دفع عند الاستلام",
+frontend\app\contact\page.tsx:12:            للدفع عند الاستلام، سيتم تأكيد الطلب عبر اتصال هاتفي قبل الشحن. الرجاء الرد حتى لا يتأخر طلبك.
+frontend\app\contact\page.tsx:27:            <p><strong className="text-charcoal">طريقة الدفع:</strong> الدفع عند الاستلام فقط</p>
+frontend\app\returns\page.tsx:9:          <p>بسبب نموذج الدفع عند الاستلام، نؤكد الطلب قبل الشحن لتقليل الإلغاء والتأخير.</p>
+frontend\app\products\[slug]\page.tsx:52:              [Banknote, "الدفع عند الاستلام"],
+frontend\app\products\[slug]\page.tsx:105:              "الدفع عند الاستلام داخل السعودية",
+frontend\app\products\page.tsx:12:            اختيارات عملية للمطبخ السعودي: تقطيع أسرع، مؤونة مرتبة، وحوض أنظف بعد الغسيل. واضحة في الاستخدام، مناسبة للدفع عند الاستلام، ونأكدها معك قبل الشحن.
+frontend\components\product\product-card.tsx:36:          الدفع عند الاستلام، اتصال تأكيد قبل الشحن، وضمان ذهبي 30 يوم.
+frontend\components\cart\cart-drawer.tsx:115:            <p className="text-xs text-charcoal/60">الدفع عند الاستلام - نؤكد الطلب قبل الشحن</p>
+frontend\app\about\page.tsx:10:          مطبخ دفا مو متجر أدوات عشوائية. هو بيت اختيار لأدوات المطبخ اليومية: نبحث عن المشكلة، نشوف هل المنتج مفهوم وعملي، ثم نقدمه بطريقة واضحة تناسب قرار الشراء بالدفع عند الاستلام.
+frontend\app\privacy\page.tsx:3:    "نستخدم بيانات الطلب لتأكيد طلبات الدفع عند الاستلام وتجهيز الشحن وخدمة العملاء.",
+frontend\components\product\offer-selector.tsx:37:          <p className="text-xs text-charcoal/60">الدفع عند الاستلام، ونكلمك قبل الشحن للتأكيد</p>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:21Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/layout/trust-ticker.tsx`**
+
+```diff
+@@
+-    title: "دفع عند الاستلام",
++    title: "الدفع عند الاستلام",
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:34Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/product/product-card.tsx`**
+
+```diff
+@@
+         </div>
+         <h3 className="text-xl font-black">{product.nameAr}</h3>
+-        <p className="mt-2 text-sm font-bold leading-7 text-date">{product.headlineAr}</p>
+         <div className="mt-4 rounded-xl border border-gold/35 bg-[#FFF7E4] p-3 text-xs font-black leading-6 text-date">
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:39Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/app/products/[slug]/page.tsx`**
+
+```diff
+@@
+-            <p className="mt-4 text-xl font-black leading-9 text-date">{product.headlineAr}</p>
+             <div id="product-offer" className="mt-6 scroll-mt-28">
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:45Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `rg "headlineAr|subheadingAr" -n frontend\components frontend\app --glob '!frontend/.next/**'`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+frontend\components\cart\cart-drawer.tsx:174:                      <span className="line-clamp-2 text-xs text-charcoal/60">{product.headlineAr}</span>
+frontend\components\cart\cart-drawer.tsx:425:                  <span className="line-clamp-2 text-xs text-charcoal/60">{product.headlineAr}</span>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:50Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/cart/cart-drawer.tsx`**
+
+```diff
+@@
+-                      <span className="line-clamp-2 text-xs text-charcoal/60">{product.headlineAr}</span>
+                       <span className="text-xs text-charcoal/60">أضيفيها للطلب من 199 ريال</span>
+@@
+-                  <span className="line-clamp-2 text-xs text-charcoal/60">{product.headlineAr}</span>
++                  <span className="text-xs font-black text-date">عرض خاص مع نفس الشحنة</span>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:48:55Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `rg "headlineAr|subheadingAr|COD|المنتج الرئيسي" -n frontend\components frontend\app --glob '!frontend/.next/**'`</summary>
+```
+Exit code: 1
+Wall time: 0.2 seconds
+Output:
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:49:00Z)**_
+
+Checklist update:
+- [x] Product subtitles/descriptions removed from product cards, product page hero, cart cross-sells, and upsell popup
+- [x] Product-page trust badges moved out of the hero content and into a horizontal styled row below it
+- [x] Offer badges moved onto the offer borders
+- [x] Benefits/detail sections redesigned with aligned image and richer cards
+- [ ] Verify
+
+Now I’m running the frontend checks and will fix anything TypeScript catches.
+
+_**Agent (gpt-5.5 2026-05-07 16:49:02Z)**_
+
+<tool-use data-tool-type="task" data-tool-name="update_plan"><details>
+<summary>Tool use: **update_plan**</summary>
+**Agent task list:**
+- [X] Audit current home/product UI and copy targets
+- [X] Update shared product data/copy and COD wording
+- [X] Revise home hero and authority sections
+- [X] Revise product page layout, offer badges, benefits/specs presentation
+- [⚡] Run typecheck/build verification
+
+```
+Plan updated
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:49:05Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 2.7 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:49:12Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run build`</summary>
+```
+Exit code: 1
+Wall time: 4.3 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 build
+> next build
+
+   ▲ Next.js 15.5.15
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+uncaughtException [Error: EPERM: operation not permitted, open 'W:\branded-store\frontend\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'W:\\branded-store\\frontend\\.next\\trace'
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:49:24Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `rg "COD|المنتج الرئيسي|headlineAr|subheadingAr" -n frontend\app frontend\components --glob '!frontend/.next/**'`</summary>
+```
+Exit code: 1
+Wall time: 0.2 seconds
+Output:
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:49:24Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-CimInstance Win32_Process -Filter "name = 'node.exe'" | Select-Object ProcessId,CommandLine`</summary>
+```
+Exit code: 0
+Wall time: 0.5 seconds
+Output:
+
+ProcessId CommandLine                                                                                                  
+--------- -----------                                                                                                  
+    18252 "C:\Program Files\Adobe\Adobe Creative Cloud Experience\libs\node.exe" "C:\Program Files\Adobe\Adobe Creat...
+    13412 "C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs/node_modules/npm/bin/npm-cli.js" run dev         
+    23760 "node"   "W:\branded-store\frontend\node_modules\.bin\\..\next\dist\bin\next" dev                            
+    12276 "C:\Program Files\nodejs\node.exe" W:\branded-store\frontend\node_modules\next\dist\server\lib\start-serve...
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:49:32Z)**_
+
+<tool-use data-tool-type="task" data-tool-name="update_plan"><details>
+<summary>Tool use: **update_plan**</summary>
+**Agent task list:**
+- [X] Audit current home/product UI and copy targets
+- [X] Update shared product data/copy and COD wording
+- [X] Revise home hero and authority sections
+- [X] Revise product page layout, offer badges, benefits/specs presentation
+- [X] Run typecheck/build verification
+
+```
+Plan updated
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-07 16:49:40Z)**_
+
+Implemented the adjustment pass.
+
+Checklist:
+- [x] Home hero now uses one collection image placeholder only.
+- [x] Visible `COD` wording replaced with `الدفع عند الاستلام`.
+- [x] Home hero trust items now use icons and stronger styling.
+- [x] Product subtitles/descriptions removed from product cards, product page hero, cart cross-sells, and upsell popup.
+- [x] Removed `المنتج الرئيسي`; replaced with `حل التحضير اليومي`.
+- [x] Home authority block redesigned with icon cards and creative styling.
+- [x] Product page hero image is now `1:1`, aligned with the offer/content area.
+- [x] Product page trust badges moved below the hero container in a styled scrollable row.
+- [x] Offer badges now sit on the offer card border.
+- [x] Benefits section redesigned with aligned `5:4` image and numbered benefit cards.
+- [x] Details/content section redesigned into `اختيار دفا` and `داخل الطلب` cards.
+
+Files touched:
+- `frontend/app/page.tsx`
+- `frontend/app/products/[slug]/page.tsx`
+- `frontend/components/ui/product-visual.tsx`
+- `frontend/components/product/product-card.tsx`
+- `frontend/components/product/offer-selector.tsx`
+- `frontend/components/cart/cart-drawer.tsx`
+- `frontend/data/products.ts`
+
+Verification:
+- `npm run typecheck` passed.
+- `npm run build` was attempted, but your running Next dev server is locking `.next/trace`. Stop the frontend dev server, then run `npm run build` again.
