@@ -3876,3 +3876,72 @@ Verification: `npm run typecheck` passed.
 _**User (2026-05-10 04:16:30Z)**_
 
 I need you to improve the styling of tags "most demanded", and "better discount" located in the offer inside product pages to incerase AOV .
+
+
+---
+
+_**Agent (gpt-5.5 2026-05-10 04:16:33Z)**_
+
+I’ll tune the offer badges inside the product offer selector so they stand out more as value cues, without making the selector noisy. I’m going straight to that component since those labels come from the offer badges.
+
+_**Agent (gpt-5.5 2026-05-10 04:16:38Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/product/offer-selector.tsx`**
+
+```diff
+@@
+-              {candidate.badge ? (
+-                <span className="absolute -top-3 right-5 rounded-full border border-gold bg-white px-3 py-1 text-[11px] font-black text-date shadow-soft">
+-                  {candidate.badge}
+-                </span>
+-              ) : null}
++              {candidate.badge ? (
++                <span
++                  className={`absolute -top-4 right-5 inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-[11px] font-black shadow-soft ${
++                    candidate.id === "three"
++                      ? "border-discount/25 bg-discount text-white"
++                      : "border-gold/40 bg-gold text-charcoal"
++                  }`}
++                >
++                  <span className="h-1.5 w-1.5 rounded-full bg-current opacity-70" />
++                  {candidate.badge}
++                </span>
++              ) : null}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:16:40Z)**_
+
+The badge treatment is updated: “الأكثر طلبا” now reads as a strong gold social-proof tag, and “أفضل توفير” reads as a green savings tag. I’ll run typecheck quickly.
+
+_**Agent (gpt-5.5 2026-05-10 04:16:41Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 2.3 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:16:46Z)**_
+
+Done. I improved the offer tags in [offer-selector.tsx](w:/branded-store/frontend/components/product/offer-selector.tsx):
+
+- `الأكثر طلبا` now uses a stronger gold badge for social proof.
+- `أفضل توفير` now uses a green savings badge to push the higher-value option.
+- Added a small dot cue and slightly larger badge padding/positioning so they feel more intentional.
+
+Verification: `npm run typecheck` passed.
+
+---
+
+_**User (2026-05-10 04:24:58Z)**_
+
+To increase AOV, I believe that the offers we suggest right now are not satisfying since no one is going to buy 3 pieces or something like that so maybe we should keep only the 1 and 2 piece offer, but add dedicated pages for packs by featuring two products that goes along with each other (we are going to add some products in the future be aware of that), so right now create the pack pages, and show them in the home page, and keep the offers parametrized maybe some products will suggest 3 pieces. for the design respect the branch identity [brand-summary.md](docs/brand-summary.md) 
