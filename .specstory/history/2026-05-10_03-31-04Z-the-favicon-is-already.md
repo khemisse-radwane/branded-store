@@ -3945,3 +3945,2982 @@ Verification: `npm run typecheck` passed.
 _**User (2026-05-10 04:24:58Z)**_
 
 To increase AOV, I believe that the offers we suggest right now are not satisfying since no one is going to buy 3 pieces or something like that so maybe we should keep only the 1 and 2 piece offer, but add dedicated pages for packs by featuring two products that goes along with each other (we are going to add some products in the future be aware of that), so right now create the pack pages, and show them in the home page, and keep the offers parametrized maybe some products will suggest 3 pieces. for the design respect the branch identity [brand-summary.md](docs/brand-summary.md) 
+
+
+---
+
+_**Agent (gpt-5.5 2026-05-10 04:25:08Z)**_
+
+I’ll reshape this around AOV without hard-coding today’s catalog too tightly: keep product offers flexible, set current products to 1- and 2-piece offers, add a pack data model for paired products, create pack detail pages, and surface packs on the homepage in the Dafa brand style.
+
+_**Agent (gpt-5.5 2026-05-10 04:25:08Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\app\page.tsx -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+import { ArrowLeft, Banknote, CheckCircle2, ClipboardCheck, PhoneCall, Ruler, ShieldCheck, Sparkles, Wrench } from "lucide-react";
+import { ProductCard } from "@/components/product/product-card";
+import { ReviewCard } from "@/components/product/review-card";
+import { ButtonLink } from "@/components/ui/button";
+import { KitchenHeroVisual } from "@/components/ui/product-visual";
+import { products } from "@/data/products";
+
+export default function HomePage() {
+  return (
+    <>
+      <section className="bg-warm-100 py-14 md:py-20">
+        <div className="container-shell grid items-center gap-10 md:grid-cols-[1fr_0.9fr]">
+          <div>
+            <p className="mb-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-black text-date shadow-soft">
+              بيت اختيار أدوات المطبخ العملية للبيت السعودي
+            </p>
+            <h1 className="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
+              مطبخ دفا يختار لك الأدوات اللي تستاهل تدخل مطبخك
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-9 text-charcoal/70">
+              مو كل أداة منتشرة تستاهل الشراء. نختار أدوات يومية واضحة للبيت السعودي: تجهز أسرع، ترتب الدولاب، وتخلي الحوض والسطح أهدأ بعد الغسيل.
+            </p>
+            <div className="mt-6 grid gap-3 text-sm font-black sm:grid-cols-3">
+              {[
+                [Banknote, "الدفع عند الاستلام"],
+                [PhoneCall, "اتصال تأكيد قبل الشحن"],
+                [ShieldCheck, "ضمان ذهبي 30 يوم"],
+              ].map(([Icon, item]) => (
+                <div key={item as string} className="group relative overflow-hidden rounded-2xl border border-charcoal/10 bg-white p-4 shadow-soft">
+                  <div className="absolute inset-y-0 right-0 w-1 bg-gold" />
+                  <div className="flex items-center gap-3">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-olive text-gold transition group-hover:scale-105">
+                      <Icon size={19} />
+                    </span>
+                    <span>{item as string}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonLink href="/products" variant="gold">
+                تسوقي الآن
+                <ArrowLeft size={18} />
+              </ButtonLink>
+              <ButtonLink href="/about" variant="outline">لماذا مطبخ دفا؟</ButtonLink>
+            </div>
+          </div>
+          <KitchenHeroVisual />
+        </div>
+      </section>
+
+     
+
+      <section className="bg-white py-16">
+        <div className="container-shell">
+          <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+          <p className="text-sm font-black text-date">اختيارات دفا</p>
+          <h2 className="mt-2 text-3xl font-black">أدوات مختارة بعقلية مطبخ، مو بعقلية ترند</h2>
+            </div>
+            <ButtonLink href="/products" variant="outline">عرض كل المنتجات</ButtonLink>
+          </div>
+          <div className="grid gap-5 lg:grid-cols-3">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+       <section className="container-shell py-16">
+        <div className="mb-8 text-center">
+          <p className="text-sm font-black text-olive">معيار مطبخ دفا</p>
+          <h2 className="mt-2 text-3xl font-black">نختار المنتج إذا كانت فائدته واضحة قبل ما يوصلك</h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            ["التقطيع يأخذ وقت", "كل يوم سلطة، كشنة، شوربة أو خضار. اختصار التحضير يعني وقت أقل وفوضى أقل."],
+            ["أكياس الأرز والحبوب تسبب فوضى", "الأرز والعدس والبرغل من أساسيات البيت. ترتيبها يعطيك دولاب أهدأ وأنظف."],
+            ["الصحون تزحم سطح المطبخ", "بعد الغسيل، الرخام يصير منطقة تجفيف. المنظم يرجع المساحة للحوض بدل السطح."],
+          ].map(([title, body]) => (
+            <div key={title} className="rounded-2xl border border-charcoal/10 bg-white p-6 shadow-soft">
+              <CheckCircle2 className="mb-4 text-olive" />
+              <h3 className="text-xl font-black">{title}</h3>
+              <p cla
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:08Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\data\products.ts -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+export type OfferId = "one" | "two" | "three" | "upsell_99";
+
+export type Offer = {
+  id: OfferId;
+  labelAr: string;
+  quantity: number;
+  price: number;
+  badge?: string;
+};
+
+export type Product = {
+  id: "dish_drying_rack" | "rice_dispenser" | "vegetable_cutter";
+  slug: string;
+  nameAr: string;
+  nameEn: string;
+  role: string;
+  headlineAr: string;
+  subheadingAr: string;
+  painAr: string;
+  emotionAr: string;
+  demoHookAr: string;
+  color: "gold" | "olive" | "date";
+  rating: number;
+  ratingCount: number;
+  benefits: string[];
+  specs: string[];
+  included: string[];
+  faq: { question: string; answer: string }[];
+  offers: Offer[];
+};
+
+export const standardOffers: Offer[] = [
+  { id: "one", labelAr: "قطعة واحدة", quantity: 1, price: 199 },
+  { id: "two", labelAr: "قطعتين", quantity: 2, price: 279, badge: "الأكثر طلبا" },
+  { id: "three", labelAr: "3 قطع", quantity: 3, price: 349, badge: "أفضل توفير" },
+];
+
+const productDisplayOrder: Product["id"][] = ["vegetable_cutter", "rice_dispenser", "dish_drying_rack"];
+
+const unsortedProducts: Product[] = [
+  {
+    id: "dish_drying_rack",
+    slug: "over-sink-dish-drying-rack",
+    nameAr: "منظم تجفيف الصحون فوق الحوض",
+    nameEn: "Over-Sink Dish Drying Organizer",
+    role: "حل فوضى الحوض",
+    headlineAr: "سطح المطبخ يرجع فاضي بعد الغسيل، والماء ينزل في الحوض مو على الرخام",
+    subheadingAr: "منظم قابل للتعديل فوق الحوض يجمع الصحون، الأكواب، الملاعق ولوح التقطيع في مكان واحد. حل بسيط بس يفرق كل يوم بعد الغسيل.",
+    painAr: "تعرفين اللحظة اللي تخلصين غسل والصحون مالية الرخام؟ ماء حول الحوض، مناشف مبتلة، وأكواب ما لها مكان. هذا المنتج يحول الفوضى لمنطقة تجفيف مرتبة فوق الحوض.",
+    emotionAr: "راحة بعد الغسيل، رخام فاضي، ومطبخ مرتب حتى بعد الطبخ",
+    demoHookAr: "ركبيه فوق الحوض، حطي الصحون بعد الغسيل، وخلي الماء يرجع لمكانه الطبيعي بدل ما ينتشر على السطح.",
+    color: "gold",
+    rating: 4.7,
+    ratingCount: 1089,
+    benefits: [
+      "يرجع لك مساحة الرخام بعد غسل الصحون بدل ما تصير منطقة تجفيف عشوائية",
+      "يساعد الماء ينزل مباشرة داخل الحوض بدل التجمع حول المغسلة",
+      "يرتب الصحون والأكواب والملاعق ولوح التقطيع في مكان واحد حسب الموديل",
+      "مناسب للبيت السعودي لأن الغسيل يتكرر يوميا بعد القهوة، الغداء، والعشاء",
+    ],
+    specs: [
+      "تصميم قابل للتعديل حسب مقاس الحوض عند اختيار الموديل المناسب",
+      "هيكل معدني بستايل أسود عملي ومناسب للمطابخ الحديثة حسب مواصفات المورد",
+      "تصميم متعدد الاستخدامات للصحون والأدوات الصغيرة حسب النسخة المتوفرة",
+      "اختيار غير كهربائي، واضح الاستخدام، ومناسب للدفع عند الاستلام لأنه يحل مشكلة تشوفينها كل يوم",
+    ],
+    included: ["منظم تجفيف الصحون", "حامل أدوات صغير حسب الموديل", "قطع تركيب أساسية"],
+    faq: [
+      {
+        question: "كيف أعرف إذا يناسب حوضي؟",
+        answer: "قبل الطلب بنوضح المقاس وطريقة القياس. إذا كان حوضك ضمن المقاس المناسب، بيكون خيار عملي جدا خصوصا للمطابخ اللي سطحها ينزحم بسرعة.",
+      },
+      {
+        question: "هل يتحمل الصحون اليومية؟",
+        answer: "نعم، هو مصمم للاستخدام اليومي مع الصحون والأكواب وأدوات المطبخ الخفيفة إلى المتوسطة. الأهم عدم تحميله بأوزان مبالغ فيها.",
+      },
+      {
+        question: "هل يساعد فعلا في تقليل الفوضى؟",
+        answer: "نعم، لأنه ينقل منطقة التجفيف من الرخام إلى فوق الحوض. الفرق يبان مباشرة بعد أول غسيل: سطح أوسع، ماء أقل، وترتيب أوضح.",
+      },
+      {
+        question: "هل شكله يخرب منظر المطبخ؟",
+        answer: "لا، اخترناه لأنه عملي وبستايل بسيط. الفكرة أنه يعطي منظر مرتب بدل تكدس الصحو�
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:08Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\store\cart-store.ts -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+"use client";
+
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { getProductById, type OfferId, type Product } from "@/data/products";
+
+export type CartItem = {
+  productId: Product["id"];
+  offerId: OfferId;
+  quantity: number;
+  unitPrice: number;
+  totalPrice: number;
+  titleAr: string;
+};
+
+type CartState = {
+  items: CartItem[];
+  isCartOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
+  addItem: (item: CartItem) => void;
+  removeItem: (productId: Product["id"], offerId: OfferId) => void;
+  clearCart: () => void;
+};
+
+export const useCartStore = create<CartState>()(
+  persist(
+    (set) => ({
+      items: [],
+      isCartOpen: false,
+      openCart: () => set({ isCartOpen: true }),
+      closeCart: () => set({ isCartOpen: false }),
+      addItem: (item) =>
+        set((state) => {
+          const existing = state.items.find((cartItem) => cartItem.productId === item.productId);
+          if (existing) {
+            return {
+              items: state.items.map((cartItem) =>
+                cartItem.productId === item.productId ? item : cartItem,
+              ),
+              isCartOpen: true,
+            };
+          }
+          return { items: [...state.items, item], isCartOpen: true };
+        }),
+      removeItem: (productId, offerId) =>
+        set((state) => ({
+          items: state.items.filter((item) => item.productId !== productId || item.offerId !== offerId),
+        })),
+      clearCart: () => set({ items: [] }),
+    }),
+    { name: "dafa-kitchen-cart" },
+  ),
+);
+
+export function makeCartItem(product: Product, offerId: OfferId): CartItem {
+  const offer =
+    offerId === "upsell_99"
+      ? { id: "upsell_99" as const, quantity: 1, price: 99, labelAr: "عرض خاص" }
+      : product.offers.find((candidate) => candidate.id === offerId);
+
+  if (!offer) {
+    throw new Error(`Unknown offer ${offerId}`);
+  }
+
+  return {
+    productId: product.id,
+    offerId,
+    quantity: offer.quantity,
+    unitPrice: Math.round(offer.price / offer.quantity),
+    totalPrice: offer.price,
+    titleAr: product.nameAr,
+  };
+}
+
+export function getCartProductIds(items: CartItem[]) {
+  return items.map((item) => item.productId);
+}
+
+export function getCartProducts(items: CartItem[]) {
+  return items.map((item) => getProductById(item.productId)).filter(Boolean) as Product[];
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:08Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\components\product\product-card.tsx -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+"use client";
+
+import Link from "next/link";
+import { Banknote, PhoneCall, ShieldCheck, Star } from "lucide-react";
+import type { Product } from "@/data/products";
+import { Button } from "@/components/ui/button";
+import { ProductVisual } from "@/components/ui/product-visual";
+import { makeCartItem, useCartStore } from "@/store/cart-store";
+import { createEventId } from "@/lib/event-id";
+import { trackEvent } from "@/lib/tracking";
+
+export function ProductCard({ product }: { product: Product }) {
+  const addItem = useCartStore((state) => state.addItem);
+
+  function addDefaultOffer() {
+    const item = makeCartItem(product, "two");
+    addItem(item);
+    trackEvent("AddToCart", {
+      eventId: createEventId("atc"),
+      value: item.totalPrice,
+      currency: "SAR",
+      productId: product.id,
+      contentIds: [product.id],
+      contentName: product.nameAr,
+      items: [
+        {
+          product_id: product.id,
+          title_ar: product.nameAr,
+          quantity: item.quantity,
+          unit_price: item.unitPrice,
+          total_price: item.totalPrice,
+        },
+      ],
+    });
+  }
+
+  return (
+    <article className="overflow-hidden rounded-2xl border border-charcoal/10 bg-white shadow-soft transition hover:-translate-y-1 hover:border-gold/50">
+      <Link href={`/products/${product.slug}`}>
+        <ProductVisual product={product} className="min-h-[220px] rounded-none border-0 shadow-none" />
+      </Link>
+      <div className="p-5">
+        <div className="mb-3 flex items-center justify-between gap-3">
+          <span className="rounded-full bg-warm-100 px-3 py-1 text-xs font-black text-date">{product.role}</span>
+          <span className="flex items-center gap-1 text-xs font-bold text-charcoal/70">
+            <Star size={14} className="fill-gold text-gold" /> {product.rating}
+          </span>
+        </div>
+        <h3 className="text-xl font-black">{product.nameAr}</h3>
+        <p className="mt-3 text-sm font-bold leading-7 text-charcoal/65">{product.subheadingAr}</p>
+        <div className="mt-4 grid gap-2 rounded-xl border border-gold/35 bg-[#FFF7E4] p-4 text-sm font-black leading-7 text-date">
+          <span className="flex items-center gap-2">
+            <Banknote size={19} className="shrink-0 text-gold" />
+            الدفع عند الاستلام
+          </span>
+          <span className="flex items-center gap-2">
+            <PhoneCall size={19} className="shrink-0 text-gold" />
+            اتصال تأكيد قبل الشحن
+          </span>
+          <span className="flex items-center gap-2">
+            <ShieldCheck size={19} className="shrink-0 text-gold" />
+            ضمان ذهبي 30 يوم
+          </span>
+        </div>
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <div>
+            <p className="text-xs text-charcoal/50">ابتداء من</p>
+            <p className="text-2xl font-black">199 ريال</p>
+          </div>
+          <Button onClick={addDefaultOffer} variant="gold">اختاري العرض</Button>
+        </div>
+      </div>
+    </article>
+  );
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:16Z)**_
+
+I’m checking the order schema before wiring pack add-to-cart, because packs can either be stored as two normal product lines or as a special pack offer. I want this to fit the existing checkout/order pipeline cleanly.
+
+_**Agent (gpt-5.5 2026-05-10 04:25:16Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `rg "offer_id|offerId|CartItem|items" backend frontend/lib frontend/components -n`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+frontend/lib\tracking.ts:41:  items?: TrackingItem[];
+frontend/lib\tracking.ts:180:    contents: payload.items?.map((item) => ({
+frontend/lib\tracking.ts:238:    items: payload.items || [],
+frontend/components\ui\button.tsx:18:      className={`focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-bold transition ${variants[variant]} ${className}`}
+frontend/components\ui\button.tsx:38:      className={`focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-bold transition ${variants[variant]} ${className}`}
+frontend/components\ui\product-visual.tsx:42:      <div className={`relative z-10 flex h-full flex-col items-center justify-center text-center ${contentClass}`}>
+frontend/components\ui\product-visual.tsx:54:      <div className="flex aspect-[5/4] min-h-80 items-center justify-center rounded-2xl bg-white p-6 text-center">
+frontend/components\cart\cart-drawer.tsx:15:import { makeCartItem, useCartStore, type CartItem } from "@/store/cart-store";
+frontend/components\cart\cart-drawer.tsx:27:  const { items, isCartOpen, closeCart, removeItem, addItem, clearCart } = useCartStore();
+frontend/components\cart\cart-drawer.tsx:33:  const total = items.reduce((sum, item) => sum + item.totalPrice, 0);
+frontend/components\cart\cart-drawer.tsx:34:  const productIds = items.map((item) => item.productId);
+frontend/components\cart\cart-drawer.tsx:37:  const trackingItems = items.map((item) => ({
+frontend/components\cart\cart-drawer.tsx:46:    const item = makeCartItem(product, "one");
+frontend/components\cart\cart-drawer.tsx:55:      items: [
+frontend/components\cart\cart-drawer.tsx:76:      items: trackingItems,
+frontend/components\cart\cart-drawer.tsx:80:  async function submitFinalOrder(values: CheckoutValues, eventId: string, acceptedUpsell: boolean, upsellItems: CartItem[] = []) {
+frontend/components\cart\cart-drawer.tsx:85:      const itemsForOrder = [...useCartStore.getState().items, ...upsellItems];
+frontend/components\cart\cart-drawer.tsx:94:        items: itemsForOrder,
+frontend/components\cart\cart-drawer.tsx:98:      const finalItems = itemsForOrder;
+frontend/components\cart\cart-drawer.tsx:108:            items: finalItems,
+frontend/components\cart\cart-drawer.tsx:118:        items: finalItems.map((item) => ({
+frontend/components\cart\cart-drawer.tsx:151:        <div className="flex items-center justify-between border-b border-charcoal/10 p-5">
+frontend/components\cart\cart-drawer.tsx:162:          {items.length === 0 ? (
+frontend/components\cart\cart-drawer.tsx:169:              {items.map((item) => (
+frontend/components\cart\cart-drawer.tsx:170:                <div key={`${item.productId}-${item.offerId}`} className="rounded-2xl bg-white p-4">
+frontend/components\cart\cart-drawer.tsx:171:                  <div className="flex items-start justify-between gap-3">
+frontend/components\cart\cart-drawer.tsx:186:                      onClick={() => removeItem(item.productId, item.offerId)}
+frontend/components\cart\cart-drawer.tsx:198:          {crossSells.length > 0 && items.length > 0 ? (
+frontend/components\cart\cart-drawer.tsx:207:                    className="focus-ring flex items-center justify-between gap-3 rounded-2xl border border-charcoal/10 bg-white p-3 text-start hover:border-gold"
+frontend/components\cart\cart-drawer.tsx:209:                    <span className="flex min-w-0 flex-1 items-center gap-3">
+frontend/components\cart\cart-drawer.tsx:225:          <div className="mb-4 flex items-center justify-between text-lg font-black">
+frontend/components\cart\cart-drawer.tsx:229:          <Button disabled={items.length === 0} onClick={startCheckout} className="w-full" variant="gold">
+frontend/components\cart\cart-drawer.tsx:237:          items={items}
+frontend/components\cart\cart-drawer.tsx:247:              items: trackingItems,
+frontend/components\cart\cart-drawer.tsx:280:              selectedProducts.map((product) => makeCartItem(product, "upsell_99")),
+frontend/components\cart\cart-drawer.tsx:289:              items: trackingItems,
+frontend/components\cart\cart-drawer.tsx:302:  items,
+frontend/components\cart\cart-drawer.tsx:308:  items: CartItem[];
+frontend/components\cart\cart-drawer.tsx:321:    <div className="fixed inset-0 z-[60] grid place-items-center bg-charcoal/55 p-4">
+frontend/components\cart\cart-drawer.tsx:323:        <div className="mb-4 flex items-start justify-between">
+frontend/components\cart\cart-drawer.tsx:336:              {items.map((item) => (
+frontend/components\cart\cart-drawer.tsx:338:                  key={`${item.productId}-${item.offerId}`}
+frontend/components\cart\cart-drawer.tsx:339:                  className="flex items-center justify-between gap-3 rounded-xl bg-white px-3 py-2 text-sm"
+frontend/components\cart\cart-drawer.tsx:342:                  <span className="flex shrink-0 items-center gap-3 text-xs font-black text-charcoal/60">
+fr
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:16Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\lib\api.ts -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+import type { CartItem } from "@/store/cart-store";
+import { collectAttribution } from "@/lib/tracking";
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+
+export type CreateOrderInput = {
+  eventId: string;
+  name: string;
+  phone: string;
+  items: CartItem[];
+  upsellAccepted: boolean;
+};
+
+export async function createOrder(input: CreateOrderInput) {
+  const subtotal = input.items.reduce((sum, item) => sum + item.totalPrice, 0);
+
+  const response = await fetch(`${API_BASE_URL}/orders`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      event_id: input.eventId,
+      name: input.name,
+      phone: input.phone,
+      items: input.items.map((item) => ({
+        product_id: item.productId,
+        offer_id: item.offerId,
+        quantity: item.quantity,
+        unit_price: item.unitPrice,
+        total_price: item.totalPrice,
+      })),
+      upsell: {
+        accepted: input.upsellAccepted,
+        product_id: input.items.find((item) => item.offerId === "upsell_99")?.productId,
+        price: input.upsellAccepted ? 99 : undefined,
+      },
+      totals: {
+        subtotal,
+        delivery_fee: 0,
+        discount: 0,
+        total: subtotal,
+        currency: "SAR",
+      },
+      client: collectAttribution(),
+    }),
+  });
+
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}));
+    throw new Error(body.detail || "تعذر تأكيد الطلب، حاولي مرة أخرى.");
+  }
+
+  return response.json() as Promise<{ ok: boolean; order_id: string; purchase_event_id: string; status: string }>;
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:16Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content backend\app\schemas\orders.py -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+from pydantic import BaseModel, Field
+
+
+class OrderItemIn(BaseModel):
+    product_id: str
+    offer_id: str
+    quantity: int | None = None
+    unit_price: int | None = None
+    total_price: int | None = None
+
+
+class UpsellIn(BaseModel):
+    accepted: bool = False
+    product_id: str | None = None
+    price: int | None = None
+
+
+class TotalsIn(BaseModel):
+    subtotal: int = 0
+    delivery_fee: int = 0
+    discount: int = 0
+    total: int = 0
+    currency: str = "SAR"
+
+
+class ClientIn(BaseModel):
+    landing_page: str | None = None
+    referrer: str | None = None
+    user_agent: str | None = None
+    ip: str | None = None
+    fbp: str | None = None
+    fbc: str | None = None
+    fbclid: str | None = None
+    ttp: str | None = None
+    ttclid: str | None = None
+    sc_click_id: str | None = None
+    sc_cookie1: str | None = None
+    utm_source: str | None = None
+    utm_medium: str | None = None
+    utm_campaign: str | None = None
+    utm_content: str | None = None
+    utm_term: str | None = None
+
+
+class OrderCreate(BaseModel):
+    event_id: str = Field(min_length=8)
+    name: str = Field(min_length=2, max_length=120)
+    phone: str = Field(min_length=8, max_length=32)
+    items: list[OrderItemIn] = Field(min_length=1)
+    upsell: UpsellIn | None = None
+    totals: TotalsIn | None = None
+    client: ClientIn = Field(default_factory=ClientIn)
+
+
+class OrderCreateResponse(BaseModel):
+    ok: bool
+    order_id: str
+    purchase_event_id: str
+    status: str
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:19Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content backend\app\services\catalog.py -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class Offer:
+    id: str
+    quantity: int
+    total_price: int
+    label_ar: str
+
+
+@dataclass(frozen=True)
+class Product:
+    id: str
+    slug: str
+    name_ar: str
+    name_en: str
+    sku: str
+
+
+PRODUCTS: dict[str, Product] = {
+    "dish_drying_rack": Product(
+        id="dish_drying_rack",
+        slug="over-sink-dish-drying-rack",
+        name_ar="منظم تجفيف الصحون فوق الحوض",
+        name_en="Over-Sink Dish Drying Organizer",
+        sku="DAFA-DR-2658",
+    ),
+    "rice_dispenser": Product(
+        id="rice_dispenser",
+        slug="rice-dispenser",
+        name_ar="حافظة الأرز الذكية مع كوب قياس",
+        name_en="Smart Rice Storage Dispenser with Measuring Cup",
+        sku="DAFA-RD-7394",
+    ),
+    "vegetable_cutter": Product(
+        id="vegetable_cutter",
+        slug="vegetable-cutter-set",
+        name_ar="مجموعة تقطيع الخضار الاحترافية",
+        name_en="Professional Vegetable Cutting Set",
+        sku="DAFA-VC-4821",
+    ),
+}
+
+OFFERS: dict[str, Offer] = {
+    "one": Offer(id="one", quantity=1, total_price=199, label_ar="قطعة واحدة"),
+    "two": Offer(id="two", quantity=2, total_price=279, label_ar="قطعتين"),
+    "three": Offer(id="three", quantity=3, total_price=349, label_ar="3 قطع"),
+    "upsell_99": Offer(id="upsell_99", quantity=1, total_price=99, label_ar="عرض خاص"),
+}
+
+
+def calculate_item(product_id: str, offer_id: str) -> dict:
+    product = PRODUCTS.get(product_id)
+    offer = OFFERS.get(offer_id)
+    if product is None:
+        raise ValueError(f"Unknown product_id: {product_id}")
+    if offer is None:
+        raise ValueError(f"Unknown offer_id: {offer_id}")
+    return {
+        "product_id": product.id,
+        "title_ar": product.name_ar,
+        "sku": product.sku,
+        "offer_id": offer.id,
+        "quantity": offer.quantity,
+        "unit_price": round(offer.total_price / offer.quantity),
+        "total_price": offer.total_price,
+    }
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:32Z)**_
+
+The backend recalculates order prices from its catalog, so packs need a real offer id there too. I’m going to add a `pack_pair` offer for bundle components, use it when a pack adds two products to cart, and keep individual product pages on 1- and 2-piece offers for now.
+
+_**Agent (gpt-5.5 2026-05-10 04:25:32Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\components\product\sticky-product-cta.tsx -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+"use client";
+
+import { ArrowUp, ShoppingCart } from "lucide-react";
+import type { Product } from "@/data/products";
+
+export function StickyProductCta({ product }: { product: Product }) {
+  const defaultOffer = product.offers.find((offer) => offer.id === "two") ?? product.offers[0];
+
+  function scrollToOffer() {
+    document.getElementById("product-offer")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-charcoal/10 bg-warm-50/95 px-4 py-3 shadow-[0_-18px_50px_rgba(37,35,31,0.14)] backdrop-blur">
+      <div className="container-shell flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <p className="truncate text-sm font-black text-charcoal">{product.nameAr}</p>
+          <p className="text-xs font-bold text-charcoal/60">العرض الأكثر طلبا: {defaultOffer.price} ريال</p>
+        </div>
+        <button
+          type="button"
+          onClick={scrollToOffer}
+          className="focus-ring inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3 text-sm font-black text-charcoal shadow-soft transition hover:bg-[#b98932]"
+        >
+          <ShoppingCart size={18} />
+          اختاري العرض
+          <ArrowUp size={16} />
+        </button>
+      </div>
+    </div>
+  );
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:32Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\components\ui\product-visual.tsx -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+import type { Product } from "@/data/products";
+
+const imageDescriptions = {
+  dish_drying_rack: "[صورة منظم تجفيف الصحون المعدني القابل للتعديل فوق الحوض مع صحون وأكواب مرتبة والماء ينزل داخل الحوض]",
+  rice_dispenser: "[صورة حافظة أرز وحبوب دوارة محكمة داخل دولاب مطبخ مرتب مع كوب قياس]",
+  vegetable_cutter: "[صورة قطاعة خضار 14 في 1 مع الحافظة أثناء تحضير السلطة والكشنة]",
+};
+
+export function ProductVisual({
+  product,
+  label = "صورة المنتج",
+  className = "",
+  compact = false,
+  ratio = "auto",
+}: {
+  product: Product;
+  label?: string;
+  className?: string;
+  compact?: boolean;
+  ratio?: "auto" | "square" | "wide";
+}) {
+  const description = imageDescriptions[product.id];
+  const frameClass = compact
+    ? "min-h-20"
+    : ratio === "square"
+      ? "aspect-square min-h-0"
+      : ratio === "wide"
+        ? "aspect-[5/4] min-h-0"
+        : "min-h-[280px]";
+  const contentClass = compact
+    ? "min-h-20 p-2"
+    : ratio === "auto"
+      ? "min-h-[280px] p-8"
+      : "h-full p-8";
+
+  return (
+    <div
+      className={`relative overflow-hidden rounded-2xl border border-dashed border-charcoal/25 bg-warm-50 shadow-soft ${frameClass} ${className}`}
+      role="img"
+      aria-label={`${label}: ${product.nameAr}`}
+    >
+      <div className={`relative z-10 flex h-full flex-col items-center justify-center text-center ${contentClass}`}>
+        <p className={`max-w-md font-black text-charcoal/55 ${compact ? "text-[10px] leading-5" : "text-base leading-8"}`}>
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export function KitchenHeroVisual() {
+  return (
+    <div className="relative overflow-hidden rounded-3xl border border-dashed border-charcoal/25 bg-warm-50 p-4 shadow-soft" aria-label="منتجات مطبخ دفا">
+      <div className="flex aspect-[5/4] min-h-80 items-center justify-center rounded-2xl bg-white p-6 text-center">
+        <p className="max-w-lg text-base font-black leading-8 text-charcoal/55">
+          [صورة هيرو لمطبخ دفا تعرض قطاعة الخضار وحافظة الأرز والحبوب ومنظم الصحون على سطح مطبخ سعودي مرتب]
+        </p>
+      </div>
+      <div className="pointer-events-none absolute inset-x-8 bottom-8 flex flex-wrap justify-center gap-2">
+        {["تحضير أسرع", "مؤونة أرتب", "حوض أنظف"].map((label) => (
+          <span key={label} className="rounded-full bg-olive px-4 py-2 text-xs font-black text-white shadow-soft">
+            {label}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:32Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\components\layout\header.tsx -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+"use client";
+
+import Link from "next/link";
+import { Menu, ShoppingCart, X } from "lucide-react";
+import { useState } from "react";
+import { useCartStore } from "@/store/cart-store";
+
+const links = [
+  { href: "/", label: "الرئيسية" },
+  { href: "/products", label: "المنتجات" },
+  { href: "/about", label: "من نحن" },
+  { href: "/contact", label: "تواصل معنا" },
+];
+
+export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { openCart, items } = useCartStore();
+  const count = items.reduce((sum, item) => sum + item.quantity, 0);
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-charcoal/10 bg-warm-50/95 backdrop-blur">
+      <div className="container-shell flex min-h-20 items-center justify-between gap-4 py-3">
+        <Link href="/" className="flex items-center gap-3">
+          <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-olive">
+            <img src="/brand-mark-light.png?v=pro" alt="" width={48} height={48} className="h-12 w-12 object-contain" />
+          </span>
+          <span>
+            <span className="block text-xl font-black leading-6">مطبخ دفا</span>
+            <span className="brand-latin block  text-xs font-semibold uppercase text-charcoal/60">Dafa Kitchen</span>
+          </span>
+        </Link>
+
+        <nav className="hidden items-center gap-6 text-sm font-bold md:flex">
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} className="transition hover:text-date">
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={openCart}
+            className="focus-ring relative flex h-11 w-11 items-center justify-center rounded-lg border border-charcoal/10 bg-white"
+            aria-label="فتح السلة"
+          >
+            <ShoppingCart size={20} />
+            {count > 0 ? (
+              <span className="absolute -left-2 -top-2 flex h-6 min-w-6 items-center justify-center rounded-full bg-gold px-1 text-xs font-black">
+                {count}
+              </span>
+            ) : null}
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((value) => !value)}
+            className="focus-ring flex h-11 w-11 items-center justify-center rounded-lg border border-charcoal/10 bg-white md:hidden"
+            aria-label="فتح القائمة"
+          >
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </div>
+
+      {isMenuOpen ? (
+        <nav className="container-shell grid gap-2 pb-4 md:hidden">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="rounded-lg bg-white px-4 py-3 text-sm font-bold"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      ) : null}
+    </header>
+  );
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:25:45Z)**_
+
+I’ve got the shape now. I’ll add a small pack system (`data/packs`, pack cards, pack pages, pack add-to-cart button), and I’ll avoid baking the pack logic into individual product offers so future products can be paired just by adding another pack object.
+
+_**Agent (gpt-5.5 2026-05-10 04:25:49Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/data/products.ts`**
+
+```diff
+@@
+-export type OfferId = "one" | "two" | "three" | "upsell_99";
++export type OfferId = "one" | "two" | "three" | "pack_pair" | "upsell_99";
+@@
+-export const standardOffers: Offer[] = [
++export const standardOffers: Offer[] = [
+   { id: "one", labelAr: "قطعة واحدة", quantity: 1, price: 199 },
+   { id: "two", labelAr: "قطعتين", quantity: 2, price: 279, badge: "الأكثر طلبا" },
++];
++
++export const volumeOffers: Offer[] = [
++  ...standardOffers,
+   { id: "three", labelAr: "3 قطع", quantity: 3, price: 349, badge: "أفضل توفير" },
+ ];
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:26:04Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Add: `frontend/data/packs.ts`**
+
+```diff
++import { getProductById, type Product } from "@/data/products";
++
++export type Pack = {
++  id: string;
++  slug: string;
++  nameAr: string;
++  eyebrow: string;
++  subtitleAr: string;
++  descriptionAr: string;
++  productIds: Product["id"][];
++  price: number;
++  compareAtPrice: number;
++  badge: string;
++  benefits: string[];
++  useCases: string[];
++};
++
++export const packs: Pack[] = [
++  {
++    id: "prep-and-storage-pack",
++    slug: "prep-and-storage-pack",
++    nameAr: "باقة التحضير والمؤونة",
++    eyebrow: "باقة ذكية للطبخ اليومي",
++    subtitleAr: "قطاعة الخضار مع حافظة الأرز والحبوب",
++    descriptionAr:
++      "للي تبغى تختصر وقت الغداء من البداية: تحضير أسرع للخضار، ومؤونة واضحة بدل الأكياس المفتوحة في الدولاب.",
++    productIds: ["vegetable_cutter", "rice_dispenser"],
++    price: 318,
++    compareAtPrice: 398,
++    badge: "توفير 80 ريال",
++    benefits: [
++      "تجهزين السلطة والكشنة أسرع وتعرفين كمية الأرز والحبوب قبل الطبخ",
++      "باقة مناسبة للروتين اليومي لأنها تجمع التحضير والترتيب في طلب واحد",
++      "منتجان واضحان وسهلان للتأكيد عبر الاتصال قبل الشحن",
++    ],
++    useCases: ["وقت الغداء", "ترتيب دولاب المؤونة", "تحضير الأسبوع"],
++  },
++  {
++    id: "clean-counter-pack",
++    slug: "clean-counter-pack",
++    nameAr: "باقة السطح المرتب",
++    eyebrow: "باقة تقلل الفوضى بعد الطبخ",
++    subtitleAr: "قطاعة الخضار مع منظم تجفيف الصحون",
++    descriptionAr:
++      "للمطبخ اللي ينزحم وقت الطبخ وبعد الغسيل: حضري المكونات بفوضى أقل، وخلي الصحون تجف فوق الحوض بدل الرخام.",
++    productIds: ["vegetable_cutter", "dish_drying_rack"],
++    price: 318,
++    compareAtPrice: 398,
++    badge: "أفضل قيمة للسطح",
++    benefits: [
++      "تقللين فوضى التقطيع وفوضى الصحون في نفس روتين الطبخ",
++      "اختيار عملي للبيوت اللي سطح المطبخ فيها ينزحم بسرعة",
++      "يرفع قيمة الطلب بمنتجين يخدمون نفس لحظة الاستخدام",
++    ],
++    useCases: ["بعد الغسيل", "تحضير السلطة", "سطح مطبخ أوسع"],
++  },
++];
++
++export function getPackBySlug(slug: string) {
++  return packs.find((pack) => pack.slug === slug);
++}
++
++export function getPackProducts(pack: Pack) {
++  return pack.productIds.map((id) => getProductById(id)).filter(Boolean) as Product[];
++}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:26:08Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/store/cart-store.ts`**
+
+```diff
+@@
+ export function makeCartItem(product: Product, offerId: OfferId): CartItem {
+   const offer =
+     offerId === "upsell_99"
+       ? { id: "upsell_99" as const, quantity: 1, price: 99, labelAr: "عرض خاص" }
++      : offerId === "pack_pair"
++        ? { id: "pack_pair" as const, quantity: 1, price: 159, labelAr: "ضمن باقة" }
+       : product.offers.find((candidate) => candidate.id === offerId);
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:26:14Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `backend/app/services/catalog.py`**
+
+```diff
+@@
+     "one": Offer(id="one", quantity=1, total_price=199, label_ar="قطعة واحدة"),
+     "two": Offer(id="two", quantity=2, total_price=279, label_ar="قطعتين"),
+     "three": Offer(id="three", quantity=3, total_price=349, label_ar="3 قطع"),
++    "pack_pair": Offer(id="pack_pair", quantity=1, total_price=159, label_ar="ضمن باقة"),
+     "upsell_99": Offer(id="upsell_99", quantity=1, total_price=99, label_ar="عرض خاص"),
+ }
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:26:19Z)**_
+
+The offer catalog is now flexible: current product pages can use only one/two, while `three` still exists for any future product that should use it. I’ve also added a backend-recognized `pack_pair` price so pack checkout totals stay honest. Next I’m adding the pack UI.
+
+_**Agent (gpt-5.5 2026-05-10 04:26:26Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Add: `frontend/components/pack/pack-actions.tsx`**
+
+```diff
++"use client";
++
++import { ShoppingCart } from "lucide-react";
++import { Button } from "@/components/ui/button";
++import type { Pack } from "@/data/packs";
++import { getPackProducts } from "@/data/packs";
++import { createEventId } from "@/lib/event-id";
++import { trackEvent } from "@/lib/tracking";
++import { makeCartItem, useCartStore } from "@/store/cart-store";
++
++export function AddPackButton({ pack, className = "" }: { pack: Pack; className?: string }) {
++  const addItem = useCartStore((state) => state.addItem);
++  const products = getPackProducts(pack);
++
++  function handleAddPack() {
++    const items = products.map((product) => makeCartItem(product, "pack_pair"));
++    items.forEach(addItem);
++
++    trackEvent("AddToCart", {
++      eventId: createEventId("pack_atc"),
++      value: pack.price,
++      currency: "SAR",
++      contentIds: products.map((product) => product.id),
++      contentName: pack.nameAr,
++      items: items.map((item) => ({
++        product_id: item.productId,
++        title_ar: item.titleAr,
++        quantity: item.quantity,
++        unit_price: item.unitPrice,
++        total_price: item.totalPrice,
++      })),
++      metadata: { pack_id: pack.id },
++    });
++  }
++
++  return (
++    <Button onClick={handleAddPack} variant="gold" className={className}>
++      <ShoppingCart size={18} />
++      أضيفي الباقة - {pack.price} ريال
++    </Button>
++  );
++}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:26:42Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Add: `frontend/components/pack/pack-card.tsx`**
+
+```diff
++import Link from "next/link";
++import { ArrowLeft, CheckCircle2 } from "lucide-react";
++import { AddPackButton } from "@/components/pack/pack-actions";
++import { ProductVisual } from "@/components/ui/product-visual";
++import type { Pack } from "@/data/packs";
++import { getPackProducts } from "@/data/packs";
++
++export function PackCard({ pack }: { pack: Pack }) {
++  const products = getPackProducts(pack);
++
++  return (
++    <article className="overflow-hidden rounded-3xl border border-charcoal/10 bg-white shadow-soft">
++      <Link href={`/packs/${pack.slug}`} className="block bg-warm-50 p-4">
++        <div className="grid gap-3 sm:grid-cols-2">
++          {products.map((product) => (
++            <ProductVisual key={product.id} product={product} compact className="min-h-32 rounded-xl shadow-none" />
++          ))}
++        </div>
++      </Link>
++      <div className="p-5">
++        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
++          <span className="rounded-full bg-olive px-3 py-1 text-xs font-black text-white">{pack.eyebrow}</span>
++          <span className="rounded-full bg-red-50 px-3 py-1 text-xs font-black text-red-800">{pack.badge}</span>
++        </div>
++        <h3 className="text-2xl font-black leading-tight">{pack.nameAr}</h3>
++        <p className="mt-2 text-sm font-black text-date">{pack.subtitleAr}</p>
++        <p className="mt-3 text-sm font-bold leading-7 text-charcoal/64">{pack.descriptionAr}</p>
++        <div className="mt-4 grid gap-2">
++          {pack.benefits.slice(0, 2).map((benefit) => (
++            <p key={benefit} className="flex gap-2 text-sm font-bold leading-7 text-charcoal/70">
++              <CheckCircle2 className="mt-1 shrink-0 text-olive" size={17} />
++              {benefit}
++            </p>
++          ))}
++        </div>
++        <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
++          <div>
++            <p className="text-xs font-bold text-charcoal/50">سعر الباقة</p>
++            <p className="text-2xl font-black">{pack.price} ريال</p>
++            <p className="text-xs font-bold text-charcoal/45 line-through">{pack.compareAtPrice} ريال منفردة</p>
++          </div>
++          <div className="flex flex-wrap gap-2">
++            <Link
++              href={`/packs/${pack.slug}`}
++              className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-charcoal/15 bg-white/70 px-4 py-3 text-sm font-bold transition hover:bg-white"
++            >
++              تفاصيل الباقة
++              <ArrowLeft size={16} />
++            </Link>
++            <AddPackButton pack={pack} />
++          </div>
++        </div>
++      </div>
++    </article>
++  );
++}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:27:28Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Add: `frontend/app/packs/[slug]/page.tsx`**
+
+```diff
++import { notFound } from "next/navigation";
++import { ArrowLeft, Banknote, CheckCircle2, PackageCheck, PhoneCall, Sparkles, Truck } from "lucide-react";
++import Link from "next/link";
++import { AddPackButton } from "@/components/pack/pack-actions";
++import { ProductCard } from "@/components/product/product-card";
++import { ProductVisual } from "@/components/ui/product-visual";
++import { getPackBySlug, getPackProducts, packs } from "@/data/packs";
++
++export function generateStaticParams() {
++  return packs.map((pack) => ({ slug: pack.slug }));
++}
++
++export default async function PackPage({ params }: { params: Promise<{ slug: string }> }) {
++  const { slug } = await params;
++  const pack = getPackBySlug(slug);
++  if (!pack) notFound();
++  const products = getPackProducts(pack);
++  const saving = pack.compareAtPrice - pack.price;
++
++  return (
++    <main className="bg-warm-50">
++      <section className="bg-olive py-12 text-white md:py-16">
++        <div className="container-shell grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
++          <div>
++            <p className="inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-black text-gold">
++              {pack.eyebrow}
++            </p>
++            <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight md:text-5xl">{pack.nameAr}</h1>
++            <p className="mt-3 text-lg font-black text-white/88">{pack.subtitleAr}</p>
++            <p className="mt-4 max-w-2xl font-bold leading-8 text-white/74">{pack.descriptionAr}</p>
++            <div className="mt-6 flex flex-wrap gap-2">
++              {pack.useCases.map((item) => (
++                <span key={item} className="rounded-full bg-white/10 px-4 py-2 text-xs font-black text-white/85">
++                  {item}
++                </span>
++              ))}
++            </div>
++          </div>
++          <div className="rounded-3xl border border-white/12 bg-white/8 p-4">
++            <div className="grid gap-4 sm:grid-cols-2">
++              {products.map((product) => (
++                <ProductVisual key={product.id} product={product} ratio="square" className="rounded-2xl shadow-none" />
++              ))}
++            </div>
++          </div>
++        </div>
++      </section>
++
++      <section className="container-shell -mt-8 grid gap-5 pb-14 lg:grid-cols-[1fr_0.78fr]">
++        <div className="rounded-3xl border border-charcoal/10 bg-white p-6 shadow-soft">
++          <p className="text-sm font-black text-date">ليش هذه الباقة؟</p>
++          <h2 className="mt-2 text-3xl font-black">منتجان يخدمان نفس روتين المطبخ</h2>
++          <div className="mt-6 grid gap-3">
++            {pack.benefits.map((benefit) => (
++              <p key={benefit} className="flex gap-3 rounded-2xl bg-warm-50 p-4 text-sm font-bold leading-7 text-charcoal/70">
++                <CheckCircle2 className="mt-1 shrink-0 text-olive" size={18} />
++                {benefit}
++              </p>
++            ))}
++          </div>
++        </div>
++
++        <aside className="rounded-3xl bg-date p-6 text-white shadow-soft lg:sticky lg:top-28 lg:self-start">
++          <PackageCheck className="text-gold" size={34} />
++          <p className="mt-4 text-sm font-black text-gold">عرض الباقة</p>
++          <div className="mt-2 flex items-end gap-3">
++            <p className="text-4xl font-black">{pack.price} ريال</p>
++            <p className="pb-1 text-sm font-bold text-white/45 line-through">{pack.compareAtPrice} ريال</p>
++          </div>
++          <p className="mt-3 rounded-2xl bg-white/10 p-4 text-sm font-black leading-7 text-white/82">
++            توفرين {saving} ريال مقارنة بشراء المنتجين منفردين.
++          </p>
++          <AddPackButton pack={pack} className="mt-5 w-full" />
++          <div className="mt-5 grid gap-3 text-sm font-bold text-white/76">
++            {[
++              [Banknote, "الدفع عند الاستلام"],
++              [PhoneCall, "اتصال تأكيد قبل الشحن"],
++              [Truck, "الشحن المجاني ضمن العرض الحالي"],
++            ].map(([Icon, text]) => (
++              <p key={text as string} className="flex items-center gap-2">
++                <Icon size={17} className="text-gold" />
++                {text as string}
++              </p>
++            ))}
++          </div>
++        </aside>
++      </section>
++
++      <section className="container-shell pb-14">
++        <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
++          <div>
++            <p className="text-sm font-black text-olive">داخل الباقة</p>
++            <h2 className="mt-1 text-3xl font-black">المنتجات المشمولة</h2>
++          </div>
++          <Link href="/products" className="focus-ring inline-flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-black">
++            عرض كل المنتجات
++            <ArrowLeft size={16} />
++          </Link>
++        </div>
++        <div className="grid gap-5 md:grid-cols-2">
++          {products.map((product) => (
++            <ProductCard key={product.id} product={product} />
++          ))}
++        </div>
++      </section>
++
++      <section className="container-shell pb-16">
++        <div className="rounded-3xl bg-white p-6 shadow-soft md:p-8">
++          <div className="flex items-start gap-4">
++            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-warm-100 text-olive">
++              <Sparkles size={22} />
++            </span>
++            <div>
++              <p className="text-sm font-black text-date">اختيار دفا</p>
++              <h2 className="mt-1 text-2xl font-black">الباقات ليست كميات مكررة، بل منتجات تكمل بعضها</h2>
++              <p className="mt-2 text-sm font-bold leading-7 text-charcoal/64">
++                بدل شراء 3 قطع من نفس المنتج، نرفع قيمة الطلب بمنتجات تخدم نفس روتين المطبخ وتبقى مفيدة بعد الاستلام.
++              </p>
++            </div>
++          </div>
++        </div>
++      </section>
++    </main>
++  );
++}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:27:32Z)**_
+
+The pack detail pages are in place, including pack-specific add-to-cart and checkout-compatible pricing. I’m adding a homepage pack section now so these offers are visible before the lower brand/review sections.
+
+_**Agent (gpt-5.5 2026-05-10 04:27:41Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/app/page.tsx`**
+
+```diff
+@@
+ import { ArrowLeft, Banknote, CheckCircle2, ClipboardCheck, PhoneCall, Ruler, ShieldCheck, Sparkles, Wrench } from "lucide-react";
++import { PackCard } from "@/components/pack/pack-card";
+ import { ProductCard } from "@/components/product/product-card";
+ import { ReviewCard } from "@/components/product/review-card";
+ import { ButtonLink } from "@/components/ui/button";
+ import { KitchenHeroVisual } from "@/components/ui/product-visual";
++import { packs } from "@/data/packs";
+ import { products } from "@/data/products";
+@@
+       </section>
+ 
++      <section className="container-shell py-16">
++        <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
++          <div>
++            <p className="text-sm font-black text-olive">باقات دفا</p>
++            <h2 className="mt-2 max-w-3xl text-3xl font-black">ارفعي قيمة الطلب بمنتجات تكمل بعض، مو بكميات مكررة</h2>
++            <p className="mt-3 max-w-2xl text-sm font-bold leading-7 text-charcoal/62">
++              اخترنا باقات من منتجين يخدمون نفس روتين المطبخ، عشان يكون العرض منطقي ومفيد بعد الاستلام.
++            </p>
++          </div>
++          <ButtonLink href={`/packs/${packs[0].slug}`} variant="outline">عرض أول باقة</ButtonLink>
++        </div>
++        <div className="grid gap-5 xl:grid-cols-2">
++          {packs.map((pack) => (
++            <PackCard key={pack.id} pack={pack} />
++          ))}
++        </div>
++      </section>
++
+        <section className="container-shell py-16">
+         <div className="mb-8 text-center">
+           <p className="text-sm font-black text-olive">معيار مطبخ دفا</p>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:27:50Z)**_
+
+I’m also tightening the offer selectors so “default offer” is driven by the product’s actual offers instead of assuming every product has a 2-piece option forever. That keeps this ready for future products with different offer strategies.
+
+_**Agent (gpt-5.5 2026-05-10 04:27:52Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/product/offer-selector.tsx`**
+
+```diff
+@@
+ export function OfferSelector({ product, compact = false }: { product: Product; compact?: boolean }) {
+-  const [selectedOffer, setSelectedOffer] = useState<OfferId>("two");
++  const defaultOffer = product.offers.find((candidate) => candidate.badge) ?? product.offers[0];
++  const [selectedOffer, setSelectedOffer] = useState<OfferId>(defaultOffer.id);
+   const addItem = useCartStore((state) => state.addItem);
+-  const offer = product.offers.find((candidate) => candidate.id === selectedOffer) ?? product.offers[0];
++  const offer = product.offers.find((candidate) => candidate.id === selectedOffer) ?? defaultOffer;
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:27:56Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/product/product-card.tsx`**
+
+```diff
+@@
+   const addItem = useCartStore((state) => state.addItem);
++  const defaultOffer = product.offers.find((offer) => offer.badge) ?? product.offers[0];
+ 
+   function addDefaultOffer() {
+-    const item = makeCartItem(product, "two");
++    const item = makeCartItem(product, defaultOffer.id);
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:27:59Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/pack/pack-actions.tsx`**
+
+```diff
+@@
+   function handleAddPack() {
+-    const items = products.map((product) => makeCartItem(product, "pack_pair"));
++    const items = products.map((product) => ({
++      ...makeCartItem(product, "pack_pair"),
++      titleAr: `${product.nameAr} - ضمن ${pack.nameAr}`,
++    }));
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:05Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 3.7 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:05Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `python -m py_compile backend\app\services\catalog.py`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:15Z)**_
+
+TypeScript and the backend catalog syntax both pass. I’ll do a final diff review now to make sure the changes are scoped and the new pack flow is easy to maintain.
+
+_**Agent (gpt-5.5 2026-05-10 04:28:15Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `git diff -- frontend/data/products.ts frontend/data/packs.ts frontend/store/cart-store.ts frontend/components/pack/pack-actions.tsx frontend/components/pack/pack-card.tsx frontend/app/packs/[slug]/page.tsx frontend/app/page.tsx frontend/components/product/offer-selector.tsx frontend/components/product/product-card.tsx backend/app/services/catalog.py`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+diff --git a/backend/app/services/catalog.py b/backend/app/services/catalog.py
+index ea263d5..42eca39 100644
+--- a/backend/app/services/catalog.py
++++ b/backend/app/services/catalog.py
+@@ -46,6 +46,7 @@ OFFERS: dict[str, Offer] = {
+     "one": Offer(id="one", quantity=1, total_price=199, label_ar="قطعة واحدة"),
+     "two": Offer(id="two", quantity=2, total_price=279, label_ar="قطعتين"),
+     "three": Offer(id="three", quantity=3, total_price=349, label_ar="3 قطع"),
++    "pack_pair": Offer(id="pack_pair", quantity=1, total_price=159, label_ar="ضمن باقة"),
+     "upsell_99": Offer(id="upsell_99", quantity=1, total_price=99, label_ar="عرض خاص"),
+ }
+ 
+diff --git a/frontend/app/page.tsx b/frontend/app/page.tsx
+index d75b0b5..acda540 100644
+--- a/frontend/app/page.tsx
++++ b/frontend/app/page.tsx
+@@ -1,8 +1,10 @@
+ import { ArrowLeft, Banknote, CheckCircle2, ClipboardCheck, PhoneCall, Ruler, ShieldCheck, Sparkles, Wrench } from "lucide-react";
++import { PackCard } from "@/components/pack/pack-card";
+ import { ProductCard } from "@/components/product/product-card";
+ import { ReviewCard } from "@/components/product/review-card";
+ import { ButtonLink } from "@/components/ui/button";
+ import { KitchenHeroVisual } from "@/components/ui/product-visual";
++import { packs } from "@/data/packs";
+ import { products } from "@/data/products";
+ 
+ export default function HomePage() {
+@@ -68,6 +70,24 @@ export default function HomePage() {
+         </div>
+       </section>
+ 
++      <section className="container-shell py-16">
++        <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
++          <div>
++            <p className="text-sm font-black text-olive">باقات دفا</p>
++            <h2 className="mt-2 max-w-3xl text-3xl font-black">ارفعي قيمة الطلب بمنتجات تكمل بعض، مو بكميات مكررة</h2>
++            <p className="mt-3 max-w-2xl text-sm font-bold leading-7 text-charcoal/62">
++              اخترنا باقات من منتجين يخدمون نفس روتين المطبخ، عشان يكون العرض منطقي ومفيد بعد الاستلام.
++            </p>
++          </div>
++          <ButtonLink href={`/packs/${packs[0].slug}`} variant="outline">عرض أول باقة</ButtonLink>
++        </div>
++        <div className="grid gap-5 xl:grid-cols-2">
++          {packs.map((pack) => (
++            <PackCard key={pack.id} pack={pack} />
++          ))}
++        </div>
++      </section>
++
+        <section className="container-shell py-16">
+         <div className="mb-8 text-center">
+           <p className="text-sm font-black text-olive">معيار مطبخ دفا</p>
+diff --git a/frontend/components/product/offer-selector.tsx b/frontend/components/product/offer-selector.tsx
+index 2cce045..09d3efb 100644
+--- a/frontend/components/product/offer-selector.tsx
++++ b/frontend/components/product/offer-selector.tsx
+@@ -9,9 +9,10 @@ import { createEventId } from "@/lib/event-id";
+ import { trackEvent } from "@/lib/tracking";
+ 
+ export function OfferSelector({ product, compact = false }: { product: Product; compact?: boolean }) {
+-  const [selectedOffer, setSelectedOffer] = useState<OfferId>("two");
++  const defaultOffer = product.offers.find((candidate) => candidate.badge) ?? product.offers[0];
++  const [selectedOffer, setSelectedOffer] = useState<OfferId>(defaultOffer.id);
+   const addItem = useCartStore((state) => state.addItem);
+-  const offer = product.offers.find((candidate) => candidate.id === selectedOffer) ?? product.offers[0];
++  const offer = product.offers.find((candidate) => candidate.id === selectedOffer) ?? defaultOffer;
+   const singleItemPrice = product.offers.find((candidate) => candidate.id === "one")?.price ?? product.offers[0].price;
+ 
+   function handleAdd() {
+diff --git a/frontend/components/product/product-card.tsx b/frontend/components/product/product-card.tsx
+index 21655a0..c1ea23f 100644
+--- a/frontend/components/product/product-card.tsx
++++ b/frontend/components/product/product-card.tsx
+@@ -11,9 +11,10 @@ import { trackEvent } from "@/lib/tracking";
+ 
+ export function ProductCard({ product }: { product: Product }) {
+   const addItem = useCartStore((state) => state.addItem);
++  const defaultOffer = product.offers.find((offer) => offer.badge) ?? product.offers[0];
+ 
+   function addDefaultOffer() {
+-    const item = makeCartItem(product, "two");
++    const item = makeCartItem(product, defaultOffer.id);
+     addItem(item);
+     trackEvent("AddToCart", {
+       eventId: createEventId("atc"),
+diff --git a/frontend/data/products.ts b/frontend/data/products.ts
+index 70f7e4c..77668c8 100644
+--- a/frontend/data/products.ts
++++ b/frontend/data/products.ts
+@@ -1,4 +1,4 @@
+-export type OfferId = "one" | "two" | "three" | "upsell_99";
++export type OfferId = "one" | "two" | "three" | "pack_pair" | "upsell_99";
+ 
+ export type Offer = {
+   id: OfferId;
+@@ -32,6 +32,1
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:15Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `git status --short frontend/data/products.ts frontend/data/packs.ts frontend/store/cart-store.ts frontend/components/pack frontend/app/packs frontend/app/page.tsx frontend/components/product/offer-selector.tsx frontend/components/product/product-card.tsx backend/app/services/catalog.py`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+ M backend/app/services/catalog.py
+ M frontend/app/page.tsx
+ M frontend/components/product/offer-selector.tsx
+ M frontend/components/product/product-card.tsx
+ M frontend/data/products.ts
+ M frontend/store/cart-store.ts
+?? frontend/app/packs/
+?? frontend/components/pack/
+?? frontend/data/packs.ts
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:25Z)**_
+
+One small usability improvement: I’m adding a `/packs` listing page and a header link, so future packs have a natural home instead of only being reachable from homepage cards or direct URLs.
+
+_**Agent (gpt-5.5 2026-05-10 04:28:31Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Add: `frontend/app/packs/page.tsx`**
+
+```diff
++import { PackCard } from "@/components/pack/pack-card";
++import { packs } from "@/data/packs";
++
++export default function PacksPage() {
++  return (
++    <main className="bg-warm-50 py-14">
++      <section className="container-shell">
++        <div className="mb-8 max-w-3xl">
++          <p className="text-sm font-black text-olive">باقات دفا</p>
++          <h1 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
++            منتجات متكاملة ترفع قيمة الطلب بدون كميات مكررة
++          </h1>
++          <p className="mt-4 font-bold leading-8 text-charcoal/66">
++            كل باقة تجمع منتجين يخدمان نفس روتين المطبخ، عشان يكون العرض مفهوم ومفيد بعد الاستلام.
++          </p>
++        </div>
++        <div className="grid gap-5 xl:grid-cols-2">
++          {packs.map((pack) => (
++            <PackCard key={pack.id} pack={pack} />
++          ))}
++        </div>
++      </section>
++    </main>
++  );
++}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:34Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/layout/header.tsx`**
+
+```diff
+@@
+   { href: "/", label: "الرئيسية" },
+   { href: "/products", label: "المنتجات" },
++  { href: "/packs", label: "الباقات" },
+   { href: "/about", label: "من نحن" },
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:37Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/app/page.tsx`**
+
+```diff
+@@
+-          <ButtonLink href={`/packs/${packs[0].slug}`} variant="outline">عرض أول باقة</ButtonLink>
++          <ButtonLink href="/packs" variant="outline">عرض كل الباقات</ButtonLink>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:44Z)**_
+
+The pack index and nav link are added. I’m running the final frontend typecheck and backend syntax check again now.
+
+_**Agent (gpt-5.5 2026-05-10 04:28:44Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 3.6 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:44Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `python -m py_compile backend\app\services\catalog.py`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:44Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `git status --short frontend/app/packs frontend/components/pack frontend/data/packs.ts frontend/data/products.ts frontend/store/cart-store.ts frontend/app/page.tsx frontend/components/product/offer-selector.tsx frontend/components/product/product-card.tsx frontend/components/layout/header.tsx backend/app/services/catalog.py`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+ M backend/app/services/catalog.py
+ M frontend/app/page.tsx
+ M frontend/components/layout/header.tsx
+ M frontend/components/product/offer-selector.tsx
+ M frontend/components/product/product-card.tsx
+ M frontend/data/products.ts
+ M frontend/store/cart-store.ts
+?? frontend/app/packs/
+?? frontend/components/pack/
+?? frontend/data/packs.ts
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:28:56Z)**_
+
+One more maintainability tweak: I’m making the pack offer id part of the pack data itself, so future packs can point to a different backend offer if they need a different price structure later.
+
+_**Agent (gpt-5.5 2026-05-10 04:29:00Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/data/packs.ts`**
+
+```diff
+@@
+-import { getProductById, type Product } from "@/data/products";
++import { getProductById, type OfferId, type Product } from "@/data/products";
+@@
+   productIds: Product["id"][];
++  offerId: OfferId;
+   price: number;
+@@
+     descriptionAr:
+       "للي تبغى تختصر وقت الغداء من البداية: تحضير أسرع للخضار، ومؤونة واضحة بدل الأكياس المفتوحة في الدولاب.",
+     productIds: ["vegetable_cutter", "rice_dispenser"],
++    offerId: "pack_pair",
+     price: 318,
+@@
+     descriptionAr:
+       "للمطبخ اللي ينزحم وقت الطبخ وبعد الغسيل: حضري المكونات بفوضى أقل، وخلي الصحون تجف فوق الحوض بدل الرخام.",
+     productIds: ["vegetable_cutter", "dish_drying_rack"],
++    offerId: "pack_pair",
+     price: 318,
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:29:04Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/pack/pack-actions.tsx`**
+
+```diff
+@@
+     const items = products.map((product) => ({
+-      ...makeCartItem(product, "pack_pair"),
++      ...makeCartItem(product, pack.offerId),
+       titleAr: `${product.nameAr} - ضمن ${pack.nameAr}`,
+     }));
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:29:07Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 2.6 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:29:07Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `python -m py_compile backend\app\services\catalog.py`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:29:15Z)**_
+
+Implemented the AOV shift.
+
+What changed:
+- Current product pages now use only `1` and `2` piece offers.
+- Kept offer logic parametrized with `standardOffers`, `volumeOffers`, and dynamic default-offer selection, so future products can still use `3` pieces if needed.
+- Added pack data in `frontend/data/packs.ts`.
+- Added two starter packs:
+  - `باقة التحضير والمؤونة`
+  - `باقة السطح المرتب`
+- Added dedicated pack pages:
+  - `/packs`
+  - `/packs/prep-and-storage-pack`
+  - `/packs/clean-counter-pack`
+- Added pack cards to the homepage.
+- Added a header link for `الباقات`.
+- Added pack add-to-cart flow using a backend-recognized `pack_pair` offer, so checkout totals remain consistent.
+
+Verification:
+- `npm run typecheck` passed.
+- Backend catalog syntax check passed with `python -m py_compile backend\app\services\catalog.py`.
+
+---
+
+_**User (2026-05-10 04:38:56Z)**_
+
+In product pages, some section should be redesign, because im not satisfied enough with it, try to be creative and don't pay attention of the wordings : here is the parts that needs improvements or redesign:
+1- ثقة قبل التوصيل
+
+مو مجرد إعلان، نأكد معك قبل الشحن عشان توصلك وأنت مقتنعة
+نشرح لك المنتج والكمية في اتصال التأكيد
+الدفع عند الاستلام داخل السعودية
+الضمان الذهبي يعطيك راحة بعد الاستلام
+2- اختيار دفا
+
+نقاط عملية قبل الطلب
+شفرات ستانلس ستيل حسب مواصفات المورد
+حافظة لتجميع المكونات وتقليل الفوضى
+قطع متعددة للتقطيع والبشر والتحضير حسب النسخة المتوفرة
+منتج غير كهربائي، سهل الفهم في الاتصال، ومناسب لطلبات الدفع عند الاستلام
+3- داخل الطلب
+
+كل شيء تحتاجينه لاستخدام المنتج
+قاعدة التقطيع
+حافظة
+شفرات متعددة
+أداة تنظيف
+نركز على التفاصيل التي تساعدك تقررين بثقة قبل الشحن، بدون حشو زائد.
+
+
+---
+
+_**Agent (gpt-5.5 2026-05-10 04:39:03Z)**_
+
+I’ll redesign those three product-page sections as actual decision-support blocks instead of plain copy cards: a clearer trust/process band, a more visual “اختيار دفا” checklist, and a better “داخل الطلب” kit preview.
+
+_**Agent (gpt-5.5 2026-05-10 04:39:04Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content -LiteralPath "frontend\app\products\[slug]\page.tsx" -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+import { notFound } from "next/navigation";
+import { Award, Banknote, CheckCircle2, PackageCheck, Settings2, Star, Timer, Truck } from "lucide-react";
+import { OfferSelector } from "@/components/product/offer-selector";
+import { ProductCard } from "@/components/product/product-card";
+import { ReviewCard } from "@/components/product/review-card";
+import { StickyProductCta } from "@/components/product/sticky-product-cta";
+import { ProductViewTracker } from "@/components/tracking/product-view-tracker";
+import { ProductVisual } from "@/components/ui/product-visual";
+import { getCrossSells, getProductBySlug, products } from "@/data/products";
+
+export function generateStaticParams() {
+  return products.map((product) => ({ slug: product.slug }));
+}
+
+const shippingPaymentFaq = [
+  {
+    question: "هل الدفع عند الاستلام؟",
+    answer: "نعم، كل طلبات مطبخ دفا داخل السعودية بالدفع عند الاستلام. نؤكد الطلب معك قبل الشحن حتى تكون البيانات والكمية واضحة.",
+  },
+  {
+    question: "هل الشحن مجاني؟",
+    answer: "نعم، عرض الشحن المجاني متاح حاليا خلال آخر ٤٨ ساعة من العرض، ويظهر مع طلبات المنتجات المؤكدة قبل الشحن.",
+  },
+  {
+    question: "متى يبدأ تجهيز الطلب؟",
+    answer: "بعد إرسال الطلب، نتواصل معك لتأكيد الاسم والمدينة والعنوان والكمية. بعد التأكيد يبدأ تجهيز الشحنة حسب تغطية شركة الشحن.",
+  },
+];
+
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
+  if (!product) notFound();
+  const crossSells = getCrossSells([product.id]);
+  const productFaq = product.faq.filter((item) => !item.question.includes("الدفع"));
+
+  return (
+    <>
+      <ProductViewTracker productId={product.id} />
+      <section className="bg-warm-100 pb-5 pt-10 md:pb-7 md:pt-14">
+        <div className="container-shell grid items-start gap-8 lg:grid-cols-[0.9fr_1fr] lg:[direction:ltr]">
+          <div className="order-2 lg:order-1 lg:col-start-1 lg:row-start-1 lg:[direction:rtl]">
+            <p className="mb-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-black text-date shadow-soft">
+              {product.role}
+            </p>
+            <h1 className="text-4xl font-black leading-tight md:text-5xl">{product.nameAr}</h1>
+            <p className="mt-4 max-w-2xl text-base font-bold leading-8 text-charcoal/70 md:text-lg">
+              {product.subheadingAr}
+            </p>
+            
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-1 text-gold">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star key={index} size={18} className="fill-gold" />
+                ))}
+              </div>
+              <span className="text-sm font-black text-charcoal">
+                {product.rating} من 5
+              </span>
+              <span className="rounded-full bg-white px-3 py-1 text-xs font-bold text-charcoal/65 shadow-soft">
+                {product.ratingCount.toLocaleString("ar-SA")} تقييم
+              </span>
+            </div>
+            <div className="mt-4 inline-flex max-w-fit items-center gap-2 rounded-xl border border-red-700/20 bg-red-50 px-3 py-2 text-xs font-black text-red-800 shadow-soft md:text-sm">
+              <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-red-700 text-white">
+                <Timer size={17} />
+              </span>
+              <span>آخر ٤٨ ساعة على عرض الشحن المجاني</span>
+            </div>
+            <div id="product-offer" className="mt-6 scroll-mt-28">
+              <OfferSelector product={product} />
+            </div>
+          </div>
+          <ProductVisual product={product} ratio="square" className="order-1 lg:order-2 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-32" />
+        </div>
+        <div className="container-shell mt-6 overflow-x-auto pb-1">
+          <div className="flex min-w-max gap-4 md:min-w-0 md:grid md:grid-cols-3">
+            {[
+              [Banknote, "الدفع عند الاستلام"],
+              [Truck, "شحن سريع للسعودية"],
+              [Award, "ضمان ذهبي 30 يوم"],
+            ].map(([Icon, text]) => (
+              <div key={text as string} className="flex min-w-60 items-center gap-4 rounded-2xl border border-charcoal/10 bg-white px-5 py-4 text-base font-black text-charcoal shadow-soft md:min-w-0 md:text-lg">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-warm-100 t
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:39:16Z)**_
+
+I’m going to replace the plain trust box with a more visual “order confidence” band, then turn the specs/included area into a warmer two-part product dossier. The idea is less “paragraphs in boxes” and more “here is how Dafa qualifies and ships this item.”
+
+_**Agent (gpt-5.5 2026-05-10 04:39:19Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/app/products/[slug]/page.tsx`**
+
+```diff
+@@
+ import { notFound } from "next/navigation";
+-import { Award, Banknote, CheckCircle2, PackageCheck, Settings2, Star, Timer, Truck } from "lucide-react";
++import { Award, Banknote, CheckCircle2, ClipboardCheck, PackageCheck, PhoneCall, ShieldCheck, Sparkles, Star, Timer, Truck } from "lucide-react";
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:39:56Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/app/products/[slug]/page.tsx`**
+
+```diff
+@@
+-      <section className="container-shell py-14">
+-        <div className="rounded-3xl bg-date p-6 text-white shadow-soft md:p-8">
+-          <p className="text-sm font-black text-gold">ثقة قبل التوصيل</p>
+-          <h2 className="mt-3 text-3xl font-black">مو مجرد إعلان، نأكد معك قبل الشحن عشان توصلك وأنت مقتنعة</h2>
+-          <div className="mt-6 grid gap-3 md:grid-cols-3">
+-            {[
+-              "نشرح لك المنتج والكمية في اتصال التأكيد",
+-              "الدفع عند الاستلام داخل السعودية",
+-              "الضمان الذهبي يعطيك راحة بعد الاستلام",
+-            ].map((item) => (
+-              <div key={item} className="rounded-2xl bg-white/10 p-4 text-sm font-bold leading-7 text-white/85">
+-                {item}
+-              </div>
+-            ))}
++      <section className="bg-date py-14 text-white">
++        <div className="container-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
++          <div>
++            <p className="text-sm font-black text-gold">ثقة قبل التوصيل</p>
++            <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">طلب واضح قبل ما يتحرك من المستودع</h2>
++            <p className="mt-4 font-bold leading-8 text-white/72">
++              تجربة الدفع عند الاستلام تحتاج وضوح أكثر من زر شراء. لذلك نخلي خطوة التأكيد جزء من الخدمة، مو إجراء زائد.
++            </p>
++          </div>
++          <div className="grid gap-3 md:grid-cols-3">
++            {[
++              [PhoneCall, "مكالمة قصيرة", "نراجع المنتج والكمية قبل تجهيز الشحنة."],
++              [Banknote, "الدفع عند الاستلام", "تدفعين بعد وصول الطلب، بدون دفع مسبق."],
++              [ShieldCheck, "راحة بعد الاستلام", "ضمان ذهبي 30 يوم حسب سياسة الاستبدال."],
++            ].map(([Icon, title, text], index) => (
++              <div key={title as string} className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/10 p-5">
++                <span className="absolute left-4 top-4 text-5xl font-black leading-none text-white/8">0{index + 1}</span>
++                <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-gold text-charcoal">
++                  <Icon size={22} />
++                </span>
++                <h3 className="relative mt-5 text-lg font-black">{title as string}</h3>
++                <p className="relative mt-2 text-sm font-bold leading-7 text-white/72">{text as string}</p>
++              </div>
++            ))}
+           </div>
+         </div>
+       </section>
+ 
+-      <section className="container-shell py-14">
+-        <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+-        <div className="rounded-3xl border border-charcoal/10 bg-white p-6 shadow-soft">
+-          <div className="flex items-center gap-3">
+-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-warm-100 text-olive">
+-              <Settings2 size={22} />
+-            </span>
+-            <div>
+-              <p className="text-sm font-black text-date">اختيار دفا</p>
+-              <h2 className="text-2xl font-black">نقاط عملية قبل الطلب</h2>
++      <section className="bg-warm-100 py-14">
++        <div className="container-shell">
++          <div className="mb-7 max-w-3xl">
++            <p className="text-sm font-black text-olive">اختيار دفا</p>
++            <h2 className="mt-2 text-3xl font-black leading-tight">تفاصيل نراجعها لأن المنتج لازم يستاهل مكانه في مطبخك</h2>
++          </div>
++          <div className="grid gap-5 lg:grid-cols-[1.18fr_0.82fr]">
++            <div className="grid gap-3 sm:grid-cols-2">
++              {product.specs.map((spec, index) => (
++                <div key={spec} className="relative overflow-hidden rounded-2xl border border-charcoal/10 bg-white p-5 shadow-soft">
++                  <span className="absolute -left-2 -top-2 text-6xl font-black leading-none text-warm-100">0{index + 1}</span>
++                  <span className="relative grid h-11 w-11 place-items-center rounded-xl bg-olive text-white">
++                    <ClipboardCheck size={20} />
++                  </span>
++                  <p className="relative mt-4 text-sm font-bold leading-7 text-charcoal/72">{spec}</p>
++                </div>
++              ))}
+             </div>
+-          </div>
+-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+-            {product.specs.map((spec) => (
+-              <div key={spec} className="flex gap-3 rounded-2xl bg-warm-50 p-4 text-sm font-bold leading-7">
+-                <CheckCircle2 className="mt-1 shrink-0 text-olive" size={18} />
+-                <span>{spec}</span>
++
++            <div className="rounded-3xl bg-olive p-6 text-white shadow-soft">
++              <div className="flex items-start justify-between gap-4">
++                <div>
++                  <p className="text-sm font-black text-gold">داخل الطلب</p>
++                  <h2 className="mt-2 text-2xl font-black leading-tight">محتويات واضحة من أول اتصال</h2>
++                </div>
++                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/10 text-gold">
++                  <PackageCheck size={25} />
++                </span>
++              </div>
++              <div className="mt-6 grid gap-3">
++                {product.included.map((item) => (
++                  <div key={item} className="flex items-center gap-3 border-b border-white/10 pb-3 last:border-0 last:pb-0">
++                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gold text-charcoal">
++                      <CheckCircle2 size={17} />
++                    </span>
++                    <span className="font-black text-white/88">{item}</span>
++                  </div>
++                ))}
+               </div>
+-            ))}
+-          </div>
+-        </div>
+-        <div className="rounded-3xl bg-olive p-6 text-white shadow-soft">
+-          <PackageCheck className="mb-5 text-gold" size={34} />
+-          <p className="text-sm font-black text-gold">داخل الطلب</p>
+-          <h2 className="mt-2 text-2xl font-black">كل شيء تحتاجينه لاستخدام المنتج</h2>
+-          <div className="mt-6 flex flex-wrap gap-2">
+-            {product.included.map((item) => (
+-              <span key={item} className="rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-white/85">
+-                {item}
+-              </span>
+-            ))}
+-          </div>
+-          <p className="mt-6 rounded-2xl bg-white/10 p-4 text-sm font-bold leading-7 text-white/75">
+-            نركز على التفاصيل التي تساعدك تقررين بثقة قبل الشحن، بدون حشو زائد.
+-          </p>
+-        </div>
++              <div className="mt-6 rounded-2xl bg-white/10 p-4">
++                <Sparkles className="text-gold" size={20} />
++                <p className="mt-2 text-sm font-bold leading-7 text-white/72">
++                  نختصر عليك القرار: تعرفين ماذا يأتيك، ولماذا اخترناه، وكيف نؤكده قبل الشحن.
++                </p>
++              </div>
++            </div>
++          </div>
+         </div>
+       </section>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:40:01Z)**_
+
+The three sections are redesigned now. I’m running typecheck and reviewing the diff to make sure the icon array typing and JSX are clean.
+
+_**Agent (gpt-5.5 2026-05-10 04:40:01Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 2.4 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:40:01Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `git diff -- frontend/app/products/[slug]/page.tsx`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+diff --git a/frontend/app/products/[slug]/page.tsx b/frontend/app/products/[slug]/page.tsx
+index 8042d26..e689a02 100644
+--- a/frontend/app/products/[slug]/page.tsx
++++ b/frontend/app/products/[slug]/page.tsx
+@@ -1,5 +1,5 @@
+ import { notFound } from "next/navigation";
+-import { Award, Banknote, CheckCircle2, PackageCheck, Settings2, Star, Timer, Truck } from "lucide-react";
++import { Award, Banknote, CheckCircle2, ClipboardCheck, PackageCheck, PhoneCall, ShieldCheck, Sparkles, Star, Timer, Truck } from "lucide-react";
+ import { OfferSelector } from "@/components/product/offer-selector";
+ import { ProductCard } from "@/components/product/product-card";
+ import { ReviewCard } from "@/components/product/review-card";
+@@ -122,60 +122,81 @@ export default async function ProductPage({ params }: { params: Promise<{ slug:
+         </div>
+       </section>
+ 
+-      <section className="container-shell py-14">
+-        <div className="rounded-3xl bg-date p-6 text-white shadow-soft md:p-8">
+-          <p className="text-sm font-black text-gold">ثقة قبل التوصيل</p>
+-          <h2 className="mt-3 text-3xl font-black">مو مجرد إعلان، نأكد معك قبل الشحن عشان توصلك وأنت مقتنعة</h2>
+-          <div className="mt-6 grid gap-3 md:grid-cols-3">
++      <section className="bg-date py-14 text-white">
++        <div className="container-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
++          <div>
++            <p className="text-sm font-black text-gold">ثقة قبل التوصيل</p>
++            <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">طلب واضح قبل ما يتحرك من المستودع</h2>
++            <p className="mt-4 font-bold leading-8 text-white/72">
++              تجربة الدفع عند الاستلام تحتاج وضوح أكثر من زر شراء. لذلك نخلي خطوة التأكيد جزء من الخدمة، مو إجراء زائد.
++            </p>
++          </div>
++          <div className="grid gap-3 md:grid-cols-3">
+             {[
+-              "نشرح لك المنتج والكمية في اتصال التأكيد",
+-              "الدفع عند الاستلام داخل السعودية",
+-              "الضمان الذهبي يعطيك راحة بعد الاستلام",
+-            ].map((item) => (
+-              <div key={item} className="rounded-2xl bg-white/10 p-4 text-sm font-bold leading-7 text-white/85">
+-                {item}
++              [PhoneCall, "مكالمة قصيرة", "نراجع المنتج والكمية قبل تجهيز الشحنة."],
++              [Banknote, "الدفع عند الاستلام", "تدفعين بعد وصول الطلب، بدون دفع مسبق."],
++              [ShieldCheck, "راحة بعد الاستلام", "ضمان ذهبي 30 يوم حسب سياسة الاستبدال."],
++            ].map(([Icon, title, text], index) => (
++              <div key={title as string} className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/10 p-5">
++                <span className="absolute left-4 top-4 text-5xl font-black leading-none text-white/8">0{index + 1}</span>
++                <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-gold text-charcoal">
++                  <Icon size={22} />
++                </span>
++                <h3 className="relative mt-5 text-lg font-black">{title as string}</h3>
++                <p className="relative mt-2 text-sm font-bold leading-7 text-white/72">{text as string}</p>
+               </div>
+             ))}
+           </div>
+         </div>
+       </section>
+ 
+-      <section className="container-shell py-14">
+-        <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+-        <div className="rounded-3xl border border-charcoal/10 bg-white p-6 shadow-soft">
+-          <div className="flex items-center gap-3">
+-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-warm-100 text-olive">
+-              <Settings2 size={22} />
+-            </span>
+-            <div>
+-              <p className="text-sm font-black text-date">اختيار دفا</p>
+-              <h2 className="text-2xl font-black">نقاط عملية قبل الطلب</h2>
+-            </div>
++      <section className="bg-warm-100 py-14">
++        <div className="container-shell">
++          <div className="mb-7 max-w-3xl">
++            <p className="text-sm font-black text-olive">اختيار دفا</p>
++            <h2 className="mt-2 text-3xl font-black leading-tight">تفاصيل نراجعها لأن المنتج لازم يستاهل مكانه في مطبخك</h2>
+           </div>
+-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+-            {product.specs.map((spec) => (
+-              <div key={spec} className="flex gap-3 rounded-2xl bg-warm-50 p-4 text-sm font-bold leading-7">
+-           
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:40:06Z)**_
+
+Done. I redesigned those product-page sections:
+
+- `ثقة قبل التوصيل` is now a full dark trust band with 3 process cards, icons, and numbered visual cues.
+- `اختيار دفا` is now a cleaner checklist grid with stronger visual hierarchy.
+- `داخل الطلب` is now a separate olive kit panel with included items shown as a clear contents list.
+
+Verification: `npm run typecheck` passed.
+
+---
+
+_**User (2026-05-10 04:52:14Z)**_
+
+there is a little bug after adding the packs, when choosing a pack and add it to the cart, the user can  remove a product from the cart and profit from a discount 199 -> 159, we don't want that, when choosing a pack show only the total and the client could only remove the pack not one product of the pack
+
+
+---
+
+_**Agent (gpt-5.5 2026-05-10 04:52:29Z)**_
+
+Good catch. I’ll treat a pack as one cart group in the UI while still sending its product lines to the backend for fulfillment, so the customer can remove the whole pack only and cannot keep one item at the discounted `159` price.
+
+_**Agent (gpt-5.5 2026-05-10 04:52:29Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\store\cart-store.ts -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.5 seconds
+Output:
+"use client";
+
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { getProductById, type OfferId, type Product } from "@/data/products";
+
+export type CartItem = {
+  productId: Product["id"];
+  offerId: OfferId;
+  quantity: number;
+  unitPrice: number;
+  totalPrice: number;
+  titleAr: string;
+};
+
+type CartState = {
+  items: CartItem[];
+  isCartOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
+  addItem: (item: CartItem) => void;
+  removeItem: (productId: Product["id"], offerId: OfferId) => void;
+  clearCart: () => void;
+};
+
+export const useCartStore = create<CartState>()(
+  persist(
+    (set) => ({
+      items: [],
+      isCartOpen: false,
+      openCart: () => set({ isCartOpen: true }),
+      closeCart: () => set({ isCartOpen: false }),
+      addItem: (item) =>
+        set((state) => {
+          const existing = state.items.find((cartItem) => cartItem.productId === item.productId);
+          if (existing) {
+            return {
+              items: state.items.map((cartItem) =>
+                cartItem.productId === item.productId ? item : cartItem,
+              ),
+              isCartOpen: true,
+            };
+          }
+          return { items: [...state.items, item], isCartOpen: true };
+        }),
+      removeItem: (productId, offerId) =>
+        set((state) => ({
+          items: state.items.filter((item) => item.productId !== productId || item.offerId !== offerId),
+        })),
+      clearCart: () => set({ items: [] }),
+    }),
+    { name: "dafa-kitchen-cart" },
+  ),
+);
+
+export function makeCartItem(product: Product, offerId: OfferId): CartItem {
+  const offer =
+    offerId === "upsell_99"
+      ? { id: "upsell_99" as const, quantity: 1, price: 99, labelAr: "عرض خاص" }
+      : offerId === "pack_pair"
+        ? { id: "pack_pair" as const, quantity: 1, price: 159, labelAr: "ضمن باقة" }
+      : product.offers.find((candidate) => candidate.id === offerId);
+
+  if (!offer) {
+    throw new Error(`Unknown offer ${offerId}`);
+  }
+
+  return {
+    productId: product.id,
+    offerId,
+    quantity: offer.quantity,
+    unitPrice: Math.round(offer.price / offer.quantity),
+    totalPrice: offer.price,
+    titleAr: product.nameAr,
+  };
+}
+
+export function getCartProductIds(items: CartItem[]) {
+  return items.map((item) => item.productId);
+}
+
+export function getCartProducts(items: CartItem[]) {
+  return items.map((item) => getProductById(item.productId)).filter(Boolean) as Product[];
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:52:29Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\components\cart\cart-drawer.tsx -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.5 seconds
+Output:
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
+import { PhoneCall, Plus, ShieldCheck, Trash2, X } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { getCrossSells, getProductById, type Product } from "@/data/products";
+import { Button } from "@/components/ui/button";
+import { createOrder } from "@/lib/api";
+import { createEventId } from "@/lib/event-id";
+import { normalizeKsaPhone } from "@/lib/phone";
+import { trackEvent } from "@/lib/tracking";
+import { makeCartItem, useCartStore, type CartItem } from "@/store/cart-store";
+import { ProductVisual } from "@/components/ui/product-visual";
+
+const checkoutSchema = z.object({
+  name: z.string().trim().min(2, "اكتبي الاسم بشكل صحيح"),
+  phone: z.string().refine((value) => normalizeKsaPhone(value) !== null, "اكتبي رقم جوال سعودي صحيح"),
+});
+
+type CheckoutValues = z.infer<typeof checkoutSchema>;
+
+export function CartDrawer() {
+  const router = useRouter();
+  const { items, isCartOpen, closeCart, removeItem, addItem, clearCart } = useCartStore();
+  const [isCheckoutOpen, setCheckoutOpen] = useState(false);
+  const [pendingCustomer, setPendingCustomer] = useState<CheckoutValues | null>(null);
+  const [pendingEventId, setPendingEventId] = useState("");
+  const [isUpsellOpen, setUpsellOpen] = useState(false);
+  const [isSubmitting, setSubmitting] = useState(false);
+  const total = items.reduce((sum, item) => sum + item.totalPrice, 0);
+  const productIds = items.map((item) => item.productId);
+  const crossSells = getCrossSells(productIds);
+  const upsellOptions = useMemo(() => getCrossSells(productIds).slice(0, 1), [productIds]);
+  const trackingItems = items.map((item) => ({
+    product_id: item.productId,
+    title_ar: item.titleAr,
+    quantity: item.quantity,
+    unit_price: item.unitPrice,
+    total_price: item.totalPrice,
+  }));
+
+  function addCrossSell(product: Product) {
+    const item = makeCartItem(product, "one");
+    addItem(item);
+    trackEvent("AddToCart", {
+      eventId: createEventId("atc"),
+      value: item.totalPrice,
+      currency: "SAR",
+      productId: product.id,
+      contentIds: [product.id],
+      contentName: product.nameAr,
+      items: [
+        {
+          product_id: product.id,
+          title_ar: product.nameAr,
+          quantity: item.quantity,
+          unit_price: item.unitPrice,
+          total_price: item.totalPrice,
+        },
+      ],
+    });
+  }
+
+  function startCheckout() {
+    const eventId = createEventId("checkout");
+    setPendingEventId(eventId);
+    setCheckoutOpen(true);
+    trackEvent("InitiateCheckout", {
+      eventId,
+      value: total,
+      currency: "SAR",
+      contentIds: productIds,
+      items: trackingItems,
+    });
+  }
+
+  async function submitFinalOrder(values: CheckoutValues, eventId: string, acceptedUpsell: boolean, upsellItems: CartItem[] = []) {
+    setSubmitting(true);
+    try {
+      const normalized = normalizeKsaPhone(values.phone);
+      if (!normalized) throw new Error("رقم الجوال غير صحيح");
+      const itemsForOrder = [...useCartStore.getState().items, ...upsellItems];
+      closeCart();
+      setUpsellOpen(false);
+      setCheckoutOpen(false);
+
+      const response = await createOrder({
+        eventId,
+        name: values.name,
+        phone: normalized.e164,
+        items: itemsForOrder,
+        upsellAccepted: acceptedUpsell,
+      });
+
+      const finalItems = itemsForOrder;
+      const finalTotal = finalItems.reduce((sum, item) => sum + item.totalPrice, 0);
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(
+          "dafa-kitchen-last-order",
+          JSON.stringify({
+            orderId: response.order_id,
+            customerName: values.name,
+            phone: normalized.e164,
+            total: finalTotal,
+            items: finalItems,
+            createdAt: new Date().toISOString(),
+          }),
+        );
+      }
+      trackEvent("Purchase", {
+        eventId: response.purchase_event_id,
+        value: finalTotal,
+        currency: "SAR",
+        contentIds: finalItems.map((item) => item.productId),
+        items: finalItems.map((item) => ({
+          product_id: item.productId,
+          title_ar: item.titleAr,
+          quantity: item.quantity,
+          unit_price: item.unitPrice,
+          total_price: item.totalPrice,
+        })),
+        name: values.name,
+        phone: normalized.e164,
+        sendServer: false,
+        metadata: { order_id: response.order_id },
+      });
+      clearCart();
+      router.push(`/thank-you?order=${encodeURIComponent(response.order_id)}&total=${finalTotal}`);
+    } catch (error) {
+      alert(error instanceof Error
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:52:29Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content frontend\components\pack\pack-actions.tsx -Encoding UTF8`</summary>
+```
+Exit code: 0
+Wall time: 0.5 seconds
+Output:
+"use client";
+
+import { ShoppingCart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import type { Pack } from "@/data/packs";
+import { getPackProducts } from "@/data/packs";
+import { createEventId } from "@/lib/event-id";
+import { trackEvent } from "@/lib/tracking";
+import { makeCartItem, useCartStore } from "@/store/cart-store";
+
+export function AddPackButton({ pack, className = "" }: { pack: Pack; className?: string }) {
+  const addItem = useCartStore((state) => state.addItem);
+  const products = getPackProducts(pack);
+
+  function handleAddPack() {
+    const items = products.map((product) => ({
+      ...makeCartItem(product, pack.offerId),
+      titleAr: `${product.nameAr} - ضمن ${pack.nameAr}`,
+    }));
+    items.forEach(addItem);
+
+    trackEvent("AddToCart", {
+      eventId: createEventId("pack_atc"),
+      value: pack.price,
+      currency: "SAR",
+      contentIds: products.map((product) => product.id),
+      contentName: pack.nameAr,
+      items: items.map((item) => ({
+        product_id: item.productId,
+        title_ar: item.titleAr,
+        quantity: item.quantity,
+        unit_price: item.unitPrice,
+        total_price: item.totalPrice,
+      })),
+      metadata: { pack_id: pack.id },
+    });
+  }
+
+  return (
+    <Button onClick={handleAddPack} variant="gold" className={className}>
+      <ShoppingCart size={18} />
+      أضيفي الباقة - {pack.price} ريال
+    </Button>
+  );
+}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:52:43Z)**_
+
+I found a second related edge case too: adding a normal product after a pack could otherwise leave the other pack item behind at the discounted price. I’m going to make pack additions atomic and make replacing/removing one pack product remove the whole pack group.
+
+_**Agent (gpt-5.5 2026-05-10 04:52:57Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/store/cart-store.ts`**
+
+```diff
+@@
+ export type CartItem = {
+   productId: Product["id"];
+   offerId: OfferId;
+   quantity: number;
+   unitPrice: number;
+   totalPrice: number;
+   titleAr: string;
++  packId?: string;
++  packName?: string;
+ };
+@@
+   closeCart: () => void;
+   addItem: (item: CartItem) => void;
++  addItems: (items: CartItem[]) => void;
+   removeItem: (productId: Product["id"], offerId: OfferId) => void;
++  removePack: (packId: string) => void;
+   clearCart: () => void;
+ };
+@@
+       addItem: (item) =>
+         set((state) => {
+-          const existing = state.items.find((cartItem) => cartItem.productId === item.productId);
++          const existing = state.items.find((cartItem) => cartItem.productId === item.productId);
++          const blockedPackId = existing?.packId;
++          const baseItems = blockedPackId
++            ? state.items.filter((cartItem) => cartItem.packId !== blockedPackId)
++            : state.items;
+           if (existing) {
+             return {
+-              items: state.items.map((cartItem) =>
++              items: baseItems.map((cartItem) =>
+                 cartItem.productId === item.productId ? item : cartItem,
+-              ),
++              ).concat(baseItems.some((cartItem) => cartItem.productId === item.productId) ? [] : [item]),
+               isCartOpen: true,
+             };
+           }
+-          return { items: [...state.items, item], isCartOpen: true };
++          return { items: [...baseItems, item], isCartOpen: true };
++        }),
++      addItems: (items) =>
++        set((state) => {
++          const incomingProductIds = new Set(items.map((item) => item.productId));
++          const incomingPackIds = new Set(items.map((item) => item.packId).filter(Boolean));
++          const replacedPackIds = new Set(
++            state.items
++              .filter((item) => incomingProductIds.has(item.productId) && item.packId)
++              .map((item) => item.packId),
++          );
++          const nextItems = state.items.filter((item) => {
++            if (incomingProductIds.has(item.productId)) return false;
++            if (item.packId && incomingPackIds.has(item.packId)) return false;
++            if (item.packId && replacedPackIds.has(item.packId)) return false;
++            return true;
++          });
++          return { items: [...nextItems, ...items], isCartOpen: true };
+         }),
+       removeItem: (productId, offerId) =>
+-        set((state) => ({
+-          items: state.items.filter((item) => item.productId !== productId || item.offerId !== offerId),
+-        })),
++        set((state) => {
++          const target = state.items.find((item) => item.productId === productId && item.offerId === offerId);
++          if (target?.packId) {
++            return { items: state.items.filter((item) => item.packId !== target.packId) };
++          }
++          return { items: state.items.filter((item) => item.productId !== productId || item.offerId !== offerId) };
++        }),
++      removePack: (packId) =>
++        set((state) => ({
++          items: state.items.filter((item) => item.packId !== packId),
++        })),
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:53:03Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/pack/pack-actions.tsx`**
+
+```diff
+@@
+ export function AddPackButton({ pack, className = "" }: { pack: Pack; className?: string }) {
+-  const addItem = useCartStore((state) => state.addItem);
++  const addItems = useCartStore((state) => state.addItems);
+   const products = getPackProducts(pack);
+@@
+       ...makeCartItem(product, pack.offerId),
+       titleAr: `${product.nameAr} - ضمن ${pack.nameAr}`,
++      packId: pack.id,
++      packName: pack.nameAr,
+     }));
+-    items.forEach(addItem);
++    addItems(items);
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:53:09Z)**_
+
+Now I’m grouping pack items in the cart and checkout modal. The order payload will still contain both product lines for fulfillment, but the customer-facing cart will show one removable pack row with one total.
+
+_**Agent (gpt-5.5 2026-05-10 04:53:27Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/cart/cart-drawer.tsx`**
+
+```diff
+@@
+ type CheckoutValues = z.infer<typeof checkoutSchema>;
+ 
++type CartDisplayGroup = {
++  id: string;
++  title: string;
++  totalPrice: number;
++  quantityLabel: string;
++  items: CartItem[];
++  packId?: string;
++};
++
++function getCartDisplayGroups(items: CartItem[]): CartDisplayGroup[] {
++  const groups: CartDisplayGroup[] = [];
++  const seenPackIds = new Set<string>();
++
++  items.forEach((item) => {
++    if (!item.packId) {
++      groups.push({
++        id: `${item.productId}-${item.offerId}`,
++        title: item.titleAr,
++        totalPrice: item.totalPrice,
++        quantityLabel: `الكمية: ${item.quantity}`,
++        items: [item],
++      });
++      return;
++    }
++
++    if (seenPackIds.has(item.packId)) return;
++    seenPackIds.add(item.packId);
++    const packItems = items.filter((candidate) => candidate.packId === item.packId);
++    groups.push({
++      id: item.packId,
++      title: item.packName ?? "باقة مطبخ دفا",
++      totalPrice: packItems.reduce((sum, candidate) => sum + candidate.totalPrice, 0),
++      quantityLabel: `${packItems.length} منتجات ضمن الباقة`,
++      items: packItems,
++      packId: item.packId,
++    });
++  });
++
++  return groups;
++}
++
+ export function CartDrawer() {
+   const router = useRouter();
+-  const { items, isCartOpen, closeCart, removeItem, addItem, clearCart } = useCartStore();
++  const { items, isCartOpen, closeCart, removeItem, removePack, addItem, clearCart } = useCartStore();
+@@
+   const total = items.reduce((sum, item) => sum + item.totalPrice, 0);
++  const cartGroups = getCartDisplayGroups(items);
+   const productIds = items.map((item) => item.productId);
+@@
+-              {items.map((item) => (
+-                <div key={`${item.productId}-${item.offerId}`} className="rounded-2xl bg-white p-4">
++              {cartGroups.map((group) => {
++                const previewProduct = getProductById(group.items[0].productId);
++
++                return (
++                <div key={group.id} className="rounded-2xl bg-white p-4">
+                   <div className="flex items-start justify-between gap-3">
+-                    {getProductById(item.productId) ? (
++                    {previewProduct ? (
+                       <ProductVisual
+-                        product={getProductById(item.productId)!}
++                        product={previewProduct}
+                         compact
+                         className="w-24 shrink-0 rounded-xl shadow-none"
+                       />
+                     ) : null}
+                     <div className="min-w-0 flex-1">
+-                      <p className="font-black">{item.titleAr}</p>
+-                      <p className="text-sm text-charcoal/60">الكمية: {item.quantity}</p>
++                      <p className="font-black">{group.title}</p>
++                      <p className="text-sm text-charcoal/60">{group.quantityLabel}</p>
++                      {group.packId ? (
++                        <p className="mt-1 rounded-full bg-warm-100 px-3 py-1 text-xs font-black text-date">تزال كباقة واحدة</p>
++                      ) : null}
+                     </div>
+                     <button
+                       type="button"
+                       className="focus-ring rounded-lg p-2 text-red-700 hover:bg-red-50"
+-                      onClick={() => removeItem(item.productId, item.offerId)}
+-                      aria-label="حذف المنتج"
++                      onClick={() => (group.packId ? removePack(group.packId) : removeItem(group.items[0].productId, group.items[0].offerId))}
++                      aria-label={group.packId ? "حذف الباقة" : "حذف المنتج"}
+                     >
+                       <Trash2 size={18} />
+                     </button>
+                   </div>
+-                  <p className="mt-3 text-lg font-black">{item.totalPrice} ريال</p>
++                  <p className="mt-3 text-lg font-black">{group.totalPrice} ريال</p>
+                 </div>
+-              ))}
++                );
++              })}
+             </div>
+           )}
+@@
+           items={items}
++          groups={cartGroups}
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:53:35Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/cart/cart-drawer.tsx`**
+
+```diff
+@@
+ function CheckoutModal({
+   items,
++  groups,
+   total,
+   isSubmitting,
+   onClose,
+@@
+ }: {
+   items: CartItem[];
++  groups: CartDisplayGroup[];
+   total: number;
+   isSubmitting: boolean;
+@@
+-              {items.map((item) => (
++              {groups.map((group) => (
+                 <div
+-                  key={`${item.productId}-${item.offerId}`}
++                  key={group.id}
+                   className="flex items-center justify-between gap-3 rounded-xl bg-white px-3 py-2 text-sm"
+                 >
+-                  <span className="font-bold">{item.titleAr}</span>
++                  <span className="font-bold">{group.title}</span>
+                   <span className="flex shrink-0 items-center gap-3 text-xs font-black text-charcoal/60">
+-                    <span>x{item.quantity}</span>
+-                    <span className="text-sm text-charcoal">{item.totalPrice} ريال</span>
++                    <span>{group.packId ? "باقة" : `x${group.items[0].quantity}`}</span>
++                    <span className="text-sm text-charcoal">{group.totalPrice} ريال</span>
+                     <span className="hidden">
+-                    x{item.quantity} - {item.totalPrice} ريال
++                    {group.quantityLabel} - {group.totalPrice} ريال
+                     </span>
+                   </span>
+                 </div>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:53:40Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 3.2 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:53:40Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `git diff -- frontend/store/cart-store.ts frontend/components/pack/pack-actions.tsx frontend/components/cart/cart-drawer.tsx`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+diff --git a/frontend/components/cart/cart-drawer.tsx b/frontend/components/cart/cart-drawer.tsx
+index ede1c8d..b758819 100644
+--- a/frontend/components/cart/cart-drawer.tsx
++++ b/frontend/components/cart/cart-drawer.tsx
+@@ -22,15 +22,57 @@ const checkoutSchema = z.object({
+ 
+ type CheckoutValues = z.infer<typeof checkoutSchema>;
+ 
++type CartDisplayGroup = {
++  id: string;
++  title: string;
++  totalPrice: number;
++  quantityLabel: string;
++  items: CartItem[];
++  packId?: string;
++};
++
++function getCartDisplayGroups(items: CartItem[]): CartDisplayGroup[] {
++  const groups: CartDisplayGroup[] = [];
++  const seenPackIds = new Set<string>();
++
++  items.forEach((item) => {
++    if (!item.packId) {
++      groups.push({
++        id: `${item.productId}-${item.offerId}`,
++        title: item.titleAr,
++        totalPrice: item.totalPrice,
++        quantityLabel: `الكمية: ${item.quantity}`,
++        items: [item],
++      });
++      return;
++    }
++
++    if (seenPackIds.has(item.packId)) return;
++    seenPackIds.add(item.packId);
++    const packItems = items.filter((candidate) => candidate.packId === item.packId);
++    groups.push({
++      id: item.packId,
++      title: item.packName ?? "باقة مطبخ دفا",
++      totalPrice: packItems.reduce((sum, candidate) => sum + candidate.totalPrice, 0),
++      quantityLabel: `${packItems.length} منتجات ضمن الباقة`,
++      items: packItems,
++      packId: item.packId,
++    });
++  });
++
++  return groups;
++}
++
+ export function CartDrawer() {
+   const router = useRouter();
+-  const { items, isCartOpen, closeCart, removeItem, addItem, clearCart } = useCartStore();
++  const { items, isCartOpen, closeCart, removeItem, removePack, addItem, clearCart } = useCartStore();
+   const [isCheckoutOpen, setCheckoutOpen] = useState(false);
+   const [pendingCustomer, setPendingCustomer] = useState<CheckoutValues | null>(null);
+   const [pendingEventId, setPendingEventId] = useState("");
+   const [isUpsellOpen, setUpsellOpen] = useState(false);
+   const [isSubmitting, setSubmitting] = useState(false);
+   const total = items.reduce((sum, item) => sum + item.totalPrice, 0);
++  const cartGroups = getCartDisplayGroups(items);
+   const productIds = items.map((item) => item.productId);
+   const crossSells = getCrossSells(productIds);
+   const upsellOptions = useMemo(() => getCrossSells(productIds).slice(0, 1), [productIds]);
+@@ -166,32 +208,39 @@ export function CartDrawer() {
+             </div>
+           ) : (
+             <div className="grid gap-3">
+-              {items.map((item) => (
+-                <div key={`${item.productId}-${item.offerId}`} className="rounded-2xl bg-white p-4">
++              {cartGroups.map((group) => {
++                const previewProduct = getProductById(group.items[0].productId);
++
++                return (
++                <div key={group.id} className="rounded-2xl bg-white p-4">
+                   <div className="flex items-start justify-between gap-3">
+-                    {getProductById(item.productId) ? (
++                    {previewProduct ? (
+                       <ProductVisual
+-                        product={getProductById(item.productId)!}
++                        product={previewProduct}
+                         compact
+                         className="w-24 shrink-0 rounded-xl shadow-none"
+                       />
+                     ) : null}
+                     <div className="min-w-0 flex-1">
+-                      <p className="font-black">{item.titleAr}</p>
+-                      <p className="text-sm text-charcoal/60">الكمية: {item.quantity}</p>
++                      <p className="font-black">{group.title}</p>
++                      <p className="text-sm text-charcoal/60">{group.quantityLabel}</p>
++                      {group.packId ? (
++                        <p className="mt-1 rounded-full bg-warm-100 px-3 py-1 text-xs font-black text-date">تزال كباقة واحدة</p>
++                      ) : null}
+                     </div>
+                     <button
+                       type="button"
+                       className="focus-ring rounded-lg p-2 text-red-700 hover:bg-red-50"
+-                      onClick={() => removeItem(item.productId, item.offerId)}
+-                      aria-label="حذف المنتج"
++                      onClick={() => (group.packId ? removePack(group.packId) : removeItem(group.items[0].productId, group.items[0].offerId))}
++                      aria-label={group.packId ? "حذف الباقة" : "حذف المنتج"}
+                     >
+                       <Trash2 size={18} />
+                     </button>
+                   </div>
+-                  <p className="mt-3 text-lg font-black">{item.totalPrice} ريال</p>
++                  <p className="mt-3 text-lg font-black">{group.totalPrice} ريال</p>
+                 </div>
+-              ))}
++                );
++              })}
+             </div>
+    
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:53:56Z)**_
+
+The protection is in place and typecheck passes. I’m doing one small cleanup now so the checkout modal only receives the grouped cart rows it actually displays.
+
+_**Agent (gpt-5.5 2026-05-10 04:53:57Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/cart/cart-drawer.tsx`**
+
+```diff
+@@
+         <CheckoutModal
+-          items={items}
+           groups={cartGroups}
+           total={total}
+@@
+ function CheckoutModal({
+-  items,
+   groups,
+   total,
+@@
+ }: {
+-  items: CartItem[];
+   groups: CartDisplayGroup[];
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:54:01Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 2.6 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:54:07Z)**_
+
+Fixed. Packs now behave as one grouped cart item:
+
+- Adding a pack stores both fulfillment items internally, but the cart displays only the pack name and total.
+- The customer can remove the pack only as a whole.
+- If they add a normal product that overlaps with an existing pack, the whole pack is removed first, so no one can keep one item at the `159` discounted pack price.
+- Checkout modal also shows the pack as one grouped row.
+
+Verification: `npm run typecheck` passed.
+
+---
+
+_**User (2026-05-10 04:56:37Z)**_
+
+for the cart no need to show image in case of the pack, also remove this "تزال كباقة واحدة", and maybe show the names of the products of the pack
+
+
+---
+
+_**Agent (gpt-5.5 2026-05-10 04:56:41Z)**_
+
+I’ll adjust the grouped pack row only: no product image for packs, remove the “تزال كباقة واحدة” label, and show the included product names under the pack title.
+
+_**Agent (gpt-5.5 2026-05-10 04:56:47Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `frontend/components/cart/cart-drawer.tsx`**
+
+```diff
+@@
+                 return (
+                 <div key={group.id} className="rounded-2xl bg-white p-4">
+                   <div className="flex items-start justify-between gap-3">
+-                    {previewProduct ? (
++                    {!group.packId && previewProduct ? (
+                       <ProductVisual
+                         product={previewProduct}
+                         compact
+@@
+                     <div className="min-w-0 flex-1">
+                       <p className="font-black">{group.title}</p>
+                       <p className="text-sm text-charcoal/60">{group.quantityLabel}</p>
+                       {group.packId ? (
+-                        <p className="mt-1 rounded-full bg-warm-100 px-3 py-1 text-xs font-black text-date">تزال كباقة واحدة</p>
++                        <div className="mt-2 grid gap-1">
++                          {group.items.map((item) => (
++                            <p key={`${item.productId}-${item.offerId}`} className="text-xs font-bold leading-5 text-charcoal/55">
++                              {item.titleAr.replace(` - ضمن ${group.title}`, "")}
++                            </p>
++                          ))}
++                        </div>
+                       ) : null}
+                     </div>
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:56:49Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 2.6 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-10 04:56:54Z)**_
+
+Done. For pack rows in the cart:
+
+- Removed the image.
+- Removed `تزال كباقة واحدة`.
+- Added the names of the products included in the pack under the pack title.
+
+Verification: `npm run typecheck` passed.
