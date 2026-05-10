@@ -28,6 +28,12 @@ services:
       ADMIN_PASSWORD: "admin"
       ENABLE_SHEETS_WEBHOOK: "true"
       ORDER_WEBHOOK_URL: "https://script.google.com/macros/s/AKfycbxa6oKq3s8B98l08vb6I4kJf6-uogoNTWHaVRWBM2sH4KI4-CuVFjxYWsZx179YbSFx/exec"
+      META_PIXEL_ID: ""
+      META_ACCESS_TOKEN: ""
+      TIKTOK_PIXEL_CODE: ""
+      TIKTOK_ACCESS_TOKEN: ""
+      SNAP_PIXEL_ID: ""
+      SNAP_ACCESS_TOKEN: ""
     ports:
       - "8000:8000"
     depends_on:
@@ -40,9 +46,16 @@ services:
       args:
         NEXT_PUBLIC_SITE_URL: http://localhost:3000
         NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+        NEXT_PUBLIC_META_PIXEL_ID: ""
+        NEXT_PUBLIC_TIKTOK_PIXEL_ID: ""
+        NEXT_PUBLIC_SNAP_PIXEL_ID: ""
+        NEXT_PUBLIC_ENABLE_PIXEL_DEBUG: "true"
     environment:
       NEXT_PUBLIC_SITE_URL: http://localhost:3000
       NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+      NEXT_PUBLIC_META_PIXEL_ID: ""
+      NEXT_PUBLIC_TIKTOK_PIXEL_ID: ""
+      NEXT_PUBLIC_SNAP_PIXEL_ID: ""
       NEXT_PUBLIC_ENABLE_PIXEL_DEBUG: "true"
     ports:
       - "3000:3000"
@@ -51,4 +64,3 @@ services:
 
 volumes:
   postgres-data:
-
