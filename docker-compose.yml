@@ -22,6 +22,7 @@ services:
       APP_ENV: local
       API_BASE_URL: http://localhost:8000
       FRONTEND_URL: http://localhost:3000
+      CORS_ORIGINS: http://localhost:3000
       DATABASE_URL: postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
       ENABLE_CAPI: "false"
       ADMIN_USERNAME: "admin"
@@ -36,6 +37,11 @@ services:
       SNAP_ACCESS_TOKEN: ""
     ports:
       - "8000:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8000/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     depends_on:
       dafa_kitchen_database:
         condition: service_healthy
@@ -59,8 +65,14 @@ services:
       NEXT_PUBLIC_ENABLE_PIXEL_DEBUG: "true"
     ports:
       - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3000').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
 
 volumes:
   postgres-data:

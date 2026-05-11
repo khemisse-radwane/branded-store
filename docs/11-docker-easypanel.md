@@ -6,7 +6,7 @@ Create root `docker-compose.yml` with services:
 
 - `frontend`
 - `backend`
-- `dafakitchen_database`
+- `dafa_kitchen_database`
 
 Ports:
 
@@ -25,7 +25,7 @@ POSTGRES_PASSWORD=dafakitchen
 Local backend database URL:
 
 ```env
-DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafakitchen_database:5432/dafa_kitchen
+DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
 ```
 
 ## Frontend Docker
@@ -97,7 +97,8 @@ Backend:
 APP_ENV=production
 API_BASE_URL=https://api.dafakitchen.shop
 FRONTEND_URL=https://dafakitchen.shop
-DATABASE_URL=
+CORS_ORIGINS=https://dafakitchen.shop
+DATABASE_URL=postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable
 ORDER_WEBHOOK_URL=
 ORDER_WEBHOOK_SECRET=
 META_PIXEL_ID=
@@ -119,15 +120,22 @@ Allow:
 
 Do not use wildcard CORS in production.
 
+Set `CORS_ORIGINS` to a comma-separated list if preview or staging frontend domains need API access.
+Browser origins must include the scheme, so use `https://dafakitchen.shop`, not only `dafakitchen.shop`.
+
+## Frontend Build Args
+
+Next.js inlines `NEXT_PUBLIC_*` values during the image build. In EasyPanel, configure these as build arguments for the frontend app, not only runtime environment variables. The Dockerfile defaults to the production domains above, but explicit build args are safer when domains or pixel IDs change.
+
 ## Deployment Checklist
 
 - DNS points to EasyPanel.
 - SSL active for both domains.
 - Frontend env uses production API URL.
+- Frontend build args include production `NEXT_PUBLIC_*` values.
 - Backend CORS allows production frontend.
 - Database migrations ran.
 - Health endpoint works.
 - Test order reaches database.
 - Test order reaches Sheet.
 - Pixel test tools confirm events.
-
