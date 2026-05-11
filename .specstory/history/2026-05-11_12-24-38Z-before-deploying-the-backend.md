@@ -2396,3 +2396,607 @@ _**User (2026-05-11 12:49:57Z)**_
 
 this is my db link, so update what should be updated postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable.
 and also you may need to add origin, here is my website dafakitchen.shop   
+
+
+---
+
+_**Agent (gpt-5.5 2026-05-11 12:50:09Z)**_
+
+Good catch on the database URL. Since your URL uses the common `postgres://` scheme, I’m going to make the backend normalize that into the SQLAlchemy/psycopg form it expects, then update the deployment examples/docs with your exact host and the proper `https://dafakitchen.shop` origin.
+
+_**Agent (gpt-5.5 2026-05-11 12:50:09Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `Get-Content backend\app\core\config.py`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+from functools import lru_cache
+
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+
+    app_env: str = "local"
+    api_base_url: str = "http://localhost:8000"
+    frontend_url: str = "http://localhost:3000"
+    cors_origins: str | None = None
+    database_url: str = "postgresql+psycopg://dafakitchen:dafakitchen@localhost:5432/dafa_kitchen"
+
+    order_webhook_url: str | None = None
+    order_webhook_secret: str | None = None
+
+    meta_pixel_id: str | None = None
+    meta_access_token: str | None = None
+    meta_graph_version: str = "v22.0"
+    meta_test_event_code: str | None = None
+
+    tiktok_pixel_code: str | None = None
+    tiktok_access_token: str | None = None
+    tiktok_events_api_url: str = "https://business-api.tiktok.com/open_api/v1.3/pixel/track/"
+    tiktok_test_event_code: str | None = None
+    tiktok_phone_hash_mode: str = Field(default="e164", pattern="^(e164|digits)$")
+
+    snap_pixel_id: str | None = None
+    snap_access_token: str | None = None
+    snap_test_event_code: str | None = None
+
+    enable_capi: bool = True
+    enable_sheets_webhook: bool = True
+
+    admin_username: str | None = None
+    admin_password: str | None = None
+
+    maxmind_city_db_path: str | None = None
+    maxmind_country_db_path: str | None = None
+    maxmind_anonymous_ip_db_path: str | None = None
+    maxmind_account_id: str | None = None
+    maxmind_license_key: str | None = None
+    maxmind_edition_ids: str = "GeoLite2-City GeoLite2-Country GeoLite2-Anonymous-IP"
+
+    vpn_check_url: str | None = None
+    vpn_check_api_key: str | None = None
+    vpn_check_api_key_header: str = "Authorization"
+    analytics_target_country: str = "SA"
+    analytics_allow_private_ips: bool = False
+
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:50:09Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `rg "DATABASE_URL|CORS_ORIGINS|dafakitchen_db|dafa_kitchen_database|dafakitchen.shop" backend docs docker-compose.yml -n`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+docker-compose.yml:2:  dafa_kitchen_database:
+docker-compose.yml:25:      CORS_ORIGINS: http://localhost:3000
+docker-compose.yml:26:      DATABASE_URL: postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
+docker-compose.yml:46:      dafa_kitchen_database:
+docs\04-site-architecture.md:59:- Domain text: `dafakitchen.shop`.
+docs\11-docker-easypanel.md:9:- `dafa_kitchen_database`
+docs\11-docker-easypanel.md:28:DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
+docs\11-docker-easypanel.md:71:- Frontend: `https://dafakitchen.shop`
+docs\11-docker-easypanel.md:72:- Backend: `https://api.dafakitchen.shop`
+docs\11-docker-easypanel.md:86:NEXT_PUBLIC_SITE_URL=https://dafakitchen.shop
+docs\11-docker-easypanel.md:87:NEXT_PUBLIC_API_BASE_URL=https://api.dafakitchen.shop
+docs\11-docker-easypanel.md:98:API_BASE_URL=https://api.dafakitchen.shop
+docs\11-docker-easypanel.md:99:FRONTEND_URL=https://dafakitchen.shop
+docs\11-docker-easypanel.md:100:CORS_ORIGINS=https://dafakitchen.shop
+docs\11-docker-easypanel.md:101:DATABASE_URL=
+docs\11-docker-easypanel.md:119:- `https://dafakitchen.shop`
+docs\11-docker-easypanel.md:123:Set `CORS_ORIGINS` to a comma-separated list if preview or staging frontend domains need API access.
+docs\13-coder-prompt.md:33:- Domain: `dafakitchen.shop`
+docs\13-coder-prompt.md:34:- Backend: `api.dafakitchen.shop`
+docs\06-backend-spec.md:106:    "landing_page": "https://dafakitchen.shop/products/dafaya-food-warmer",
+docs\06-backend-spec.md:214:DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafakitchen_database:5432/dafa_kitchen
+backend\alembic.ini:7:sqlalchemy.url = postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
+docs\README.md:4:Domain: `dafakitchen.shop`  
+docs\README.md:5:Backend domain: `api.dafakitchen.shop`  
+backend\.env.example:4:CORS_ORIGINS=http://localhost:3000,https://dafakitchen.shop
+backend\.env.example:6:DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
+backend\app\main.py:23:    "https://dafakitchen.shop",
+docs\templates\orders-sample.csv:2:DK-20260430-0001,2026-04-30T15:00:00Z,سارة,+9665XXXXXXXX,pending_confirmation,دفاية الطعام الكهربائية x1,199,0,0,199,SAR,COD,false,https://dafakitchen.shop/products/dafaya-food-warmer,tiktok,paid_social,food_warmer_test,ugc_01,,evt_sample_001,2026-04-30T15:00:05Z
+docs\templates\sheet-columns.csv:15:landing_page,Landing page URL,https://dafakitchen.shop/products/dafaya-food-warmer
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:50:23Z)**_
+
+I’m also making the database URL handling more forgiving instead of relying on everyone remembering the SQLAlchemy-specific scheme. That way the Easypanel value can stay exactly as Hostinger gives it.
+
+_**Agent (gpt-5.5 2026-05-11 12:50:30Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `backend/app/core/config.py`**
+
+```diff
+@@
+-from pydantic import Field
++from pydantic import Field, field_validator
+@@
+ class Settings(BaseSettings):
+@@
+     analytics_target_country: str = "SA"
+     analytics_allow_private_ips: bool = False
++
++    @field_validator("database_url", mode="before")
++    @classmethod
++    def normalize_database_url(cls, value: str) -> str:
++        if value.startswith("postgres://"):
++            return value.replace("postgres://", "postgresql+psycopg://", 1)
++        if value.startswith("postgresql://"):
++            return value.replace("postgresql://", "postgresql+psycopg://", 1)
++        return value
+```
+
+**Update: `backend/.env.example`**
+
+```diff
+@@
+-CORS_ORIGINS=http://localhost:3000,https://dafakitchen.shop
++CORS_ORIGINS=https://dafakitchen.shop
+ 
+-DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
++DATABASE_URL=postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable
+```
+
+**Update: `docs/11-docker-easypanel.md`**
+
+```diff
+@@
+ CORS_ORIGINS=https://dafakitchen.shop
+-DATABASE_URL=
++DATABASE_URL=postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable
+ ORDER_WEBHOOK_URL=
+ ORDER_WEBHOOK_SECRET=
+@@
+ Do not use wildcard CORS in production.
+ 
+ Set `CORS_ORIGINS` to a comma-separated list if preview or staging frontend domains need API access.
++Browser origins must include the scheme, so use `https://dafakitchen.shop`, not only `dafakitchen.shop`.
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:50:40Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `python -m compileall app`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+Listing 'app'...
+Listing 'app\\core'...
+Compiling 'app\\core\\config.py'...
+Listing 'app\\db'...
+Listing 'app\\routers'...
+Listing 'app\\schemas'...
+Listing 'app\\services'...
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:50:40Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command**</summary>
+```bash
+@'
+from app.core.config import Settings
+s = Settings(database_url='postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable')
+print(s.database_url)
+'@ | python -
+```
+```
+Exit code: 0
+Wall time: 1 seconds
+Output:
+postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:50:40Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `git diff -- backend/app/core/config.py backend/.env.example docs/11-docker-easypanel.md`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+diff --git a/backend/.env.example b/backend/.env.example
+index 4062823..f5ce313 100644
+--- a/backend/.env.example
++++ b/backend/.env.example
+@@ -1,8 +1,9 @@
+ APP_ENV=local
+ API_BASE_URL=http://localhost:8000
+ FRONTEND_URL=http://localhost:3000
++CORS_ORIGINS=https://dafakitchen.shop
+ 
+-DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
++DATABASE_URL=postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable
+ 
+ 
+ 
+@@ -40,5 +41,4 @@ VPN_CHECK_API_KEY_HEADER=Authorization
+ ANALYTICS_TARGET_COUNTRY=SA
+ ANALYTICS_ALLOW_PRIVATE_IPS=false
+ 
+-ENABLE_SHEETS_WEBHOOK=true
+ ORDER_WEBHOOK_URL="https://script.google.com/macros/s/AKfycbxL9V-qTLgth05kU5Adpd1kxgpba-gVz9JZHzNyK81tURKt_HdMjjcmjf4MutejgLcN/exec"
+diff --git a/backend/app/core/config.py b/backend/app/core/config.py
+index a88f644..1130853 100644
+--- a/backend/app/core/config.py
++++ b/backend/app/core/config.py
+@@ -1,6 +1,6 @@
+ from functools import lru_cache
+ 
+-from pydantic import Field
++from pydantic import Field, field_validator
+ from pydantic_settings import BaseSettings, SettingsConfigDict
+ 
+ 
+@@ -10,6 +10,7 @@ class Settings(BaseSettings):
+     app_env: str = "local"
+     api_base_url: str = "http://localhost:8000"
+     frontend_url: str = "http://localhost:3000"
++    cors_origins: str | None = None
+     database_url: str = "postgresql+psycopg://dafakitchen:dafakitchen@localhost:5432/dafa_kitchen"
+ 
+     order_webhook_url: str | None = None
+@@ -49,6 +50,15 @@ class Settings(BaseSettings):
+     analytics_target_country: str = "SA"
+     analytics_allow_private_ips: bool = False
+ 
++    @field_validator("database_url", mode="before")
++    @classmethod
++    def normalize_database_url(cls, value: str) -> str:
++        if value.startswith("postgres://"):
++            return value.replace("postgres://", "postgresql+psycopg://", 1)
++        if value.startswith("postgresql://"):
++            return value.replace("postgresql://", "postgresql+psycopg://", 1)
++        return value
++
+ 
+ @lru_cache
+ def get_settings() -> Settings:
+diff --git a/docs/11-docker-easypanel.md b/docs/11-docker-easypanel.md
+index e9ea70f..b1ad2cc 100644
+--- a/docs/11-docker-easypanel.md
++++ b/docs/11-docker-easypanel.md
+@@ -6,7 +6,7 @@ Create root `docker-compose.yml` with services:
+ 
+ - `frontend`
+ - `backend`
+-- `dafakitchen_database`
++- `dafa_kitchen_database`
+ 
+ Ports:
+ 
+@@ -25,7 +25,7 @@ POSTGRES_PASSWORD=dafakitchen
+ Local backend database URL:
+ 
+ ```env
+-DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafakitchen_database:5432/dafa_kitchen
++DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
+ ```
+ 
+ ## Frontend Docker
+@@ -97,7 +97,8 @@ Backend:
+ APP_ENV=production
+ API_BASE_URL=https://api.dafakitchen.shop
+ FRONTEND_URL=https://dafakitchen.shop
+-DATABASE_URL=
++CORS_ORIGINS=https://dafakitchen.shop
++DATABASE_URL=postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable
+ ORDER_WEBHOOK_URL=
+ ORDER_WEBHOOK_SECRET=
+ META_PIXEL_ID=
+@@ -119,15 +120,22 @@ Allow:
+ 
+ Do not use wildcard CORS in production.
+ 
++Set `CORS_ORIGINS` to a comma-separated list if preview or staging frontend domains need API access.
++Browser origins must include the scheme, so use `https://dafakitchen.shop`, not only `dafakitchen.shop`.
++
++## Frontend Build Args
++
++Next.js inlines `NEXT_PUBLIC_*` values during the image build. In EasyPanel, configure these as build arguments for the frontend app, not only runtime environment variables. The Dockerfile defaults to the production domains above, but explicit build args are safer when domains or pixel IDs change.
++
+ ## Deployment Checklist
+ 
+ - DNS points to EasyPanel.
+ - SSL active for both domains.
+ - Frontend env uses production API URL.
++- Frontend build args include production `NEXT_PUBLIC_*` values.
+ - Backend CORS allows production frontend.
+ - Database migrations ran.
+ - Health endpoint works.
+ - Test order reaches database.
+ - Test order reaches Sheet.
+ - Pixel test tools confirm events.
+-
+warning: in the working copy of 'backend/.env.example', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/app/core/config.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/11-docker-easypanel.md', LF will be replaced by CRLF the next time Git touches it
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:50:52Z)**_
+
+The normalization check passed: your `postgres://...` value becomes `postgresql+psycopg://...` inside the app, so migrations and SQLAlchemy will use the right driver without you changing the Easypanel value. I’m aligning the env examples now so they read like deployment values instead of half-local, half-production.
+
+_**Agent (gpt-5.5 2026-05-11 12:50:54Z)**_
+
+<tool-use data-tool-type="write" data-tool-name="apply_patch"><details>
+<summary>Tool use: **apply_patch**</summary>
+**Update: `backend/.env.example`**
+
+```diff
+@@
+-APP_ENV=local
+-API_BASE_URL=http://localhost:8000
+-FRONTEND_URL=http://localhost:3000
++APP_ENV=production
++API_BASE_URL=https://api.dafakitchen.shop
++FRONTEND_URL=https://dafakitchen.shop
+ CORS_ORIGINS=https://dafakitchen.shop
+```
+
+**Update: `frontend/.env.example`**
+
+```diff
+@@
+-NEXT_PUBLIC_SITE_URL=http://localhost:3000
+-NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
++NEXT_PUBLIC_SITE_URL=https://dafakitchen.shop
++NEXT_PUBLIC_API_BASE_URL=https://api.dafakitchen.shop
+@@
+-NEXT_PUBLIC_ENABLE_PIXEL_DEBUG=true
++NEXT_PUBLIC_ENABLE_PIXEL_DEBUG=false
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:51:01Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `npm run typecheck`</summary>
+```
+Exit code: 0
+Wall time: 2.5 seconds
+Output:
+
+> dafa-kitchen-frontend@1.0.0 typecheck
+> tsc --noEmit
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:51:01Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `python -m compileall app`</summary>
+```
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+Listing 'app'...
+Listing 'app\\core'...
+Listing 'app\\db'...
+Listing 'app\\routers'...
+Listing 'app\\schemas'...
+Listing 'app\\services'...
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:51:01Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command**</summary>
+```bash
+@'
+from app.core.config import Settings
+s = Settings(database_url='postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable')
+print(s.database_url)
+'@ | python -
+```
+```
+Exit code: 0
+Wall time: 0.5 seconds
+Output:
+postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:51:01Z)**_
+
+<tool-use data-tool-type="shell" data-tool-name="shell_command"><details>
+<summary>Tool use: **shell_command** `git diff -- backend/app/core/config.py backend/.env.example frontend/.env.example docs/11-docker-easypanel.md`</summary>
+```
+Exit code: 0
+Wall time: 0.2 seconds
+Output:
+diff --git a/backend/.env.example b/backend/.env.example
+index 4062823..81dfbb9 100644
+--- a/backend/.env.example
++++ b/backend/.env.example
+@@ -1,8 +1,9 @@
+-APP_ENV=local
+-API_BASE_URL=http://localhost:8000
+-FRONTEND_URL=http://localhost:3000
++APP_ENV=production
++API_BASE_URL=https://api.dafakitchen.shop
++FRONTEND_URL=https://dafakitchen.shop
++CORS_ORIGINS=https://dafakitchen.shop
+ 
+-DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
++DATABASE_URL=postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable
+ 
+ 
+ 
+@@ -40,5 +41,4 @@ VPN_CHECK_API_KEY_HEADER=Authorization
+ ANALYTICS_TARGET_COUNTRY=SA
+ ANALYTICS_ALLOW_PRIVATE_IPS=false
+ 
+-ENABLE_SHEETS_WEBHOOK=true
+ ORDER_WEBHOOK_URL="https://script.google.com/macros/s/AKfycbxL9V-qTLgth05kU5Adpd1kxgpba-gVz9JZHzNyK81tURKt_HdMjjcmjf4MutejgLcN/exec"
+diff --git a/backend/app/core/config.py b/backend/app/core/config.py
+index a88f644..1130853 100644
+--- a/backend/app/core/config.py
++++ b/backend/app/core/config.py
+@@ -1,6 +1,6 @@
+ from functools import lru_cache
+ 
+-from pydantic import Field
++from pydantic import Field, field_validator
+ from pydantic_settings import BaseSettings, SettingsConfigDict
+ 
+ 
+@@ -10,6 +10,7 @@ class Settings(BaseSettings):
+     app_env: str = "local"
+     api_base_url: str = "http://localhost:8000"
+     frontend_url: str = "http://localhost:3000"
++    cors_origins: str | None = None
+     database_url: str = "postgresql+psycopg://dafakitchen:dafakitchen@localhost:5432/dafa_kitchen"
+ 
+     order_webhook_url: str | None = None
+@@ -49,6 +50,15 @@ class Settings(BaseSettings):
+     analytics_target_country: str = "SA"
+     analytics_allow_private_ips: bool = False
+ 
++    @field_validator("database_url", mode="before")
++    @classmethod
++    def normalize_database_url(cls, value: str) -> str:
++        if value.startswith("postgres://"):
++            return value.replace("postgres://", "postgresql+psycopg://", 1)
++        if value.startswith("postgresql://"):
++            return value.replace("postgresql://", "postgresql+psycopg://", 1)
++        return value
++
+ 
+ @lru_cache
+ def get_settings() -> Settings:
+diff --git a/docs/11-docker-easypanel.md b/docs/11-docker-easypanel.md
+index e9ea70f..b1ad2cc 100644
+--- a/docs/11-docker-easypanel.md
++++ b/docs/11-docker-easypanel.md
+@@ -6,7 +6,7 @@ Create root `docker-compose.yml` with services:
+ 
+ - `frontend`
+ - `backend`
+-- `dafakitchen_database`
++- `dafa_kitchen_database`
+ 
+ Ports:
+ 
+@@ -25,7 +25,7 @@ POSTGRES_PASSWORD=dafakitchen
+ Local backend database URL:
+ 
+ ```env
+-DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafakitchen_database:5432/dafa_kitchen
++DATABASE_URL=postgresql+psycopg://dafakitchen:dafakitchen@dafa_kitchen_database:5432/dafa_kitchen
+ ```
+ 
+ ## Frontend Docker
+@@ -97,7 +97,8 @@ Backend:
+ APP_ENV=production
+ API_BASE_URL=https://api.dafakitchen.shop
+ FRONTEND_URL=https://dafakitchen.shop
+-DATABASE_URL=
++CORS_ORIGINS=https://dafakitchen.shop
++DATABASE_URL=postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable
+ ORDER_WEBHOOK_URL=
+ ORDER_WEBHOOK_SECRET=
+ META_PIXEL_ID=
+@@ -119,15 +120,22 @@ Allow:
+ 
+ Do not use wildcard CORS in production.
+ 
++Set `CORS_ORIGINS` to a comma-separated list if preview or staging frontend domains need API access.
++Browser origins must include the scheme, so use `https://dafakitchen.shop`, not only `dafakitchen.shop`.
++
++## Frontend Build Args
++
++Next.js inlines `NEXT_PUBLIC_*` values during the image build. In EasyPanel, configure these as build arguments for the frontend app, not only runtime environment variables. The Dockerfile defaults to the production domains above, but explicit build args are safer when domains or pixel IDs change.
++
+ ## Deployment Checklist
+ 
+ - DNS points to EasyPanel.
+ - SSL active for both domains.
+ - Frontend env uses production API URL.
++- Frontend build args include production `NEXT_PUBLIC_*` values.
+ - Backend CORS allows production frontend.
+ - Database migrations ran.
+ - Health endpoint works.
+ - Test order reaches database.
+ - Test order reaches Sheet.
+ - Pixel test tools confirm events.
+-
+diff --git a/frontend/.env.example b/frontend/.env.example
+index cd96a2c..2cafb23 100644
+--- a/frontend/.env.example
++++ b/frontend/.env.example
+@@ -1,9 +1,8 @@
+-NEXT_PUBLIC_SITE_URL=http://localhost:3000
+-NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
++NEXT_PUBLIC_SITE_URL=https://dafakitchen.shop
++NEXT_PUBLIC_API_BASE_URL=https://api.dafakitchen.shop
+ 
+ NEXT_PUBLIC_META_PIXEL_ID=
+ NEXT_PUBLIC_TIKTOK_PIXEL_ID=
+ NEXT_PUBLIC_SNAP_PIXEL_ID=
+ 
+-NEXT_PUBLIC_ENABLE_PIXEL_DEBUG=true
+-
++NEXT_PUBLIC_ENABLE_PIXEL_DEBUG=false
+warning: in the working copy of 'backend/.env.example', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/app/core/config.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working
+... (truncated)
+```
+</details></tool-use>
+
+_**Agent (gpt-5.5 2026-05-11 12:51:12Z)**_
+
+Updated.
+
+I set the deployment examples to use your DB link:
+
+`postgres://dafakitchen:dafakitchen@dafa_kitchen_dafakitchen_db:5432/dafakitchen?sslmode=disable`
+
+And I added backend normalization so that `postgres://...` works safely with SQLAlchemy/psycopg at runtime. Internally it converts to:
+
+`postgresql+psycopg://...`
+
+Files updated:
+- [backend/app/core/config.py](w:/branded-store/backend/app/core/config.py:1)
+- [backend/.env.example](w:/branded-store/backend/.env.example:1)
+- [frontend/.env.example](w:/branded-store/frontend/.env.example:1)
+- [docs/11-docker-easypanel.md](w:/branded-store/docs/11-docker-easypanel.md:97)
+
+Origin is now set as:
+
+`CORS_ORIGINS=https://dafakitchen.shop`
+
+Important: for CORS, `dafakitchen.shop` alone is not a valid browser origin. It needs the scheme, so `https://dafakitchen.shop` is the right value.
+
+Verified:
+- `npm run typecheck` passed
+- `python -m compileall app` passed
+- DB URL normalization test passed
+
+---
+
+_**User (2026-05-11 12:55:18Z)**_
+
+I want you to go over every page, and update wordings that are fluff and not helping for inceasing AOV, CRO, keep icp language and dtc brand marketing that is suitable to KSA dialect
